@@ -1037,6 +1037,11 @@ def cmd_sync(args):
         return
 
     has_remote = bool(git("remote").stdout.strip())
+    if not has_remote:
+        print("⚠ 還沒設定遠端 repo，目前只會在本機留版本紀錄。")
+        print("  要讓另一台電腦接得上，先開一個私人 repo 再執行：")
+        print("    git remote add origin <你的私人 repo 網址>")
+        print("    git push -u origin main\n")
 
     if has_remote:
         print(hr("拉取遠端進度"))
