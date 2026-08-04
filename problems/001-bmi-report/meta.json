@@ -1,0 +1,20 @@
+{
+  "id": "001-bmi-report",
+  "title": "BMI 分類報告",
+  "lang": "py",
+  "mode": "function",
+  "entry": "bmi_report",
+  "node": "1.1",
+  "difficulty": "warmup",
+  "tags": [
+    "型別轉換",
+    "f-string",
+    "四捨五入",
+    "分支"
+  ],
+  "hint_count": 4,
+  "test_count": 8,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-04T08:51:07+00:00"
+}

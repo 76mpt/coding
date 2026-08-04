@@ -1,0 +1,20 @@
+{
+  "id": "004-top-k-words",
+  "title": "詞頻 Top-K",
+  "lang": "py",
+  "mode": "function",
+  "entry": "top_k_words",
+  "node": "1.4",
+  "difficulty": "standard",
+  "tags": [
+    "dict 計數",
+    "sorted key",
+    "同分排序",
+    "tuple"
+  ],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 8,
+  "source_style": "leetcode",
+  "created": "2026-08-04T08:51:07+00:00"
+}

@@ -1,0 +1,22 @@
+# 本機專屬設定（各台電腦的 Python 路徑不同，不要同步）
+config.json
+
+# 編譯產物與快取
+problems/*/.build/
+__pycache__/
+*.pyc
+*.exe
+*.obj
+
+# 出題時的暫存
+.next_brief.json
+
+# 編輯器
+.vscode/
+.idea/
+*.swp
+
+# 注意：以下這些「刻意」要進版控，因為它們就是你的練習資產
+#   state.json          進度、提示用量、複習排程
+#   problems/           題目、你的作答、已解鎖的提示與解答
+#   problems/*/attempts/ 每次 redo 之前的舊作答（拿來看自己的進步）

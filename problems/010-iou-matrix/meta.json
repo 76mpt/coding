@@ -1,0 +1,20 @@
+{
+  "id": "010-iou-matrix",
+  "title": "IoU 矩陣（向量化）",
+  "lang": "py",
+  "mode": "function",
+  "entry": "iou_matrix",
+  "node": "5.1",
+  "difficulty": "standard",
+  "tags": [
+    "numpy",
+    "broadcasting",
+    "IoU",
+    "物件偵測"
+  ],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 20,
+  "source_style": "leetcode",
+  "created": "2026-08-04T08:51:07+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "007-min-shipping-capacity",
+  "title": "貨船運送能力下限",
+  "lang": "py",
+  "mode": "function",
+  "entry": "min_capacity",
+  "node": "2.5",
+  "difficulty": "standard",
+  "tags": [
+    "二分答案",
+    "貪心檢驗",
+    "單調性",
+    "LeetCode 1011"
+  ],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 20,
+  "source_style": "leetcode",
+  "created": "2026-08-04T08:51:07+00:00"
+}

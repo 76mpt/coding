@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "created": "2026-08-04T08:51:07+00:00",
+  "problems": {
+    "001-bmi-report": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "1.1"
+    },
+    "002-collatz-steps": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "1.2"
+    },
+    "003-apply-discount": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "1.3"
+    },
+    "004-top-k-words": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "1.4"
+    },
+    "005-parse-label-line": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "1.5"
+    },
+    "006-container-with-most-water": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "2.1"
+    },
+    "007-min-shipping-capacity": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "2.5"
+    },
+    "008-cpp-unique-sorted": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "2.12"
+    },
+    "009-range-add-max": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "3.2"
+    },
+    "010-iou-matrix": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-04T08:51:07+00:00",
+      "node": "5.1"
+    }
+  },
+  "topics": {
+    "1.1": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "1.2": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "1.3": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "1.4": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "1.5": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "2.1": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "2.5": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "2.12": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "3.2": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "5.1": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    }
+  },
+  "log": [
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "001-bmi-report",
+      "node": "1.1",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "002-collatz-steps",
+      "node": "1.2",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "003-apply-discount",
+      "node": "1.3",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "004-top-k-words",
+      "node": "1.4",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "005-parse-label-line",
+      "node": "1.5",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "006-container-with-most-water",
+      "node": "2.1",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "007-min-shipping-capacity",
+      "node": "2.5",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "008-cpp-unique-sorted",
+      "node": "2.12",
+      "lang": "cpp",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "009-range-add-max",
+      "node": "3.2",
+      "lang": "cpp",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-04T08:51:07+00:00",
+      "event": "created",
+      "id": "010-iou-matrix",
+      "node": "5.1",
+      "lang": "py",
+      "difficulty": "standard"
+    }
+  ],
+  "counter": 10
+}

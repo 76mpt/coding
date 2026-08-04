@@ -1,0 +1,20 @@
+{
+  "id": "002-collatz-steps",
+  "title": "Collatz 序列的步數與峰值",
+  "lang": "py",
+  "mode": "function",
+  "entry": "collatz",
+  "node": "1.2",
+  "difficulty": "warmup",
+  "tags": [
+    "while 迴圈",
+    "累加器",
+    "多回傳值",
+    "整數運算"
+  ],
+  "hint_count": 4,
+  "test_count": 6,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-04T08:51:07+00:00"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "009-range-add-max",
+  "title": "區間加值後的最大值",
+  "lang": "cpp",
+  "mode": "io",
+  "entry": "",
+  "node": "3.2",
+  "difficulty": "standard",
+  "tags": [
+    "差分陣列",
+    "前綴和",
+    "離線處理"
+  ],
+  "hint_count": 4,
+  "test_count": 7,
+  "timeout": 15,
+  "source_style": "leetcode",
+  "created": "2026-08-04T08:51:07+00:00"
+}
