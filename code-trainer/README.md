@@ -132,35 +132,39 @@ code-trainer/
 整個專案是**自足**的：沒有絕對路徑寫死在程式裡，所有狀態都在這個資料夾內。
 把資料夾同步過去就能接著練。
 
-### 用 git（建議）
+### 已經設定好的狀態
 
-第一台電腦，開一個**私人** repo（進度紀錄不需要公開）：
+repo 根目錄是 **`d:\coding`**（不是 `code-trainer`），這樣上層的
+`.claude/skills/` 指標檔也會一起同步。遠端是私人 repo
+`https://github.com/76mpt/coding`。
+
+```
+d:\coding\                    ← repo 根目錄
+├── .gitignore
+├── .claude/skills/           ← 教練規則指標檔（會同步）
+└── code-trainer/             ← 練習系統本體
+```
+
+### 第二台電腦怎麼接上
 
 ```bash
+git clone https://github.com/76mpt/coding d:\coding
 cd d:\coding\code-trainer
-git init -b main
-git add -A
-git commit -m "初始化 code-trainer"
-git remote add origin <你的私人 repo 網址>
-git push -u origin main
+python trainer.py doctor                  # 自動找出這台有 numpy 的 Python
+python trainer.py skill --install         # 重建指標檔（路徑不同時必做）
+python trainer.py status                  # 確認進度接上了
 ```
 
-第二台電腦：
+`git config --global user.name/user.email` 也要在新機器上設定，否則 `sync` 的 commit 會失敗。
 
-```bash
-git clone <你的私人 repo 網址> code-trainer
-cd code-trainer
-python trainer.py doctor      # 會自動找出這台機器上有 numpy 的 Python
-```
-
-之後**每次練完**在任一台電腦執行：
+### 每次練習前後
 
 ```bash
 python trainer.py sync
 ```
 
 它會 `pull --rebase` → `commit` → `push`，一行搞定。
-開始練之前也跑一次，確保拿到另一台的最新進度。
+**開始練之前跑一次**拿到另一台的最新進度，**練完再跑一次**推上去。
 
 ### 會同步什麼
 

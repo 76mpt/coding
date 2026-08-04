@@ -1008,8 +1008,13 @@ def cmd_doctor(args):
     print()
     print(f"題庫          {len(list(PROBLEMS.glob('*/meta.json')))} 題")
     print(f"進度紀錄      {'state.json 存在' if STATE_PATH.exists() else '尚未建立'}")
-    inside_git = (ROOT / ".git").is_dir() or (ROOT.parent / ".git").is_dir()
-    print(f"版本控制      {'已初始化（可用 sync 同步）' if inside_git else '未初始化'}")
+    root = repo_root()
+    if root:
+        remote = git("remote", "get-url", "origin").stdout.strip()
+        print(f"版本控制      repo 根目錄 {root}")
+        print(f"              遠端 {remote or '（未設定，sync 只會在本機留紀錄）'}")
+    else:
+        print("版本控制      未初始化（無法用 sync 同步）")
 
     if len(python_candidates()) > 1:
         print("\n本機偵測到的 Python：")
@@ -1107,12 +1112,23 @@ def git(*argv, capture: bool = True) -> subprocess.CompletedProcess:
                           text=True, encoding="utf-8", errors="replace")
 
 
+def repo_root() -> Path | None:
+    """專案所在的 git repo 根目錄（可能是 ROOT 本身，也可能是它的上層）。"""
+    if not shutil.which("git"):
+        return None
+    res = git("rev-parse", "--show-toplevel")
+    if res.returncode != 0 or not res.stdout.strip():
+        return None
+    return Path(res.stdout.strip())
+
+
 def cmd_sync(args):
     """把進度與題庫同步到 git remote，讓另一台電腦接著練。"""
     if not shutil.which("git"):
         die("找不到 git。請先安裝 git，或改用雲端資料夾（OneDrive / Dropbox）同步整個資料夾。")
-    if not (ROOT / ".git").is_dir():
-        print("這個資料夾還不是 git repo。要開始同步，執行：\n")
+    root = repo_root()
+    if root is None:
+        print("這個資料夾還不在任何 git repo 裡。要開始同步，執行：\n")
         print(f"  cd {ROOT}")
         print("  git init -b main")
         print("  git add -A && git commit -m \"初始化 code-trainer\"")
@@ -1120,6 +1136,8 @@ def cmd_sync(args):
         print("  git push -u origin main\n")
         print("之後兩台電腦都用 `python trainer.py sync` 就好。")
         return
+    if root.resolve() != ROOT.resolve():
+        print(f"（repo 根目錄在上層：{root}，會一併同步該資料夾底下的東西）\n")
 
     has_remote = bool(git("remote").stdout.strip())
     if not has_remote:
