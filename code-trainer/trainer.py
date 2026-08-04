@@ -1017,6 +1017,91 @@ def cmd_doctor(args):
             print(f"  {'✓ numpy' if can_import(c, 'numpy') else '  無 numpy'}   {c}")
 
 
+SKILL_DIR = ROOT / ".claude" / "skills" / "code-trainer"
+SKILL_FILE = SKILL_DIR / "SKILL.md"
+
+
+def skill_description() -> str:
+    """讀出正本 SKILL.md 的 description，讓指標檔永遠跟正本一致。"""
+    fallback = ("程式練習教練。當使用者要練習寫程式、要出題、卡在 code-trainer 的題目、"
+                "要提示、要看標準解、要 review 作答時使用。")
+    if not SKILL_FILE.exists():
+        return fallback
+    m = re.search(r"^description:\s*(.+)$", SKILL_FILE.read_text(encoding="utf-8"), re.M)
+    return m.group(1).strip() if m else fallback
+
+
+def pointer_skill_text() -> str:
+    return f"""---
+name: code-trainer
+description: {skill_description()}
+---
+
+# code-trainer 教練（指標）
+
+這份是**指標**，不是內容。真正的教練規則放在專案裡，會跟著 git 一起同步到每台電腦：
+
+**立刻讀取並完整遵循下面這個檔案，然後照它的指示執行：**
+
+```
+{SKILL_FILE}
+```
+
+規則只維護那一份，避免兩邊內容走鐘。
+如果專案被搬到別的路徑，在新位置執行 `python trainer.py skill --install` 重新產生這個檔案。
+
+在讀到那份檔案之前，你只需要知道一條規則：
+**不要主動給題目的答案或解法程式碼，只給提示。**
+"""
+
+
+def cmd_skill(args):
+    if not SKILL_FILE.exists():
+        die(f"找不到教練規則正本：{SKILL_FILE}")
+
+    if not args.install:
+        print(hr("教練規則"))
+        print(f"正本（跟著專案同步）：\n  {SKILL_FILE}\n")
+        print("已安裝的指標檔：")
+        found = False
+        for cand in (ROOT.parent / ".claude" / "skills" / "code-trainer" / "SKILL.md",
+                     Path.home() / ".claude" / "skills" / "code-trainer" / "SKILL.md"):
+            if cand.exists():
+                print(f"  ✓ {cand}")
+                found = True
+        if not found:
+            print("  （沒有。只有在專案資料夾內開 Claude Code 時才會載入教練規則）")
+        print("\n重建指標檔：")
+        print(f"  python trainer.py skill --install          → {ROOT.parent}")
+        print("  python trainer.py skill --install --user   → 使用者家目錄（任何地方都能用）")
+        print("  python trainer.py skill --install --target <資料夾>")
+        return
+
+    if args.user:
+        base = Path.home()
+    elif args.target:
+        base = Path(args.target).expanduser().resolve()
+        if not base.is_dir():
+            die(f"找不到資料夾 {base}")
+    else:
+        base = ROOT.parent
+
+    dest_dir = base / ".claude" / "skills" / "code-trainer"
+    if dest_dir.resolve() == SKILL_DIR.resolve():
+        die("目標就是正本所在位置，不需要也不可以在這裡放指標檔。")
+
+    dest = dest_dir / "SKILL.md"
+    if dest.exists() and not args.force:
+        existing = dest.read_text(encoding="utf-8")
+        if "指標" not in existing and "轉向" not in existing:
+            die(f"{dest} 已經存在而且不像是指標檔，怕蓋掉你的東西。確定要覆寫請加 --force")
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    dest.write_text(pointer_skill_text(), encoding="utf-8")
+    print(f"✓ 指標檔已寫入\n  {dest}")
+    print(f"\n它指向正本：\n  {SKILL_FILE}")
+    print(f"\n效果：在 {base} 底下開啟 Claude Code 時，教練模式會自動載入。")
+
+
 def git(*argv, capture: bool = True) -> subprocess.CompletedProcess:
     return subprocess.run(["git", "-C", str(ROOT), *argv], capture_output=capture,
                           text=True, encoding="utf-8", errors="replace")
@@ -1204,6 +1289,13 @@ def main():
     s = sub.add_parser("doctor", help="環境檢查")
     s.add_argument("--pick", metavar="PYTHON", help="指定執行解答用的 Python 直譯器路徑")
     s.set_defaults(func=cmd_doctor)
+
+    s = sub.add_parser("skill", help="檢視或重建 Claude Code 教練規則的指標檔")
+    s.add_argument("--install", action="store_true", help="寫入指標檔")
+    s.add_argument("--user", action="store_true", help="裝到家目錄，任何資料夾都能用")
+    s.add_argument("--target", help="裝到指定資料夾")
+    s.add_argument("--force", action="store_true", help="覆寫已存在的檔案")
+    s.set_defaults(func=cmd_skill)
 
     s = sub.add_parser("sync", help="用 git 同步進度與題庫到另一台電腦")
     s.add_argument("-m", "--message", help="自訂 commit 訊息")
