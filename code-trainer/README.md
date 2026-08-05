@@ -72,8 +72,14 @@ python trainer.py answer 001  # 標準解 + 最佳解 + 複雜度 + 常見錯誤
 
 ## 學習路線
 
-`curriculum.json` 定義，共 51 個節點。每個節點要通過 `target` 題（3–5 題）
-**且至少一題是 0 提示 0 解答自力完成**，才算掌握。
+`curriculum.json` 定義，**兩條平行軌道、共 99 個節點**。每個節點要通過 `target` 題
+**且至少一題是 0 提示 0 解答自力完成**，才算掌握。兩軌各自獨立追蹤進度，可以同時進行。
+
+### 程式軌（51 節點）
+
+```bash
+python trainer.py next
+```
 
 | 階段 | 內容 | 語言 | 節點數 |
 |---|---|---|---|
@@ -81,9 +87,32 @@ python trainer.py answer 001  # 標準解 + 最佳解 + 複雜度 + 常見錯誤
 | **S2** | 資料結構與演算法（LeetCode 風格）：雙指標、雜湊、樹、圖、DP、STL | Python + C++ | 12 |
 | **S3** | 競賽演算法：卡時限、差分、貪心證明、進階 DP、數論、字串、線段樹、計算幾何 | C++ | 9 |
 | **S4** | 軟體工程實務：介面設計、錯誤處理、測試、重構、CLI、資料清理、剖析、並行 | Python | 9 |
-| **S5** | AI / CV 研究基本功：NumPy 向量化、線代、卷積手寫、相機模型、IoU/NMS/mAP、autograd、訓練迴圈、論文復現 | Python | 12 |
+| **S5** | AI / CV 研究基本功：NumPy 向量化、卷積手寫、相機模型、IoU/NMS/mAP、autograd、訓練迴圈、論文復現 | Python | 12 |
 
-全部走完約 175 題。題目是**即時生成**的，不是固定題庫，所以不會用完也不會重複。
+### 數學軌（48 節點）
+
+```bash
+python trainer.py next --track math
+```
+
+數學軌的題目**不是紙筆計算**，而是「**把數學寫成程式，再用程式證明自己算對了**」——
+手寫 Gram-Schmidt 跟 `np.linalg.qr` 比對、用有限差分驗證解析梯度、
+用蒙地卡羅驗證貝氏推論、實作 SO(3) 的 exp/log 映射並驗證往返一致。
+
+| 階段 | 內容 | 節點數 |
+|---|---|---|
+| **M0** | **Tier 0 基礎**：線性映射、子空間、投影與最小平方、特徵值、SVD、條件數、梯度/Jacobian/Hessian、矩陣微分與反向傳播、貝氏、MLE、KL 散度、多變數高斯 | 12 |
+| **M1** | **Tier 1**：凸最佳化、梯度下降家族、KKT、Gauss-Newton/LM、傅立葉、卷積定理、取樣定理、數值線代、浮點誤差 | 9 |
+| **M2** | **Tier 2-A　3D / SLAM / 姿態估計**：射影幾何、相機模型、homography/DLT、對極幾何、三角測量/PnP、RANSAC、旋轉表示、**李群李代數 SO(3)/SE(3)**、bundle adjustment、EKF | 10 |
+| **M3** | **Tier 2-B　學習理論**：ERM、集中不等式、VC 維與 Rademacher、雙下降、隱式正則化、NTK | 6 |
+| **M4** | **Tier 2-C　表徵學習**：熵與互資訊、InfoNCE 推導、度量學習、維度崩塌與白化、流形與降維 | 5 |
+| **M5** | **Tier 2-D　生成模型**：ELBO、隨機過程、SDE 與 score matching、Diffusion 完整推導、flow matching、取樣器 | 6 |
+
+每個 M 階段都掛了**中英文參考資源**（台大開放式課程、李宏毅、《視覺SLAM十四講》、
+MIT 18.06/18.065、EE364A、Hartley & Zisserman…），
+執行 `next --track math` 或 `curriculum -v --track math` 時會一併列出。
+
+題目是**即時生成**的，不是固定題庫，所以不會用完也不會重複。
 
 ---
 

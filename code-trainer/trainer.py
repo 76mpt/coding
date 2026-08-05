@@ -226,12 +226,16 @@ def load_curriculum() -> dict:
     return json.loads(CURRICULUM_PATH.read_text(encoding="utf-8"))
 
 
-def all_nodes(cur: dict) -> list[dict]:
+def all_nodes(cur: dict, track: str | None = None) -> list[dict]:
     out = []
     for stage in cur["stages"]:
+        if track and stage.get("track", "code") != track:
+            continue
         for node in stage["nodes"]:
             out.append({**node, "stage_id": stage["id"], "stage_name": stage["name"],
-                        "stage_lang": stage.get("lang", ["py"])})
+                        "stage_lang": stage.get("lang", ["py"]),
+                        "track": stage.get("track", "code"),
+                        "resources": stage.get("resources", {})})
     return out
 
 
@@ -710,8 +714,9 @@ def cmd_open(args):
 # ---------------------------------------------------------------- next
 
 
-def pick_next_node(st: dict, cur: dict, want_node: str | None, want_lang: str | None):
-    nodes = all_nodes(cur)
+def pick_next_node(st: dict, cur: dict, want_node: str | None, want_lang: str | None,
+                   track: str | None = None):
+    nodes = all_nodes(cur, track)
     if want_node:
         n = find_node(cur, want_node)
         if not n:
@@ -738,7 +743,7 @@ def cmd_next(args):
         print(f"\n  python trainer.py redo {due[0][0]}   ← 清空重寫一次")
         print("  （不想複習就加 --skip-review）\n")
 
-    node = pick_next_node(st, cur, args.node, args.lang)
+    node = pick_next_node(st, cur, args.node, args.lang, args.track)
     stats = topic_stats(st, node["id"])
     langs = node.get("lang", node["stage_lang"])
     lang = args.lang or langs[0]
@@ -758,10 +763,12 @@ def cmd_next(args):
 
     brief = {
         "generated_at": iso(now()),
+        "track": node.get("track", "code"),
         "node": node["id"],
         "node_name": node["name"],
         "node_goal": node.get("goal", ""),
         "node_skills": node.get("skills", []),
+        "node_verify": node.get("verify", ""),
         "stage": node["stage_name"],
         "lang": lang,
         "mode": "function" if lang == "py" else "io",
@@ -770,22 +777,33 @@ def cmd_next(args):
         "progress_in_node": f"{solved}/{node.get('target', 3)}",
         "avoid_titles": existing,
         "weak_spots": weak,
+        "resources": node.get("resources", {}),
         "spec_schema": "見 code-trainer/README.md 的 spec 欄位說明",
     }
     BRIEF_PATH.write_text(json.dumps(brief, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(hr("下一題出題指令（給 AI 教練）"))
+    print(f"軌道    : {'數學軌' if node.get('track') == 'math' else '程式軌'}")
     print(f"階段    : {node['stage_name']}")
     print(f"節點    : {node['id']} {node['name']}（此節點進度 {solved}/{node.get('target', 3)}）")
     print(f"學習目標: {node.get('goal', '')}")
     if node.get("skills"):
         print(f"必考技能: {', '.join(node['skills'])}")
+    if node.get("verify"):
+        print(f"驗證方向: {node['verify']}")
     print(f"語言    : {'Python' if lang == 'py' else 'C++'}　難度: {difficulty}"
           f"　風格: {node.get('style', 'leetcode')}")
     if existing:
         print(f"避免重複: {'; '.join(existing[-6:])}")
     if weak:
         print(f"順便補弱: {'; '.join(weak)}")
+
+    res = node.get("resources") or {}
+    if res:
+        print("\n" + hr("這個階段的參考資源"))
+        for label, key in (("中文", "zh"), ("英文", "en")):
+            for item in res.get(key, []):
+                print(f"  [{label}] {item}")
     print()
     print("AI 教練請照 SKILL 規則出題：寫一份 spec JSON 到暫存檔，然後執行")
     print("  python trainer.py new --spec <spec.json>")
@@ -883,11 +901,19 @@ def cmd_status(args):
     due = due_reviews(st)
     if due:
         print(f"待複習 {len(due)} 題（python trainer.py review）")
-    print()
-    for stage in cur["stages"]:
-        nodes = stage["nodes"]
-        done = sum(1 for n in nodes if is_mastered(n, topic_stats(st, n["id"])))
-        print(f"{bar(done / len(nodes))} {done:>2}/{len(nodes)}  {stage['id']} {stage['name']}")
+    for track, label in (("code", "程式軌"), ("math", "數學軌")):
+        stages = [s for s in cur["stages"] if s.get("track", "code") == track]
+        if not stages:
+            continue
+        total = sum(len(s["nodes"]) for s in stages)
+        done_all = sum(
+            1 for s in stages for n in s["nodes"] if is_mastered(n, topic_stats(st, n["id"]))
+        )
+        print(f"\n{hr(f'{label}  {done_all}/{total} 節點')}")
+        for stage in stages:
+            nodes = stage["nodes"]
+            done = sum(1 for n in nodes if is_mastered(n, topic_stats(st, n["id"])))
+            print(f"{bar(done / len(nodes))} {done:>2}/{len(nodes)}  {stage['id']} {stage['name']}")
     print()
     active = []
     for stage in cur["stages"]:
@@ -901,8 +927,12 @@ def cmd_status(args):
             flag = "✓" if is_mastered(n, s) else " "
             print(f" {flag} {n['id']:<5} {n['name'][:26]:<28} 通過 {s['solved']}/{n.get('target', 3)}"
                   f"　自力 {s['clean_solved']}　提示 {s['hints_used']}")
-    nxt = pick_next_node(st, cur, None, None)
-    print(f"\n下一個節點：{nxt['id']} {nxt['name']}　→ python trainer.py next")
+    nxt = pick_next_node(st, cur, None, None, "code")
+    print(f"\n下一題（程式軌）：{nxt['id']} {nxt['name']}"
+          f"\n  → python trainer.py next")
+    nxt_m = pick_next_node(st, cur, None, None, "math")
+    print(f"下一題（數學軌）：{nxt_m['id']} {nxt_m['name']}"
+          f"\n  → python trainer.py next --track math")
 
 
 def streak(dates: list) -> int:
@@ -956,8 +986,15 @@ def cmd_curriculum(args):
     cur = load_curriculum()
     st = load_state()
     for stage in cur["stages"]:
-        print("\n" + hr(f"{stage['id']} {stage['name']}"))
+        if args.track and stage.get("track", "code") != args.track:
+            continue
+        track_tag = "數學軌" if stage.get("track") == "math" else "程式軌"
+        print("\n" + hr(f"[{track_tag}] {stage['id']} {stage['name']}"))
         print(f"  語言 {stage.get('lang')}　{stage.get('goal', '')}")
+        if args.verbose and stage.get("resources"):
+            for label, key in (("中文", "zh"), ("英文", "en")):
+                for item in stage["resources"].get(key, []):
+                    print(f"    [{label}] {item}")
         for n in stage["nodes"]:
             s = topic_stats(st, n["id"])
             flag = "✓" if is_mastered(n, s) else ("~" if s["solved"] else " ")
@@ -966,6 +1003,8 @@ def cmd_curriculum(args):
                 print(f"        目標：{n.get('goal', '')}")
                 if n.get("skills"):
                     print(f"        技能：{', '.join(n['skills'])}")
+                if n.get("verify"):
+                    print(f"        用程式驗證：{n['verify']}")
 
 
 def cmd_doctor(args):
@@ -1255,7 +1294,9 @@ def main():
     s.set_defaults(func=cmd_status)
 
     s = sub.add_parser("next", help="產生下一題的出題指令")
-    s.add_argument("--node", help="指定 curriculum 節點，例如 2.5")
+    s.add_argument("--node", help="指定 curriculum 節點，例如 2.5 或 M2.8")
+    s.add_argument("--track", choices=["code", "math"], default="code",
+                   help="程式軌（預設）或數學軌")
     s.add_argument("--lang", choices=["py", "cpp"])
     s.add_argument("--difficulty", choices=["warmup", "standard", "challenge", "contest"])
     s.add_argument("--skip-review", action="store_true")
@@ -1297,7 +1338,8 @@ def main():
     s.set_defaults(func=cmd_redo)
 
     s = sub.add_parser("curriculum", help="看完整學習路線")
-    s.add_argument("-v", "--verbose", action="store_true")
+    s.add_argument("-v", "--verbose", action="store_true", help="顯示目標、技能與參考資源")
+    s.add_argument("--track", choices=["code", "math"], help="只看其中一軌")
     s.set_defaults(func=cmd_curriculum)
 
     s = sub.add_parser("log", help="最近事件")

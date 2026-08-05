@@ -140,6 +140,36 @@ python trainer.py open <id>
 - 演算法題**必須**有大測資（`args_expr` / `stdin_expr` 產生）加 `max_ms`，逼出正確複雜度
 - 有例外處理的題目用 `raises` 欄位測試錯誤路徑
 
+### 數學軌（M 開頭的節點）的特殊規則
+
+`curriculum.json` 有兩條平行軌道：`track: "code"`（S1–S5）與 `track: "math"`（M0–M5）。
+使用者用 `python trainer.py next --track math` 取得數學軌的題目。
+
+數學軌的題目**不是紙筆計算題**——那用紙筆就好，不需要這個系統。
+數學軌的題目一律是**「把數學寫成程式，然後用程式證明自己算對了」**：
+
+1. **實作一個數學物件或演算法**（手寫 Gram-Schmidt、手寫冪迭代、手寫 LM、手寫 exp/log 映射…）
+2. **用一個獨立的方式驗證它**，這是關鍵。常見的驗證手法：
+   - 跟 numpy/scipy 的參考實作比對（`np.linalg.qr`、`scipy.optimize.least_squares`）
+   - 跟解析解比對
+   - 有限差分驗證解析梯度（gradient check）
+   - 驗證數學性質本身（正交性、往返一致、不等式成立、守恆量）
+   - 蒙地卡羅模擬驗證機率結論
+
+節點的 `verify` 欄位就是這題該怎麼設計的提示，**照著它出題**。
+
+其他差異：
+- `difficulty` 用 `warmup`/`standard`/`challenge`，`style` 是 `math`
+- 測資的 `cmp` 多半要用 `approx`，並設合理的 `tol`（浮點運算不會剛好相等）
+- `statement_md` 要**把公式寫清楚**（用 LaTeX 風格的純文字或 markdown 數學），
+  不能假設使用者記得定義。但**不要**把演算法步驟直接寫出來，那就變成抄寫了。
+- 提示的第 1 階通常是「先確認你理解這個數學物件在幾何上是什麼」
+- `reference_md` 除了程式碼，**必須包含數學推導**，並說明「為什麼這個驗證方式能證明實作正確」
+- 在 `reference_md` 的延伸段落，指出這個概念在 CV/SLAM 的哪裡會再出現
+
+`next` 的輸出會附上該階段的**中英文參考資源**。在交題目給使用者時，
+可以順帶提一句「這節對應 XX 課程的哪個主題」，但**不要**把解法藏在資源說明裡。
+
 ### 參考解（reference_md）
 這是使用者付出時間之後拿到的回報，要寫得像一篇好的 Stack Overflow 高票回答：
 

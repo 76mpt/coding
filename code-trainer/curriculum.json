@@ -1,403 +1,1955 @@
 {
   "title": "程式新手 → 軟體工程師 → AI / Computer Vision 研究者",
-  "note": "節點順序就是建議學習順序。target 是該節點要通過幾題才算掌握，另外至少要有 1 題是 0 提示自力完成。",
+  "note": "兩條軌道平行進行，各自獨立追蹤進度（trainer.py next --track math）。節點順序就是建議學習順序。target 是該節點要通過幾題才算掌握，另外至少要有 1 題是 0 提示自力完成。",
   "stages": [
     {
       "id": "S1",
       "name": "基本功：語法與函式",
-      "lang": ["py"],
+      "lang": [
+        "py"
+      ],
       "goal": "能把一段中文需求翻成可執行、可測試的 Python 函式。不碰演算法技巧，只練把想法寫出來。",
       "nodes": [
         {
           "id": "1.1",
           "name": "變數、型別、數值運算",
           "goal": "理解 int/float/str/bool 的差別與轉換，會做四則運算與四捨五入。",
-          "skills": ["型別轉換", "整數除法 // 與 %", "round 與浮點誤差", "f-string 格式化"],
-          "lang": ["py"], "target": 3, "style": "basics"
+          "skills": [
+            "型別轉換",
+            "整數除法 // 與 %",
+            "round 與浮點誤差",
+            "f-string 格式化"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "basics"
         },
         {
           "id": "1.2",
           "name": "條件判斷與迴圈",
           "goal": "會用 if/elif/else 表達分支，用 for/while 走訪與累積，會用 break/continue。",
-          "skills": ["布林運算", "range", "累加器模式", "巢狀迴圈", "early return"],
-          "lang": ["py"], "target": 3, "style": "basics"
+          "skills": [
+            "布林運算",
+            "range",
+            "累加器模式",
+            "巢狀迴圈",
+            "early return"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "basics"
         },
         {
           "id": "1.3",
           "name": "函式：參數與回傳",
           "goal": "會設計函式介面：位置參數、預設值、keyword-only、多回傳值、type hint。",
-          "skills": ["預設參數陷阱", "*args/**kwargs", "keyword-only", "回傳 tuple", "docstring"],
-          "lang": ["py"], "target": 3, "style": "basics"
+          "skills": [
+            "預設參數陷阱",
+            "*args/**kwargs",
+            "keyword-only",
+            "回傳 tuple",
+            "docstring"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "basics"
         },
         {
           "id": "1.4",
           "name": "list / tuple / dict / set",
           "goal": "選對容器，會做增刪查改與走訪，理解各操作的成本。",
-          "skills": ["切片", "dict.get/setdefault", "set 去重與交聯集", "sorted 的 key", "enumerate/zip"],
-          "lang": ["py"], "target": 4, "style": "basics"
+          "skills": [
+            "切片",
+            "dict.get/setdefault",
+            "set 去重與交聯集",
+            "sorted 的 key",
+            "enumerate/zip"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "basics"
         },
         {
           "id": "1.5",
           "name": "字串處理",
           "goal": "會清理與解析字串，這是之後讀資料集標註檔的基本功。",
-          "skills": ["split/join/strip", "大小寫與 in", "replace", "簡單 regex", "編碼觀念"],
-          "lang": ["py"], "target": 3, "style": "basics"
+          "skills": [
+            "split/join/strip",
+            "大小寫與 in",
+            "replace",
+            "簡單 regex",
+            "編碼觀念"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "basics"
         },
         {
           "id": "1.6",
           "name": "comprehension 與函式式寫法",
           "goal": "能把三層迴圈壓成一行可讀的 comprehension，也知道何時不該壓。",
-          "skills": ["list/dict/set comprehension", "條件式 comprehension", "generator", "any/all/sum", "lambda 與 sorted key"],
-          "lang": ["py"], "target": 3, "style": "basics"
+          "skills": [
+            "list/dict/set comprehension",
+            "條件式 comprehension",
+            "generator",
+            "any/all/sum",
+            "lambda 與 sorted key"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "basics"
         },
         {
           "id": "1.7",
           "name": "例外處理與檔案 I/O",
           "goal": "會讀寫檔案並在壞資料下不整支掛掉。",
-          "skills": ["with open", "try/except/else/finally", "自訂例外", "raise 的時機", "pathlib"],
-          "lang": ["py"], "target": 3, "style": "basics"
+          "skills": [
+            "with open",
+            "try/except/else/finally",
+            "自訂例外",
+            "raise 的時機",
+            "pathlib"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "basics"
         },
         {
           "id": "1.8",
           "name": "class 與物件",
           "goal": "會用 class 把狀態與行為包在一起，理解 __init__/__repr__/__eq__。",
-          "skills": ["實例屬性 vs 類別屬性", "method", "dunder", "dataclass", "組合優於繼承"],
-          "lang": ["py"], "target": 3, "style": "basics"
+          "skills": [
+            "實例屬性 vs 類別屬性",
+            "method",
+            "dunder",
+            "dataclass",
+            "組合優於繼承"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "basics"
         },
         {
           "id": "1.9",
           "name": "複雜度直覺",
           "goal": "看得懂 O(n)、O(n log n)、O(n^2)，能估「這樣寫 10^6 筆會不會爆」。",
-          "skills": ["時間複雜度", "空間複雜度", "常數項", "list vs set 查找", "字串串接成本"],
-          "lang": ["py"], "target": 2, "style": "basics"
+          "skills": [
+            "時間複雜度",
+            "空間複雜度",
+            "常數項",
+            "list vs set 查找",
+            "字串串接成本"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "basics"
         }
-      ]
+      ],
+      "track": "code"
     },
     {
       "id": "S2",
       "name": "資料結構與演算法（LeetCode 風格）",
-      "lang": ["py", "cpp"],
+      "lang": [
+        "py",
+        "cpp"
+      ],
       "goal": "面試與研究都要的核心。每題都要能說出複雜度，並知道最佳解為什麼最佳。",
       "nodes": [
         {
           "id": "2.1",
           "name": "陣列與雙指標",
           "goal": "會用雙指標把 O(n^2) 降成 O(n)。",
-          "skills": ["對撞指標", "快慢指標", "滑動視窗", "就地修改", "邊界處理"],
-          "lang": ["py", "cpp"], "target": 4, "style": "leetcode"
+          "skills": [
+            "對撞指標",
+            "快慢指標",
+            "滑動視窗",
+            "就地修改",
+            "邊界處理"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 4,
+          "style": "leetcode"
         },
         {
           "id": "2.2",
           "name": "雜湊表",
           "goal": "用空間換時間的第一個工具，會設計 key。",
-          "skills": ["dict/unordered_map", "計數", "分組（groupby key）", "前綴和 + 雜湊", "雜湊碰撞觀念"],
-          "lang": ["py", "cpp"], "target": 4, "style": "leetcode"
+          "skills": [
+            "dict/unordered_map",
+            "計數",
+            "分組（groupby key）",
+            "前綴和 + 雜湊",
+            "雜湊碰撞觀念"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 4,
+          "style": "leetcode"
         },
         {
           "id": "2.3",
           "name": "堆疊與佇列",
           "goal": "會看出「要記住還沒配對的東西」就是堆疊題。",
-          "skills": ["括號配對", "單調堆疊", "deque", "BFS 佇列", "用兩個 stack 模擬 queue"],
-          "lang": ["py", "cpp"], "target": 3, "style": "leetcode"
+          "skills": [
+            "括號配對",
+            "單調堆疊",
+            "deque",
+            "BFS 佇列",
+            "用兩個 stack 模擬 queue"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 3,
+          "style": "leetcode"
         },
         {
           "id": "2.4",
           "name": "鏈結串列",
           "goal": "會操作指標而不弄丟節點。",
-          "skills": ["dummy head", "反轉", "快慢指標找中點/環", "合併", "遞迴 vs 迭代"],
-          "lang": ["py", "cpp"], "target": 3, "style": "leetcode"
+          "skills": [
+            "dummy head",
+            "反轉",
+            "快慢指標找中點/環",
+            "合併",
+            "遞迴 vs 迭代"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 3,
+          "style": "leetcode"
         },
         {
           "id": "2.5",
           "name": "二分搜尋",
           "goal": "會寫不出錯的二分邊界，並認出「二分答案」的題型。",
-          "skills": ["lower_bound/upper_bound", "左閉右開", "二分答案", "旋轉陣列", "浮點二分"],
-          "lang": ["py", "cpp"], "target": 4, "style": "leetcode"
+          "skills": [
+            "lower_bound/upper_bound",
+            "左閉右開",
+            "二分答案",
+            "旋轉陣列",
+            "浮點二分"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 4,
+          "style": "leetcode"
         },
         {
           "id": "2.6",
           "name": "排序與自訂比較",
           "goal": "知道何時排序就贏一半，會寫穩定的自訂比較。",
-          "skills": ["sort key/comparator", "穩定排序", "區間排序題", "計數排序", "第 k 大"],
-          "lang": ["py", "cpp"], "target": 3, "style": "leetcode"
+          "skills": [
+            "sort key/comparator",
+            "穩定排序",
+            "區間排序題",
+            "計數排序",
+            "第 k 大"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 3,
+          "style": "leetcode"
         },
         {
           "id": "2.7",
           "name": "遞迴與回溯",
           "goal": "會定義遞迴狀態，會剪枝。",
-          "skills": ["遞迴三要素", "排列/組合/子集", "剪枝", "路徑還原", "遞迴深度"],
-          "lang": ["py", "cpp"], "target": 4, "style": "leetcode"
+          "skills": [
+            "遞迴三要素",
+            "排列/組合/子集",
+            "剪枝",
+            "路徑還原",
+            "遞迴深度"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 4,
+          "style": "leetcode"
         },
         {
           "id": "2.8",
           "name": "樹與 DFS / BFS",
           "goal": "樹是遞迴的自然舞台，也是之後 CV 中 KD-tree / 階層結構的基礎。",
-          "skills": ["前中後序", "層序走訪", "遞迴回傳資訊", "BST 性質", "最近共同祖先"],
-          "lang": ["py", "cpp"], "target": 4, "style": "leetcode"
+          "skills": [
+            "前中後序",
+            "層序走訪",
+            "遞迴回傳資訊",
+            "BST 性質",
+            "最近共同祖先"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 4,
+          "style": "leetcode"
         },
         {
           "id": "2.9",
           "name": "堆積與優先佇列",
           "goal": "會用 heap 維護「當前最好的 k 個」——NMS、beam search 都靠它。",
-          "skills": ["heapq/priority_queue", "top-k", "合併 k 個有序序列", "延遲刪除", "自訂優先度"],
-          "lang": ["py", "cpp"], "target": 3, "style": "leetcode"
+          "skills": [
+            "heapq/priority_queue",
+            "top-k",
+            "合併 k 個有序序列",
+            "延遲刪除",
+            "自訂優先度"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 3,
+          "style": "leetcode"
         },
         {
           "id": "2.10",
           "name": "圖論基礎",
           "goal": "會建圖、走圖、判連通。",
-          "skills": ["鄰接表", "BFS 最短路", "DFS 連通塊", "拓撲排序", "並查集"],
-          "lang": ["py", "cpp"], "target": 4, "style": "leetcode"
+          "skills": [
+            "鄰接表",
+            "BFS 最短路",
+            "DFS 連通塊",
+            "拓撲排序",
+            "並查集"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 4,
+          "style": "leetcode"
         },
         {
           "id": "2.11",
           "name": "動態規劃入門",
           "goal": "會定義狀態與轉移，會從記憶化推到迭代。",
-          "skills": ["狀態定義", "記憶化搜尋", "一維 DP", "二維 DP", "滾動陣列"],
-          "lang": ["py", "cpp"], "target": 5, "style": "leetcode"
+          "skills": [
+            "狀態定義",
+            "記憶化搜尋",
+            "一維 DP",
+            "二維 DP",
+            "滾動陣列"
+          ],
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 5,
+          "style": "leetcode"
         },
         {
           "id": "2.12",
           "name": "C++ 與 STL 上手",
           "goal": "把 Python 的想法用 C++ 寫出來，熟 vector/string/map/algorithm。",
-          "skills": ["vector/string", "map/set/unordered_*", "sort/lower_bound/accumulate", "reference 與 auto", "快速 I/O"],
-          "lang": ["cpp"], "target": 4, "style": "leetcode"
+          "skills": [
+            "vector/string",
+            "map/set/unordered_*",
+            "sort/lower_bound/accumulate",
+            "reference 與 auto",
+            "快速 I/O"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 4,
+          "style": "leetcode"
         }
-      ]
+      ],
+      "track": "code"
     },
     {
       "id": "S3",
       "name": "競賽演算法（C++ 為主）",
-      "lang": ["cpp"],
+      "lang": [
+        "cpp"
+      ],
       "goal": "在時限與記憶體限制下寫出正確又夠快的解。標準輸入輸出、大測資、卡常數。",
       "nodes": [
         {
           "id": "3.1",
           "name": "卡時限與 I/O 優化",
           "goal": "同一個演算法為什麼別人過你 TLE。",
-          "skills": ["sync_with_stdio", "避免不必要複製", "reserve", "cache 友善走訪", "估算 10^8 運算"],
-          "lang": ["cpp"], "target": 3, "style": "contest"
+          "skills": [
+            "sync_with_stdio",
+            "避免不必要複製",
+            "reserve",
+            "cache 友善走訪",
+            "估算 10^8 運算"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 3,
+          "style": "contest"
         },
         {
           "id": "3.2",
           "name": "前綴和與差分",
           "goal": "區間查詢/區間更新的最便宜解法。",
-          "skills": ["一維/二維前綴和", "差分陣列", "區間加值", "子矩陣和", "離線處理"],
-          "lang": ["cpp"], "target": 3, "style": "contest"
+          "skills": [
+            "一維/二維前綴和",
+            "差分陣列",
+            "區間加值",
+            "子矩陣和",
+            "離線處理"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 3,
+          "style": "contest"
         },
         {
           "id": "3.3",
           "name": "貪心與證明",
           "goal": "不只猜對，還能說出為什麼交換論證成立。",
-          "skills": ["排序後貪心", "交換論證", "反例構造", "區間排程", "貪心 + heap"],
-          "lang": ["cpp"], "target": 3, "style": "contest"
+          "skills": [
+            "排序後貪心",
+            "交換論證",
+            "反例構造",
+            "區間排程",
+            "貪心 + heap"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 3,
+          "style": "contest"
         },
         {
           "id": "3.4",
           "name": "進階動態規劃",
           "goal": "背包、區間、位元、樹形 DP。",
-          "skills": ["01/完全背包", "區間 DP", "bitmask DP", "樹形 DP", "轉移優化"],
-          "lang": ["cpp"], "target": 5, "style": "contest"
+          "skills": [
+            "01/完全背包",
+            "區間 DP",
+            "bitmask DP",
+            "樹形 DP",
+            "轉移優化"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 5,
+          "style": "contest"
         },
         {
           "id": "3.5",
           "name": "圖論進階",
           "goal": "最短路、生成樹、強連通。",
-          "skills": ["Dijkstra", "Bellman-Ford/SPFA", "Floyd", "Kruskal/Prim", "Tarjan SCC"],
-          "lang": ["cpp"], "target": 4, "style": "contest"
+          "skills": [
+            "Dijkstra",
+            "Bellman-Ford/SPFA",
+            "Floyd",
+            "Kruskal/Prim",
+            "Tarjan SCC"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 4,
+          "style": "contest"
         },
         {
           "id": "3.6",
           "name": "數學與數論",
           "goal": "模運算、質數、組合數——密碼學與機率推導都會用到。",
-          "skills": ["快速冪", "gcd/擴展歐幾里得", "篩法", "模逆元", "組合數與容斥"],
-          "lang": ["cpp"], "target": 4, "style": "contest"
+          "skills": [
+            "快速冪",
+            "gcd/擴展歐幾里得",
+            "篩法",
+            "模逆元",
+            "組合數與容斥"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 4,
+          "style": "contest"
         },
         {
           "id": "3.7",
           "name": "字串演算法",
           "goal": "KMP、hashing、trie。",
-          "skills": ["KMP failure function", "字串雜湊", "Z-function", "Trie", "回文處理"],
-          "lang": ["cpp"], "target": 3, "style": "contest"
+          "skills": [
+            "KMP failure function",
+            "字串雜湊",
+            "Z-function",
+            "Trie",
+            "回文處理"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 3,
+          "style": "contest"
         },
         {
           "id": "3.8",
           "name": "進階資料結構",
           "goal": "線段樹、BIT、稀疏表。",
-          "skills": ["BIT 單點更新區間查詢", "線段樹", "懶標記", "稀疏表 RMQ", "離散化"],
-          "lang": ["cpp"], "target": 4, "style": "contest"
+          "skills": [
+            "BIT 單點更新區間查詢",
+            "線段樹",
+            "懶標記",
+            "稀疏表 RMQ",
+            "離散化"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 4,
+          "style": "contest"
         },
         {
           "id": "3.9",
           "name": "計算幾何入門",
           "goal": "叉積、凸包、線段相交——直接通往 CV 的幾何。",
-          "skills": ["向量與叉積", "點線關係", "凸包", "線段相交", "浮點誤差處理"],
-          "lang": ["cpp"], "target": 3, "style": "contest"
+          "skills": [
+            "向量與叉積",
+            "點線關係",
+            "凸包",
+            "線段相交",
+            "浮點誤差處理"
+          ],
+          "lang": [
+            "cpp"
+          ],
+          "target": 3,
+          "style": "contest"
         }
-      ]
+      ],
+      "track": "code"
     },
     {
       "id": "S4",
       "name": "軟體工程實務",
-      "lang": ["py"],
+      "lang": [
+        "py"
+      ],
       "goal": "從「跑得出答案」到「別人敢用、半年後你自己還看得懂」。題目會像真實 ticket。",
       "nodes": [
         {
           "id": "4.1",
           "name": "從模糊需求到介面設計",
           "goal": "讀一段像 PM 寫的需求，先定義函式/類別介面與邊界規則。",
-          "skills": ["釐清需求", "定義輸入輸出契約", "邊界與非法輸入", "命名", "最小可行實作"],
-          "lang": ["py"], "target": 3, "style": "engineering"
+          "skills": [
+            "釐清需求",
+            "定義輸入輸出契約",
+            "邊界與非法輸入",
+            "命名",
+            "最小可行實作"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "engineering"
         },
         {
           "id": "4.2",
           "name": "錯誤處理與防禦性設計",
           "goal": "壞資料進來時失敗得清楚，而不是靜默算錯。",
-          "skills": ["驗證與早退", "自訂例外階層", "錯誤訊息可讀性", "重試與超時", "logging"],
-          "lang": ["py"], "target": 3, "style": "engineering"
+          "skills": [
+            "驗證與早退",
+            "自訂例外階層",
+            "錯誤訊息可讀性",
+            "重試與超時",
+            "logging"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "engineering"
         },
         {
           "id": "4.3",
           "name": "單元測試與 TDD",
           "goal": "自己寫測資，包含邊界與退化情況。",
-          "skills": ["測試命名", "邊界案例設計", "parametrize", "fixture/mock", "先寫測試再實作"],
-          "lang": ["py"], "target": 3, "style": "engineering"
+          "skills": [
+            "測試命名",
+            "邊界案例設計",
+            "parametrize",
+            "fixture/mock",
+            "先寫測試再實作"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "engineering"
         },
         {
           "id": "4.4",
           "name": "重構與可讀性",
           "goal": "拿到一段爛 code，在不改行為的前提下改乾淨。",
-          "skills": ["抽函式", "消除重複", "降低巢狀", "純函式化", "以測試護欄重構"],
-          "lang": ["py"], "target": 3, "style": "engineering"
+          "skills": [
+            "抽函式",
+            "消除重複",
+            "降低巢狀",
+            "純函式化",
+            "以測試護欄重構"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "engineering"
         },
         {
           "id": "4.5",
           "name": "CLI 工具與設定",
           "goal": "做出可以交給同事用的小工具。",
-          "skills": ["argparse", "退出碼", "stdin/stdout 管線", "設定檔與環境變數", "使用說明"],
-          "lang": ["py"], "target": 2, "style": "engineering"
+          "skills": [
+            "argparse",
+            "退出碼",
+            "stdin/stdout 管線",
+            "設定檔與環境變數",
+            "使用說明"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "engineering"
         },
         {
           "id": "4.6",
           "name": "資料格式與資料清理",
           "goal": "CSV/JSON/YAML 進出，處理缺值與髒資料——資料集標註檔的日常。",
-          "skills": ["csv/json 模組", "schema 驗證", "缺值策略", "編碼問題", "串流處理大檔"],
-          "lang": ["py"], "target": 3, "style": "engineering"
+          "skills": [
+            "csv/json 模組",
+            "schema 驗證",
+            "缺值策略",
+            "編碼問題",
+            "串流處理大檔"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "engineering"
         },
         {
           "id": "4.7",
           "name": "效能剖析與記憶體",
           "goal": "先量再改，別憑感覺優化。",
-          "skills": ["timeit/cProfile", "熱點定位", "generator 省記憶體", "批次處理", "快取 lru_cache"],
-          "lang": ["py"], "target": 3, "style": "engineering"
+          "skills": [
+            "timeit/cProfile",
+            "熱點定位",
+            "generator 省記憶體",
+            "批次處理",
+            "快取 lru_cache"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "engineering"
         },
         {
           "id": "4.8",
           "name": "並行與非同步",
           "goal": "IO 密集 vs CPU 密集要用不同工具。",
-          "skills": ["threading vs multiprocessing", "GIL", "ThreadPoolExecutor", "asyncio 基礎", "競態與鎖"],
-          "lang": ["py"], "target": 3, "style": "engineering"
+          "skills": [
+            "threading vs multiprocessing",
+            "GIL",
+            "ThreadPoolExecutor",
+            "asyncio 基礎",
+            "競態與鎖"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "engineering"
         },
         {
           "id": "4.9",
           "name": "型別註解與工具鍊",
           "goal": "讓工具幫你抓錯。",
-          "skills": ["typing 泛型", "Protocol", "mypy 思維", "lint/format", "專案結構與套件化"],
-          "lang": ["py"], "target": 2, "style": "engineering"
+          "skills": [
+            "typing 泛型",
+            "Protocol",
+            "mypy 思維",
+            "lint/format",
+            "專案結構與套件化"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "engineering"
         }
-      ]
+      ],
+      "track": "code"
     },
     {
       "id": "S5",
       "name": "AI / Computer Vision 研究基本功",
-      "lang": ["py"],
+      "lang": [
+        "py"
+      ],
       "goal": "把論文裡的公式變成正確、向量化、可驗證的程式。這階段的題目大多要求手寫實作，再和參考實作對答案。",
       "nodes": [
         {
           "id": "5.1",
           "name": "NumPy 向量化",
           "goal": "不寫 for 迴圈也能算完，這是研究 code 的基本禮儀。",
-          "skills": ["broadcasting", "軸(axis)操作", "布林遮罩與 fancy index", "reshape/transpose", "避免複製"],
-          "lang": ["py"], "target": 5, "style": "research"
+          "skills": [
+            "broadcasting",
+            "軸(axis)操作",
+            "布林遮罩與 fancy index",
+            "reshape/transpose",
+            "避免複製"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 5,
+          "style": "research"
         },
         {
           "id": "5.2",
           "name": "線性代數實作",
           "goal": "矩陣運算不是黑盒子。",
-          "skills": ["矩陣乘法語意", "最小平方解", "SVD/特徵值用途", "正規化", "數值穩定性"],
-          "lang": ["py"], "target": 3, "style": "research"
+          "skills": [
+            "矩陣乘法語意",
+            "最小平方解",
+            "SVD/特徵值用途",
+            "正規化",
+            "數值穩定性"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "research"
         },
         {
           "id": "5.3",
           "name": "機率、統計與取樣",
           "goal": "會算期望、會取樣、會做 softmax 而不 overflow。",
-          "skills": ["log-sum-exp", "softmax/cross-entropy", "隨機種子與可重現", "分佈取樣", "期望與變異數"],
-          "lang": ["py"], "target": 3, "style": "research"
+          "skills": [
+            "log-sum-exp",
+            "softmax/cross-entropy",
+            "隨機種子與可重現",
+            "分佈取樣",
+            "期望與變異數"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "research"
         },
         {
           "id": "5.4",
           "name": "影像表示與幾何變換",
           "goal": "影像就是張量：座標、通道、內插。",
-          "skills": ["HWC vs CHW", "色彩空間轉換", "雙線性內插", "affine/warp", "邊界處理"],
-          "lang": ["py"], "target": 4, "style": "research"
+          "skills": [
+            "HWC vs CHW",
+            "色彩空間轉換",
+            "雙線性內插",
+            "affine/warp",
+            "邊界處理"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "research"
         },
         {
           "id": "5.5",
           "name": "卷積與池化手寫",
           "goal": "自己寫過一次 conv2d，之後看任何架構圖都不心慌。",
-          "skills": ["stride/padding/dilation", "im2col", "max/avg pooling", "輸出尺寸公式", "分離卷積"],
-          "lang": ["py"], "target": 4, "style": "research"
+          "skills": [
+            "stride/padding/dilation",
+            "im2col",
+            "max/avg pooling",
+            "輸出尺寸公式",
+            "分離卷積"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "research"
         },
         {
           "id": "5.6",
           "name": "相機模型與多視角幾何",
           "goal": "齊次座標、內外參、homography、RANSAC。",
-          "skills": ["齊次座標", "投影矩陣", "homography 估計", "RANSAC", "重投影誤差"],
-          "lang": ["py"], "target": 4, "style": "research"
+          "skills": [
+            "齊次座標",
+            "投影矩陣",
+            "homography 估計",
+            "RANSAC",
+            "重投影誤差"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "research"
         },
         {
           "id": "5.7",
           "name": "特徵、匹配與對齊",
           "goal": "傳統 CV 的核心工具，深度學習時代仍在用。",
-          "skills": ["梯度與邊緣", "Harris 角點", "描述子與匹配", "ratio test", "影像拼接"],
-          "lang": ["py"], "target": 3, "style": "research"
+          "skills": [
+            "梯度與邊緣",
+            "Harris 角點",
+            "描述子與匹配",
+            "ratio test",
+            "影像拼接"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "research"
         },
         {
           "id": "5.8",
           "name": "評估指標實作",
           "goal": "IoU / NMS / mAP / confusion matrix 自己寫得出來才算懂。",
-          "skills": ["IoU 與矩陣化 IoU", "NMS", "precision-recall 曲線", "mAP", "分類指標與不平衡"],
-          "lang": ["py"], "target": 4, "style": "research"
+          "skills": [
+            "IoU 與矩陣化 IoU",
+            "NMS",
+            "precision-recall 曲線",
+            "mAP",
+            "分類指標與不平衡"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "research"
         },
         {
           "id": "5.9",
           "name": "自動微分與反向傳播",
           "goal": "手寫一個 tiny autograd，理解梯度怎麼流。",
-          "skills": ["計算圖", "chain rule", "backward 實作", "梯度檢查", "常見層的梯度"],
-          "lang": ["py"], "target": 4, "style": "research"
+          "skills": [
+            "計算圖",
+            "chain rule",
+            "backward 實作",
+            "梯度檢查",
+            "常見層的梯度"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "research"
         },
         {
           "id": "5.10",
           "name": "訓練迴圈與資料管線",
           "goal": "寫出一個不會靜默出錯的訓練流程。",
-          "skills": ["dataset/dataloader", "augmentation", "learning rate schedule", "checkpoint", "可重現實驗"],
-          "lang": ["py"], "target": 4, "style": "research"
+          "skills": [
+            "dataset/dataloader",
+            "augmentation",
+            "learning rate schedule",
+            "checkpoint",
+            "可重現實驗"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "research"
         },
         {
           "id": "5.11",
           "name": "除錯與效能（PyTorch）",
           "goal": "研究 code 的 bug 通常不會拋例外，只會讓 loss 不降。",
-          "skills": ["shape 除錯", "device/dtype 錯配", "梯度爆炸/消失診斷", "profiling", "常見靜默 bug"],
-          "lang": ["py"], "target": 4, "style": "research"
+          "skills": [
+            "shape 除錯",
+            "device/dtype 錯配",
+            "梯度爆炸/消失診斷",
+            "profiling",
+            "常見靜默 bug"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "research"
         },
         {
           "id": "5.12",
           "name": "從論文到程式（復現）",
           "goal": "給你一段偽代碼或公式，寫出可驗證的實作。",
-          "skills": ["讀公式轉張量運算", "對齊符號與維度", "單元測試驗證數學", "與參考實作比對", "消融實驗設計"],
-          "lang": ["py"], "target": 4, "style": "research"
+          "skills": [
+            "讀公式轉張量運算",
+            "對齊符號與維度",
+            "單元測試驗證數學",
+            "與參考實作比對",
+            "消融實驗設計"
+          ],
+          "lang": [
+            "py"
+          ],
+          "target": 4,
+          "style": "research"
+        }
+      ],
+      "track": "code"
+    },
+    {
+      "id": "M0",
+      "track": "math",
+      "name": "數學基礎（Tier 0：沒有就寸步難行）",
+      "lang": [
+        "py"
+      ],
+      "goal": "線代、機率、微積分三根柱子。每個概念都要能用程式驗證一次，看到數字對上了才算懂。",
+      "resources": {
+        "zh": [
+          "3Blue1Brown《線性代數的本質》官方中文（bilibili）— 先看這個建立幾何直覺",
+          "台大開放式課程 蘇柏青《線性代數》— 原生繁中，最紮實的中文線代課",
+          "台大開放式課程 葉丙成《機率》",
+          "李沐《動手學深度學習》d2l.ai/zh — 附錄的數學章節，每個概念都有 PyTorch 程式碼"
+        ],
+        "en": [
+          "MIT 18.06 Linear Algebra (Gilbert Strang) — ocw.mit.edu",
+          "MIT 18.065 Matrix Methods in Data Analysis, Signal Processing and ML (Strang) — 對 ML 最對口",
+          "Mathematics for Machine Learning (Deisenroth et al.) — mml-book.github.io，免費 PDF",
+          "Harvard Stat 110 (Blitzstein) — YouTube",
+          "MIT 18.S096 Matrix Calculus for Machine Learning and Beyond",
+          "The Matrix Cookbook — 免費 PDF，查表用"
+        ]
+      },
+      "nodes": [
+        {
+          "id": "M0.1",
+          "name": "向量、矩陣與線性映射",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "把矩陣看成「對空間做的事」而不是一堆數字：旋轉、縮放、剪切、投影。",
+          "skills": [
+            "矩陣即線性映射",
+            "基底與座標變換",
+            "行空間與列空間",
+            "矩陣乘法的幾何意義"
+          ],
+          "verify": "用 numpy 把一組點做矩陣變換並畫出來，驗證合成變換等於矩陣相乘"
+        },
+        {
+          "id": "M0.2",
+          "name": "子空間、秩與正交性",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "理解四個基本子空間與正交補，這是最小平方與 SVD 的地基。",
+          "skills": [
+            "秩與零空間",
+            "四個基本子空間",
+            "正交補",
+            "Gram-Schmidt",
+            "正交矩陣的性質"
+          ],
+          "verify": "手寫 Gram-Schmidt 並與 np.linalg.qr 比對；驗證 A 的零空間與列空間正交"
+        },
+        {
+          "id": "M0.3",
+          "name": "投影與最小平方",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "最小平方就是把 b 投影到 A 的行空間。這是所有擬合問題的原型。",
+          "skills": [
+            "投影矩陣",
+            "normal equation",
+            "殘差正交性",
+            "過定方程組",
+            "加權最小平方"
+          ],
+          "verify": "手寫 normal equation 解直線擬合，與 np.linalg.lstsq 比對，並驗證殘差與行空間正交"
+        },
+        {
+          "id": "M0.4",
+          "name": "特徵值與特徵向量",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "特徵向量是變換下方向不變的那些軸，特徵值是伸縮倍率。",
+          "skills": [
+            "特徵分解",
+            "對角化",
+            "對稱矩陣的譜定理",
+            "冪迭代",
+            "正定性"
+          ],
+          "verify": "手寫冪迭代求最大特徵值，與 np.linalg.eig 比對收斂過程"
+        },
+        {
+          "id": "M0.5",
+          "name": "SVD 與低秩近似",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "CV 幾何問題的萬用鑰匙：幾乎所有估計問題最後都變成「取最小奇異值對應的向量」。",
+          "skills": [
+            "奇異值分解的幾何",
+            "Eckart-Young 定理",
+            "偽逆",
+            "低秩近似",
+            "用 SVD 解齊次方程"
+          ],
+          "verify": "用 SVD 壓縮一張灰階圖並畫出誤差對秩的曲線；用 SVD 解 Ax=0 的最小平方"
+        },
+        {
+          "id": "M0.6",
+          "name": "矩陣範數與條件數",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "知道一個問題「病不病態」，這是研究 code 靜默出錯的頭號來源。",
+          "skills": [
+            "向量與矩陣範數",
+            "條件數",
+            "誤差放大",
+            "為什麼不要直接求逆",
+            "正則化的數值意義"
+          ],
+          "verify": "構造病態矩陣，比較直接求逆與 lstsq 的誤差差異"
+        },
+        {
+          "id": "M0.7",
+          "name": "梯度、Jacobian 與 Hessian",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "多變數微積分的三個核心物件，以及它們各自代表什麼。",
+          "skills": [
+            "方向導數",
+            "梯度是最陡上升方向",
+            "Jacobian",
+            "Hessian 與曲率",
+            "鏈鎖律"
+          ],
+          "verify": "用有限差分驗證自己推導的解析梯度（gradient check），這是研究 code 的標準除錯手法"
+        },
+        {
+          "id": "M0.8",
+          "name": "矩陣微分與反向傳播",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "反向傳播不是魔法，就是矩陣微分加鏈鎖律。推導過一次就永遠不怕。",
+          "skills": [
+            "對矩陣求導的排版慣例",
+            "常見層的梯度",
+            "vector-Jacobian product",
+            "計算圖",
+            "梯度檢查"
+          ],
+          "verify": "手推並實作線性層、softmax、cross-entropy 的反向傳播，與 PyTorch autograd 比對"
+        },
+        {
+          "id": "M0.9",
+          "name": "機率基礎與貝氏",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "條件機率、獨立性、貝氏定理，以及「為什麼直覺常常錯」。",
+          "skills": [
+            "條件機率",
+            "全機率公式",
+            "貝氏定理",
+            "獨立與條件獨立",
+            "期望值與變異數"
+          ],
+          "verify": "用蒙地卡羅模擬驗證貝氏推論結果（例如疾病篩檢的偽陽性悖論）"
+        },
+        {
+          "id": "M0.10",
+          "name": "常見分布與最大概似",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "Gaussian、Bernoulli、Categorical，以及 MLE/MAP 怎麼推出你熟悉的損失函數。",
+          "skills": [
+            "高斯分布的性質",
+            "MLE 推導",
+            "MAP 與正則化的關係",
+            "log-sum-exp 數值穩定",
+            "共軛先驗"
+          ],
+          "verify": "從資料用 MLE 估高斯參數並與閉式解比對；證明 MSE 損失等價於高斯 MLE"
+        },
+        {
+          "id": "M0.11",
+          "name": "KL 散度與交叉熵",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "分類損失、蒸餾、VAE、對比學習全都建立在這上面。",
+          "skills": [
+            "熵",
+            "交叉熵",
+            "KL 散度的非對稱性",
+            "forward vs reverse KL",
+            "Jensen 不等式"
+          ],
+          "verify": "用程式畫出 forward/reverse KL 擬合雙峰分布的差異（mode-seeking vs mode-covering）"
+        },
+        {
+          "id": "M0.12",
+          "name": "多變數高斯與共變異",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "共變異矩陣就是資料的形狀。PCA、卡爾曼濾波、不確定度傳播都從這裡開始。",
+          "skills": [
+            "共變異矩陣",
+            "馬氏距離",
+            "白化",
+            "邊緣化與條件化",
+            "不確定度橢圓"
+          ],
+          "verify": "從共變異矩陣畫出信賴橢圓；實作白化並驗證白化後共變異是單位矩陣"
+        }
+      ]
+    },
+    {
+      "id": "M1",
+      "track": "math",
+      "name": "Tier 1：最佳化、訊號、數值",
+      "lang": [
+        "py"
+      ],
+      "goal": "從「會算」到「算得穩、算得快」。這一階段直接決定你之後能不能 debug 自己的研究 code。",
+      "resources": {
+        "zh": [
+          "《凸優化》Boyd 中譯本",
+          "李宏毅《機器學習》最佳化相關章節（YouTube）",
+          "花書《深度學習》中文版 exacity/deeplearningbook-chinese — 第 4、8 章",
+          "李沐《動手學深度學習》d2l.ai/zh — 最佳化演算法章"
+        ],
+        "en": [
+          "Stanford EE364A Convex Optimization I (Boyd) — 影片與教科書 PDF 皆免費",
+          "Stanford EE261 The Fourier Transform and its Applications (Osgood) — YouTube 全套",
+          "Trefethen & Bau, Numerical Linear Algebra",
+          "Nocedal & Wright, Numerical Optimization — 非線性最小平方的標準參考"
+        ]
+      },
+      "nodes": [
+        {
+          "id": "M1.1",
+          "name": "凸集、凸函數與凸最佳化",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "知道什麼問題「保證解得出來」，以及深度學習為什麼不在這個範圍內。",
+          "skills": [
+            "凸集與凸函數",
+            "一階與二階判別",
+            "凸問題的全域最優",
+            "常見凸函數",
+            "非凸的困難在哪"
+          ],
+          "verify": "用程式驗證凸函數的一階條件；在非凸函數上展示不同初始值收斂到不同局部最小"
+        },
+        {
+          "id": "M1.2",
+          "name": "梯度下降家族與收斂性",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "GD、SGD、momentum、Adam 各自在解什麼問題，以及學習率為什麼那麼難調。",
+          "skills": [
+            "步長與 Lipschitz 常數",
+            "momentum 的物理直覺",
+            "自適應學習率",
+            "條件數對收斂的影響",
+            "學習率排程"
+          ],
+          "verify": "在同一個病態二次函數上實作 GD/momentum/Adam，畫出收斂軌跡比較"
+        },
+        {
+          "id": "M1.3",
+          "name": "拉格朗日對偶與 KKT",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "有約束的最佳化怎麼解，以及 SVM、正則化背後的統一觀點。",
+          "skills": [
+            "拉格朗日函數",
+            "對偶問題",
+            "弱對偶與強對偶",
+            "KKT 條件",
+            "約束轉正則化"
+          ],
+          "verify": "用拉格朗日乘子法解等式約束問題並與數值最佳化結果比對"
+        },
+        {
+          "id": "M1.4",
+          "name": "非線性最小平方：Gauss-Newton 與 LM",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "SLAM 後端、相機標定、bundle adjustment 的核心求解器。這節直接通往你的主方向。",
+          "skills": [
+            "殘差與 Jacobian",
+            "Gauss-Newton",
+            "Levenberg-Marquardt 阻尼",
+            "穩健核函數 Huber",
+            "稀疏結構"
+          ],
+          "verify": "手寫 LM 擬合非線性曲線，與 scipy.optimize.least_squares 比對迭代次數與精度"
+        },
+        {
+          "id": "M1.5",
+          "name": "傅立葉級數與傅立葉轉換",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "把訊號拆成頻率成分，這是理解卷積、濾波、aliasing 的前提。",
+          "skills": [
+            "傅立葉級數",
+            "連續與離散傅立葉轉換",
+            "頻譜的意義",
+            "FFT",
+            "複數表示"
+          ],
+          "verify": "手寫 DFT 並與 np.fft 比對；對一張影像做 FFT 觀察低頻高頻分布"
+        },
+        {
+          "id": "M1.6",
+          "name": "卷積定理與濾波",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "時域卷積 = 頻域相乘。理解這件事，CNN 的每一層你都會用新的眼光看。",
+          "skills": [
+            "卷積與相關的差別",
+            "卷積定理",
+            "低通/高通/帶通",
+            "可分離濾波器",
+            "邊界處理"
+          ],
+          "verify": "用 FFT 實作卷積並與直接卷積比對結果與速度；驗證高斯核的可分離性"
+        },
+        {
+          "id": "M1.7",
+          "name": "取樣定理、aliasing 與影像金字塔",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "為什麼縮圖前一定要先模糊，為什麼 GAN 的棋盤格 artifact 會出現。",
+          "skills": [
+            "Nyquist 取樣定理",
+            "aliasing 現象",
+            "抗鋸齒",
+            "高斯/拉普拉斯金字塔",
+            "上採樣與轉置卷積"
+          ],
+          "verify": "對高頻紋理直接 downsample 與先模糊再 downsample，比較 aliasing 差異"
+        },
+        {
+          "id": "M1.8",
+          "name": "數值線性代數：QR、Cholesky、迭代法",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "真正的求解器怎麼寫。SLAM 的稀疏線性系統就靠這些。",
+          "skills": [
+            "QR 分解",
+            "Cholesky 分解",
+            "共軛梯度法",
+            "稀疏矩陣",
+            "分解的選擇準則"
+          ],
+          "verify": "手寫 Cholesky 解正定系統；比較稠密與稀疏求解在大系統上的時間差"
+        },
+        {
+          "id": "M1.9",
+          "name": "浮點誤差與病態問題",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "研究 code 最陰險的 bug 都在這裡：不會報錯，只會讓結果慢慢偏掉。",
+          "skills": [
+            "浮點表示與機器精度",
+            "災難性抵消",
+            "數值穩定的算式改寫",
+            "log 空間運算",
+            "float32 vs float64"
+          ],
+          "verify": "展示變異數的兩種公式在大數值下的誤差差異；實作數值穩定的 log-sum-exp"
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "track": "math",
+      "name": "Tier 2-A：3D 視覺 / SLAM / 姿態估計（你的主方向）",
+      "lang": [
+        "py",
+        "cpp"
+      ],
+      "goal": "從單張影像的射影幾何，一路走到多視角的 bundle adjustment。這一階段的題目會開始用 C++。",
+      "resources": {
+        "zh": [
+          "高翔《視覺SLAM十四講》+ 開源程式碼 gaoxiang12/slambook2 — 中文圈的天花板，C++ 實作齊全",
+          "《電腦視覺：演算法與應用》Szeliski 中譯本",
+          "跟李沐學AI 論文精讀（bilibili）— 3D 視覺相關論文"
+        ],
+        "en": [
+          "Hartley & Zisserman, Multiple View Geometry in Computer Vision — 標準參考書",
+          "TUM Multiple View Geometry (Daniel Cremers) — YouTube 全套",
+          "Cyrill Stachniss, SLAM course (Univ. Bonn) — YouTube",
+          "Solà, Deray & Atchuthan, A Micro Lie Theory for State Estimation in Robotics — arXiv，李代數最好的入門",
+          "Shree Nayar, First Principles of Computer Vision — YouTube"
+        ]
+      },
+      "nodes": [
+        {
+          "id": "M2.1",
+          "name": "齊次座標與射影幾何",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "多加一個維度，平移就變成矩陣乘法，平行線在無窮遠相交。",
+          "skills": [
+            "齊次座標",
+            "射影平面",
+            "點線對偶",
+            "無窮遠點",
+            "射影變換群"
+          ],
+          "verify": "用齊次座標實作平移/旋轉/縮放的合成，驗證與逐步套用結果一致"
+        },
+        {
+          "id": "M2.2",
+          "name": "相機模型、內外參與標定",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "真實世界的點怎麼變成像素。內參、外參、畸變三件事講清楚。",
+          "skills": [
+            "針孔模型",
+            "內參矩陣 K",
+            "外參 R,t",
+            "投影矩陣 P",
+            "徑向畸變"
+          ],
+          "verify": "實作完整投影管線並反向驗證；用棋盤格資料做一次相機標定"
+        },
+        {
+          "id": "M2.3",
+          "name": "單應矩陣與 DLT",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "平面到平面的映射，以及用 SVD 解齊次線性系統的標準套路。",
+          "skills": [
+            "homography 的自由度",
+            "DLT 演算法",
+            "資料正規化的重要性",
+            "用 SVD 解 Ah=0",
+            "影像拼接"
+          ],
+          "verify": "從 4 組對應點估 homography 並做影像 warp；比較有無正規化的數值差異"
+        },
+        {
+          "id": "M2.4",
+          "name": "對極幾何、本質矩陣與基礎矩陣",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "兩個視角之間的約束。這是雙目與 SfM 的理論核心。",
+          "skills": [
+            "對極約束",
+            "基礎矩陣 F",
+            "本質矩陣 E",
+            "八點法",
+            "從 E 分解出 R,t"
+          ],
+          "verify": "實作八點法估 F 並畫出對極線；驗證對應點滿足 x'^T F x ≈ 0"
+        },
+        {
+          "id": "M2.5",
+          "name": "三角測量與 PnP",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "已知相機求 3D 點（三角測量），已知 3D 點求相機（PnP）。SLAM 的兩個基本動作。",
+          "skills": [
+            "線性三角測量",
+            "重投影誤差",
+            "PnP 問題",
+            "P3P 幾何解",
+            "退化情形"
+          ],
+          "verify": "合成資料做三角測量並算重投影誤差；用 PnP 回推相機姿態與真值比對"
+        },
+        {
+          "id": "M2.6",
+          "name": "RANSAC 與穩健估計",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "真實資料一定有外點。RANSAC 是 CV 最常用的穩健估計工具。",
+          "skills": [
+            "RANSAC 流程",
+            "迭代次數的機率推導",
+            "內點閾值選擇",
+            "MSAC/LO-RANSAC",
+            "穩健核函數"
+          ],
+          "verify": "手寫 RANSAC 擬合直線與 homography；用機率公式驗證所需迭代次數"
+        },
+        {
+          "id": "M2.7",
+          "name": "旋轉表示：矩陣、四元數、軸角",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "三種表示各有優缺點，換來換去是姿態估計 bug 的主要來源。",
+          "skills": [
+            "旋轉矩陣性質",
+            "軸角與 Rodrigues 公式",
+            "四元數運算",
+            "萬向鎖",
+            "插值 SLERP"
+          ],
+          "verify": "實作三種表示的互轉並驗證往返一致；用 SLERP 做旋轉插值並檢查角速度均勻"
+        },
+        {
+          "id": "M2.8",
+          "name": "李群李代數 SO(3) / SE(3)",
+          "lang": [
+            "py",
+            "cpp"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "旋轉沒有加法，但在李代數上有。這是姿態最佳化能做梯度下降的原因。",
+          "skills": [
+            "群與流形直覺",
+            "指數映射與對數映射",
+            "hat 與 vee 運算",
+            "左右擾動模型",
+            "SE(3) 的 Jacobian"
+          ],
+          "verify": "實作 exp/log 映射並驗證往返；用擾動模型數值驗證解析 Jacobian"
+        },
+        {
+          "id": "M2.9",
+          "name": "圖最佳化與 bundle adjustment",
+          "lang": [
+            "cpp"
+          ],
+          "target": 3,
+          "style": "contest",
+          "goal": "把 SLAM 後端寫成一個大型稀疏非線性最小平方問題。",
+          "skills": [
+            "因子圖表示",
+            "稀疏 Hessian 結構",
+            "Schur 補消元",
+            "邊緣化",
+            "g2o/Ceres 的使用"
+          ],
+          "verify": "在合成資料上實作小型 BA，比較有無 Schur 補的求解時間"
+        },
+        {
+          "id": "M2.10",
+          "name": "濾波方法：EKF 與不確定度傳播",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "濾波與最佳化是 SLAM 的兩條路線，要知道各自的適用場景。",
+          "skills": [
+            "卡爾曼濾波",
+            "EKF 線性化",
+            "不確定度傳播",
+            "濾波 vs 最佳化",
+            "IMU 預積分概念"
+          ],
+          "verify": "實作 1D 卡爾曼濾波並與最小平方解比對；畫出共變異隨時間的演化"
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "track": "math",
+      "name": "Tier 2-B：學習理論 / 泛化分析",
+      "lang": [
+        "py"
+      ],
+      "goal": "回答「為什麼模型在沒看過的資料上也能work」。這是把工程做成研究的分水嶺。",
+      "resources": {
+        "zh": [
+          "李宏毅《機器學習》理論相關章節（YouTube）",
+          "花書《深度學習》中文版 — 第 5 章 機器學習基礎"
+        ],
+        "en": [
+          "Shalev-Shwartz & Ben-David, Understanding Machine Learning: From Theory to Algorithms — 免費 PDF",
+          "Mohri, Rostamizadeh & Talwalkar, Foundations of Machine Learning",
+          "Wainwright, High-Dimensional Statistics — 進階",
+          "Belkin et al., Reconciling modern machine learning and the bias-variance trade-off — 雙下降原始論文"
+        ]
+      },
+      "nodes": [
+        {
+          "id": "M3.1",
+          "name": "統計學習框架與 ERM",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "把「學習」形式化：假設空間、風險、經驗風險最小化。",
+          "skills": [
+            "真實風險與經驗風險",
+            "ERM",
+            "可學習性",
+            "no free lunch",
+            "歸納偏置"
+          ],
+          "verify": "在合成分布上比較經驗風險與真實風險隨樣本數的差距"
+        },
+        {
+          "id": "M3.2",
+          "name": "集中不等式",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "為什麼樣本平均會接近期望值，以及收斂有多快。泛化界的基本工具。",
+          "skills": [
+            "Markov 與 Chebyshev",
+            "Hoeffding 不等式",
+            "McDiarmid",
+            "聯集界",
+            "尾機率"
+          ],
+          "verify": "用模擬驗證 Hoeffding 界的緊緻度；畫出實際偏差與理論界的比較"
+        },
+        {
+          "id": "M3.3",
+          "name": "VC 維與 Rademacher 複雜度",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "怎麼衡量一個模型類別的「表達能力」，以及它如何換算成泛化界。",
+          "skills": [
+            "打散與 VC 維",
+            "成長函數",
+            "Rademacher 複雜度",
+            "泛化界的形式",
+            "為什麼深網路的界很鬆"
+          ],
+          "verify": "用隨機標籤實驗估計模型的有效複雜度（Rademacher 的經驗估計）"
+        },
+        {
+          "id": "M3.4",
+          "name": "偏差-變異數與雙下降",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "古典理論說過參數會過擬合，但深度學習不是這樣。理解這個落差。",
+          "skills": [
+            "偏差變異數分解",
+            "過參數化",
+            "雙下降現象",
+            "插值機制",
+            "隱式正則化"
+          ],
+          "verify": "用多項式迴歸重現雙下降曲線：測試誤差對模型容量的非單調變化"
+        },
+        {
+          "id": "M3.5",
+          "name": "最佳化的隱式正則化",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "SGD 本身就在做正則化。這是深度學習泛化的關鍵解釋之一。",
+          "skills": [
+            "梯度下降的隱式偏好",
+            "最小範數解",
+            "平坦最小值",
+            "batch size 與泛化",
+            "early stopping 的正則效果"
+          ],
+          "verify": "在過定線性系統上驗證 GD 從零初始化會收斂到最小範數解"
+        },
+        {
+          "id": "M3.6",
+          "name": "NTK 與無限寬網路",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "無限寬的神經網路等價於核方法。這條線把深度學習連回了古典理論。",
+          "skills": [
+            "神經正切核",
+            "懶惰訓練機制",
+            "寬度極限",
+            "特徵學習 vs 核機制",
+            "理論與實務的落差"
+          ],
+          "verify": "訓練不同寬度的網路，觀察權重變化量隨寬度增加而變小（懶惰訓練）"
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "track": "math",
+      "name": "Tier 2-C：表徵學習 / 自監督",
+      "lang": [
+        "py"
+      ],
+      "goal": "沒有標籤要怎麼學到好的表徵，以及「好」的數學定義是什麼。",
+      "resources": {
+        "zh": [
+          "李宏毅《機器學習》自監督學習章節（YouTube）",
+          "跟李沐學AI 論文精讀（bilibili）— SimCLR、MoCo、CLIP、MAE 都有"
+        ],
+        "en": [
+          "MacKay, Information Theory, Inference, and Learning Algorithms — 免費 PDF",
+          "Kevin Murphy, Probabilistic Machine Learning (Book 1 & 2) — 免費 PDF",
+          "Oord et al., Representation Learning with Contrastive Predictive Coding (InfoNCE 原始論文)",
+          "Wang & Isola, Understanding Contrastive Representation Learning through Alignment and Uniformity"
+        ]
+      },
+      "nodes": [
+        {
+          "id": "M4.1",
+          "name": "資訊理論：熵與互資訊",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "衡量「資訊量」與「兩個變數共享多少資訊」。自監督學習的通用語言。",
+          "skills": [
+            "熵與條件熵",
+            "互資訊",
+            "資料處理不等式",
+            "資訊瓶頸",
+            "互資訊估計的困難"
+          ],
+          "verify": "用離散化資料估計互資訊並驗證資料處理不等式"
+        },
+        {
+          "id": "M4.2",
+          "name": "對比學習的數學",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "InfoNCE 為什麼是互資訊的下界，溫度參數到底在調什麼。",
+          "skills": [
+            "InfoNCE 損失",
+            "互資訊下界推導",
+            "溫度參數的作用",
+            "負樣本數的影響",
+            "alignment 與 uniformity"
+          ],
+          "verify": "實作 InfoNCE 並用不同溫度觀察嵌入分布；驗證 alignment/uniformity 兩項指標"
+        },
+        {
+          "id": "M4.3",
+          "name": "度量學習與嵌入幾何",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "嵌入空間的距離該怎麼定義，以及球面上的幾何。",
+          "skills": [
+            "餘弦相似度與 L2",
+            "球面幾何",
+            "triplet loss",
+            "難負樣本挖掘",
+            "嵌入正規化的作用"
+          ],
+          "verify": "比較正規化前後的嵌入分布；驗證餘弦相似度與正規化後 L2 距離的等價關係"
+        },
+        {
+          "id": "M4.4",
+          "name": "維度崩塌與白化",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "自監督學習最常見的失敗模式，以及 BYOL/Barlow Twins 怎麼避開它。",
+          "skills": [
+            "完全崩塌與維度崩塌",
+            "嵌入共變異的秩",
+            "白化與去相關",
+            "stop-gradient 的作用",
+            "冗餘減少"
+          ],
+          "verify": "訓練會崩塌的對比模型，畫出嵌入共變異矩陣的奇異值頻譜觀察秩下降"
+        },
+        {
+          "id": "M4.5",
+          "name": "流形假設與降維",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "高維資料其實躺在低維流形上。PCA / t-SNE / UMAP 各自在保留什麼。",
+          "skills": [
+            "流形假設",
+            "PCA 的兩種推導",
+            "t-SNE 的機率觀點",
+            "UMAP 的拓撲觀點",
+            "視覺化的陷阱"
+          ],
+          "verify": "手寫 PCA（用 SVD）並與 sklearn 比對；展示 t-SNE 的 perplexity 如何改變結論"
+        }
+      ]
+    },
+    {
+      "id": "M5",
+      "track": "math",
+      "name": "Tier 2-D：生成模型（diffusion / flow）",
+      "lang": [
+        "py"
+      ],
+      "goal": "從變分推論一路推到 score-based SDE 與 flow matching。數學密度是全部階段最高的。",
+      "resources": {
+        "zh": [
+          "李宏毅《生成式AI》系列（YouTube）— diffusion 的中文講解最清楚的一份",
+          "跟李沐學AI 論文精讀（bilibili）— DDPM、Stable Diffusion"
+        ],
+        "en": [
+          "Lilian Weng, What are Diffusion Models? — lilianweng.github.io，最好的入門筆記",
+          "Yang Song, Generative Modeling by Estimating Gradients of the Data Distribution — 作者 blog + 論文",
+          "Ho et al., Denoising Diffusion Probabilistic Models (DDPM)",
+          "Lipman et al., Flow Matching for Generative Modeling",
+          "Särkkä & Solin, Applied Stochastic Differential Equations — 免費 PDF"
+        ]
+      },
+      "nodes": [
+        {
+          "id": "M5.1",
+          "name": "變分推論與 ELBO",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "算不出來的後驗就用一個簡單分布去逼近。VAE 與 diffusion 共同的起點。",
+          "skills": [
+            "變分下界推導",
+            "重參數化技巧",
+            "KL 項與重建項",
+            "後驗坍塌",
+            "ELBO 與 log-likelihood 的差距"
+          ],
+          "verify": "實作簡易 VAE 並驗證 ELBO 單調上升；用數值積分比較 ELBO 與真實 log-likelihood"
+        },
+        {
+          "id": "M5.2",
+          "name": "隨機過程與布朗運動",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "diffusion 的「擴散」是字面意義上的物理擴散。",
+          "skills": [
+            "馬可夫鏈",
+            "維納過程",
+            "隨機遊走的極限",
+            "Itô 積分直覺",
+            "轉移核"
+          ],
+          "verify": "模擬布朗運動並驗證變異數隨時間線性增長；驗證中央極限行為"
+        },
+        {
+          "id": "M5.3",
+          "name": "SDE、Fokker-Planck 與 score matching",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "score function 是什麼、為什麼估計它就能生成資料。",
+          "skills": [
+            "前向與反向 SDE",
+            "Fokker-Planck 方程",
+            "score function 定義",
+            "denoising score matching",
+            "Langevin 取樣"
+          ],
+          "verify": "在 1D 混合高斯上解析算出 score 並用 Langevin 動力學取樣，比對真實分布"
+        },
+        {
+          "id": "M5.4",
+          "name": "Diffusion 的完整推導",
+          "lang": [
+            "py"
+          ],
+          "target": 3,
+          "style": "math",
+          "goal": "把 DDPM 的損失從 ELBO 一路推到簡單的噪聲預測 MSE。",
+          "skills": [
+            "前向加噪的閉式解",
+            "反向過程參數化",
+            "從 ELBO 到 simple loss",
+            "噪聲排程",
+            "DDPM 與 SDE 的對應"
+          ],
+          "verify": "驗證前向過程閉式解與逐步加噪的統計一致；在 2D 玩具資料上訓練完整 diffusion"
+        },
+        {
+          "id": "M5.5",
+          "name": "Flow matching 與最佳傳輸",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "比 diffusion 更直接的路線：直接學從噪聲到資料的向量場。",
+          "skills": [
+            "連續正規化流",
+            "條件流匹配",
+            "最佳傳輸直覺",
+            "Wasserstein 距離",
+            "直線路徑與取樣效率"
+          ],
+          "verify": "在 2D 資料上實作 flow matching 並與 diffusion 比較取樣步數與品質"
+        },
+        {
+          "id": "M5.6",
+          "name": "取樣器與 ODE 求解",
+          "lang": [
+            "py"
+          ],
+          "target": 2,
+          "style": "math",
+          "goal": "為什麼 DDIM 可以 20 步就出圖，而 DDPM 要 1000 步。",
+          "skills": [
+            "probability flow ODE",
+            "DDIM",
+            "數值 ODE 求解器",
+            "classifier-free guidance",
+            "步數與品質的取捨"
+          ],
+          "verify": "同一個訓練好的模型用不同取樣器與步數，比較生成品質與時間"
         }
       ]
     }
-  ]
+  ],
+  "tracks": {
+    "code": "程式軌：語法 → 演算法 → 競賽 → 工程實務 → CV/AI 實作",
+    "math": "數學軌：線代機率基礎 → 最佳化訊號數值 → 3D/SLAM → 學習理論 → 表徵學習 → 生成模型"
+  }
 }
