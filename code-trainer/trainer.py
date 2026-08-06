@@ -1146,6 +1146,139 @@ def cmd_skill(args):
     print(f"\n效果：在 {base} 底下開啟 Claude Code 時，教練模式會自動載入。")
 
 
+# ---------------------------------------------------------------- 日程表
+
+PLAN_PATH = ROOT / "plan.json"
+
+
+def load_plan() -> dict:
+    if not PLAN_PATH.exists():
+        die("找不到 plan.json")
+    return json.loads(PLAN_PATH.read_text(encoding="utf-8"))
+
+
+def plan_position(st: dict, plan: dict):
+    """回傳 (第幾週從 1 起算, 目前階段, 該階段第幾週, 累計起始週)。沒設開始日就回 None。"""
+    started = st.get("plan", {}).get("started")
+    if not started:
+        return None
+    days = (now().date() - parse_iso(started).date()).days
+    week = days // 7 + 1
+    cursor = 0
+    for phase in plan["phases"]:
+        if week <= cursor + phase["weeks"]:
+            return week, phase, week - cursor, cursor
+        cursor += phase["weeks"]
+    return week, plan["phases"][-1], week - cursor + plan["phases"][-1]["weeks"], cursor
+
+
+def node_progress(st: dict, cur: dict, ids: list[str]) -> tuple[int, int]:
+    done = 0
+    for nid in ids:
+        n = find_node(cur, nid)
+        if n and is_mastered(n, topic_stats(st, nid)):
+            done += 1
+    return done, len(ids)
+
+
+def cmd_plan(args):
+    st = load_state()
+    plan = load_plan()
+    if args.start:
+        when = now() if args.start == "today" else parse_iso(args.start)
+        st.setdefault("plan", {})["started"] = iso(when)
+        st["plan"]["hours_per_week"] = args.hours or plan.get("hours_per_week", 10)
+        log_event(st, "plan_start", "", started=st["plan"]["started"])
+        save_state(st)
+        print(f"✓ 日程表開始日設為 {parse_iso(st['plan']['started']).date()}")
+        print(f"  每週時數目標 {st['plan']['hours_per_week']} 小時")
+        print("\n每天執行：python trainer.py today")
+        return
+
+    pos = plan_position(st, plan)
+    print(hr(plan["title"]))
+    print(f"{plan['assumption']}\n")
+    total = sum(p["weeks"] for p in plan["phases"])
+    cursor = 0
+    cur = load_curriculum()
+    for phase in plan["phases"]:
+        span = f"週 {cursor + 1}–{cursor + phase['weeks']}"
+        mark = "▶" if pos and phase["id"] == pos[1]["id"] else " "
+        cdone, ctot = node_progress(st, cur, phase["code"])
+        mdone, mtot = node_progress(st, cur, phase["math"])
+        print(f"{mark} {phase['id']}  {span:<12} {phase['name']}")
+        print(f"     程式軌 {cdone}/{ctot} 節點　數學軌 {mdone}/{mtot} 節點")
+        print(f"     里程碑：{phase['milestone']}")
+        cursor += phase["weeks"]
+    print(f"\n總長 {total} 週（約 {total / 4.33:.0f} 個月）")
+    if not pos:
+        print("\n還沒設定開始日：python trainer.py plan --start today")
+
+
+def cmd_today(args):
+    st = load_state()
+    cur = load_curriculum()
+    plan = load_plan()
+    pos = plan_position(st, plan)
+    today = now()
+    weekday = today.weekday()
+    rhythm = plan["rhythm"][weekday]
+
+    header = today.strftime("%Y-%m-%d")
+    if pos:
+        week, phase, week_in_phase, _ = pos
+        header += f"　第 {week} 週　{phase['id']} {phase['name']}（本階段第 {week_in_phase}/{phase['weeks']} 週）"
+    print(hr(header))
+
+    print(f"今天（{rhythm['day']}）：{rhythm['slot']}　約 {rhythm['minutes']} 分鐘")
+    print(f"  {rhythm['detail']}\n")
+
+    due = due_reviews(st)
+    if due:
+        print(hr(f"① 先複習 {len(due)} 題（優先於新題）"))
+        for pid, days in due[:3]:
+            meta = load_meta(problem_dir(pid))
+            print(f"  python trainer.py redo {pid}    ← {meta['title']}（逾期 {days} 天）")
+        print()
+
+    if rhythm["minutes"] == 0:
+        print("今天休息。落後就補一題，沒落後就去做別的事。")
+        print("  python trainer.py status    ← 看看這週的成果")
+        return
+
+    want_math = "數學軌" in rhythm["slot"]
+    review_only = "複習" in rhythm["slot"] and not want_math
+    if review_only and due:
+        pass  # 上面已經列出複習清單，今天就做那些
+    else:
+        if review_only:
+            print(hr("② 今天沒有到期複習，改做一題新的"))
+        else:
+            print(hr(f"② 今天的題目（{'數學軌' if want_math else '程式軌'}）"))
+        track = "math" if want_math else "code"
+        nxt = pick_next_node(st, cur, None, None, track)
+        print(f"  節點 {nxt['id']} {nxt['name']}")
+        print(f"  python trainer.py next{' --track math' if want_math else ''}")
+
+    if "課程" in rhythm["slot"] and pos:
+        print("\n" + hr("③ 課程"))
+        print(f"  {pos[1]['course']}")
+
+    if pos:
+        week, phase, _, _ = pos
+        cdone, ctot = node_progress(st, cur, phase["code"])
+        mdone, mtot = node_progress(st, cur, phase["math"])
+        print("\n" + hr("本階段進度"))
+        print(f"  程式軌 {bar(cdone / max(ctot, 1))} {cdone}/{ctot}　"
+              f"{' '.join(phase['code'])}")
+        print(f"  數學軌 {bar(mdone / max(mtot, 1))} {mdone}/{mtot}　"
+              f"{' '.join(phase['math'])}")
+        print(f"  重點：{phase['focus']}")
+        print(f"  里程碑：{phase['milestone']}")
+    else:
+        print("\n（還沒設定日程表開始日：python trainer.py plan --start today）")
+
+
 def git(*argv, capture: bool = True) -> subprocess.CompletedProcess:
     return subprocess.run(["git", "-C", str(ROOT), *argv], capture_output=capture,
                           text=True, encoding="utf-8", errors="replace")
@@ -1332,6 +1465,14 @@ def main():
 
     s = sub.add_parser("review", help="到期複習清單")
     s.set_defaults(func=cmd_review)
+
+    s = sub.add_parser("today", help="今天該做什麼（按表操課）")
+    s.set_defaults(func=cmd_today)
+
+    s = sub.add_parser("plan", help="看日程表 / 設定開始日")
+    s.add_argument("--start", metavar="YYYY-MM-DD", help="設定開始日，或用 today")
+    s.add_argument("--hours", type=int, help="每週可投入時數")
+    s.set_defaults(func=cmd_plan)
 
     s = sub.add_parser("redo", help="清空重做一題")
     s.add_argument("id")

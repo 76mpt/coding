@@ -14,6 +14,7 @@
 ## 目錄
 
 - [三分鐘開始](#三分鐘開始)
+- **[SCHEDULE.md](SCHEDULE.md)** ← 按表操課的日程表：每週節奏、8 階段路線圖、里程碑
 - [怎麼練](#怎麼練) ← 訓練流程、提示策略、兩軌怎麼分配
 - [指令一覽](#指令一覽)
 - [題幹大綱](#題幹大綱) ← 99 個節點的完整清單
@@ -30,8 +31,17 @@
 ```bash
 cd d:\coding\code-trainer
 
-python trainer.py doctor      # 確認環境（python / g++ / numpy）
-python trainer.py status      # 看目前進度
+python trainer.py doctor              # 確認環境（python / g++ / numpy）
+python trainer.py plan --start today  # 設定日程表開始日（只做一次）
+python trainer.py today               # 今天該做什麼 ← 以後每天打這個
+```
+
+**按表操課的完整日程在 [SCHEDULE.md](SCHEDULE.md)**：每週節奏、8 個階段的路線圖與里程碑、
+時數換算、落後了怎麼辦。`today` 會依那份計畫告訴你今天做什麼。
+
+想直接開始寫題：
+
+```bash
 python trainer.py open 001    # 打開第一題
 ```
 
@@ -202,6 +212,8 @@ e^{iθ} = cos θ + i sin θ
 
 | 指令 | 作用 |
 |---|---|
+| `today` | **今天該做什麼**（按表操課的入口，每天打這個就好） |
+| `plan [--start today] [--hours 10]` | 看階段路線與進度／設定日程表開始日 |
 | `status` | 進度總覽：兩軌完成度、通過題數、連續練習天數 |
 | `curriculum [-v] [--track code\|math]` | 完整學習路線，`✓` 已掌握 / `~` 進行中；`-v` 顯示技能與資源 |
 | `next [--track math] [--node 2.5] [--lang cpp] [--difficulty ...]` | 產生下一題的出題指令（給 AI 教練看） |

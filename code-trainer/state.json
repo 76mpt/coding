@@ -245,7 +245,17 @@
       "node": "5.1",
       "lang": "py",
       "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-06T11:28:00+00:00",
+      "event": "plan_start",
+      "id": "",
+      "started": "2026-08-06T11:28:00+00:00"
     }
   ],
-  "counter": 10
+  "counter": 10,
+  "plan": {
+    "started": "2026-08-06T11:28:00+00:00",
+    "hours_per_week": 10
+  }
 }
