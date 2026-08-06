@@ -1,0 +1,20 @@
+{
+  "id": "021-log-sum-exp",
+  "title": "數值穩定的 log-sum-exp",
+  "lang": "py",
+  "mode": "function",
+  "entry": "log_sum_exp",
+  "node": "M00.1",
+  "difficulty": "standard",
+  "tags": [
+    "log-sum-exp",
+    "數值溢位",
+    "softmax",
+    "提出最大值"
+  ],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-06T11:53:23+00:00"
+}

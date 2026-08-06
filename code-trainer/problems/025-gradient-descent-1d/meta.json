@@ -1,0 +1,20 @@
+{
+  "id": "025-gradient-descent-1d",
+  "title": "一維梯度下降（看見學習率的威力與災難）",
+  "lang": "py",
+  "mode": "function",
+  "entry": "gradient_descent_1d",
+  "node": "M00.4",
+  "difficulty": "standard",
+  "tags": [
+    "梯度下降",
+    "學習率",
+    "收斂與發散",
+    "極值"
+  ],
+  "hint_count": 4,
+  "test_count": 8,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-06T11:53:23+00:00"
+}

@@ -295,11 +295,19 @@ def cmd_new(args):
     spec_path = Path(args.spec)
     if not spec_path.exists():
         die(f"找不到 spec: {spec_path}")
-    spec = json.loads(spec_path.read_text(encoding="utf-8"))
-    pid = create_problem(spec)
-    print(f"✓ 已建立題目 {pid}")
-    print(f"  題目：python trainer.py open {pid}")
-    print(f"  作答檔：{(problem_dir(pid) / LANG_FILE[spec['lang']]).as_posix()}")
+    payload = json.loads(spec_path.read_text(encoding="utf-8"))
+    specs = payload if isinstance(payload, list) else [payload]
+    created = []
+    for spec in specs:
+        pid = create_problem(spec)
+        created.append(pid)
+        print(f"✓ {pid}   [{spec['node']}] {spec['title']}")
+    if len(created) == 1:
+        pid = created[0]
+        print(f"\n  題目：python trainer.py open {pid}")
+        print(f"  作答檔：{(problem_dir(pid) / LANG_FILE[specs[0]['lang']]).as_posix()}")
+    else:
+        print(f"\n共建立 {len(created)} 題。記得驗證：python trainer.py verify")
 
 
 def create_problem(spec: dict, quiet: bool = False) -> str:

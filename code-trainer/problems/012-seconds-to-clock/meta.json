@@ -1,0 +1,19 @@
+{
+  "id": "012-seconds-to-clock",
+  "title": "秒數轉時鐘格式",
+  "lang": "py",
+  "mode": "function",
+  "entry": "seconds_to_clock",
+  "node": "1.1",
+  "difficulty": "warmup",
+  "tags": [
+    "divmod",
+    "整數除法與餘數",
+    "f-string 補零"
+  ],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-06T11:40:12+00:00"
+}

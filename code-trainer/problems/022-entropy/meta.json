@@ -1,0 +1,20 @@
+{
+  "id": "022-entropy",
+  "title": "熵：換底與 0 log 0",
+  "lang": "py",
+  "mode": "function",
+  "entry": "entropy",
+  "node": "M00.1",
+  "difficulty": "standard",
+  "tags": [
+    "換底公式",
+    "熵",
+    "0log0 邊界",
+    "log 的應用"
+  ],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-06T11:53:23+00:00"
+}

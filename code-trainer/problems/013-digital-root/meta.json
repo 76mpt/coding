@@ -1,0 +1,20 @@
+{
+  "id": "013-digital-root",
+  "title": "數位根與迭代次數",
+  "lang": "py",
+  "mode": "function",
+  "entry": "digital_root",
+  "node": "1.2",
+  "difficulty": "standard",
+  "tags": [
+    "while 迴圈",
+    "巢狀迴圈",
+    "數字拆解",
+    "累加器"
+  ],
+  "hint_count": 4,
+  "test_count": 8,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-06T11:40:12+00:00"
+}

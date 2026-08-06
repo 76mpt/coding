@@ -1,0 +1,20 @@
+{
+  "id": "019-dedupe-keep-order",
+  "title": "去重但保留順序",
+  "lang": "py",
+  "mode": "function",
+  "entry": "dedupe_keep_order",
+  "node": "1.4",
+  "difficulty": "standard",
+  "tags": [
+    "set 查找 O(1)",
+    "list vs set",
+    "保持順序",
+    "複雜度直覺"
+  ],
+  "hint_count": 4,
+  "test_count": 8,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-06T11:45:30+00:00"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "020-log-product",
+  "title": "連乘機率的對數（親眼看見下溢）",
+  "lang": "py",
+  "mode": "function",
+  "entry": "log_product",
+  "node": "M00.1",
+  "difficulty": "warmup",
+  "tags": [
+    "log(ab)=log a+log b",
+    "數值下溢",
+    "最大概似"
+  ],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-06T11:53:23+00:00"
+}

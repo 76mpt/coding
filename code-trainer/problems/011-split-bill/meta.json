@@ -1,0 +1,20 @@
+{
+  "id": "011-split-bill",
+  "title": "分帳與無條件進位",
+  "lang": "py",
+  "mode": "function",
+  "entry": "split_bill",
+  "node": "1.1",
+  "difficulty": "standard",
+  "tags": [
+    "整數除法",
+    "無條件進位",
+    "round",
+    "多回傳值"
+  ],
+  "hint_count": 4,
+  "test_count": 8,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-06T11:40:12+00:00"
+}
