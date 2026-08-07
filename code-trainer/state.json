@@ -3,14 +3,16 @@
   "created": "2026-08-04T08:51:07+00:00",
   "problems": {
     "001-bmi-report": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 16,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-04T08:51:07+00:00",
-      "node": "1.1"
+      "node": "1.1",
+      "solved_at": "2026-08-07T08:26:46+00:00",
+      "review_due": "2026-08-10T08:26:46+00:00"
     },
     "002-collatz-steps": {
       "status": "open",
@@ -103,24 +105,28 @@
       "node": "5.1"
     },
     "011-split-bill": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 6,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-06T11:40:12+00:00",
-      "node": "1.1"
+      "node": "1.1",
+      "solved_at": "2026-08-07T09:05:35+00:00",
+      "review_due": "2026-08-10T09:05:35+00:00"
     },
     "012-seconds-to-clock": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-06T11:40:12+00:00",
-      "node": "1.1"
+      "node": "1.1",
+      "solved_at": "2026-08-07T08:52:55+00:00",
+      "review_due": "2026-08-10T08:52:55+00:00"
     },
     "013-digital-root": {
       "status": "open",
@@ -255,9 +261,9 @@
   },
   "topics": {
     "1.1": {
-      "attempted": 0,
-      "solved": 0,
-      "clean_solved": 0,
+      "attempted": 4,
+      "solved": 3,
+      "clean_solved": 3,
       "hints_used": 0
     },
     "1.2": {
@@ -533,11 +539,191 @@
       "node": "M00.4",
       "lang": "py",
       "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-07T08:03:01+00:00",
+      "event": "plan_start",
+      "id": "",
+      "started": "2026-08-07T08:03:01+00:00"
+    },
+    {
+      "ts": "2026-08-07T08:14:56+00:00",
+      "event": "test_error",
+      "id": "001-bmi-report"
+    },
+    {
+      "ts": "2026-08-07T08:15:12+00:00",
+      "event": "test_error",
+      "id": "001-bmi-report"
+    },
+    {
+      "ts": "2026-08-07T08:15:25+00:00",
+      "event": "test_error",
+      "id": "001-bmi-report"
+    },
+    {
+      "ts": "2026-08-07T08:16:43+00:00",
+      "event": "test_error",
+      "id": "001-bmi-report"
+    },
+    {
+      "ts": "2026-08-07T08:19:25+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:19:46+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:19:52+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:20:03+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:22:34+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:23:35+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:24:23+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:24:30+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 6,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:25:09+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 6,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:25:36+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 6,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:26:29+00:00",
+      "event": "test_fail",
+      "id": "001-bmi-report",
+      "passed": 6,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T08:26:46+00:00",
+      "event": "solved",
+      "id": "001-bmi-report",
+      "attempts": 16,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-07T08:26:59+00:00",
+      "event": "answer_unlocked",
+      "id": "001-bmi-report",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-07T08:52:55+00:00",
+      "event": "solved",
+      "id": "012-seconds-to-clock",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-07T08:53:02+00:00",
+      "event": "answer_unlocked",
+      "id": "012-seconds-to-clock",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-07T09:02:39+00:00",
+      "event": "test_fail",
+      "id": "011-split-bill",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T09:04:19+00:00",
+      "event": "test_fail",
+      "id": "011-split-bill",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T09:04:41+00:00",
+      "event": "test_fail",
+      "id": "011-split-bill",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T09:04:56+00:00",
+      "event": "test_fail",
+      "id": "011-split-bill",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T09:05:26+00:00",
+      "event": "test_fail",
+      "id": "011-split-bill",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-07T09:05:35+00:00",
+      "event": "solved",
+      "id": "011-split-bill",
+      "attempts": 6,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-07T09:05:56+00:00",
+      "event": "answer_unlocked",
+      "id": "011-split-bill",
+      "solved_first": true
     }
   ],
   "counter": 25,
   "plan": {
-    "started": "2026-08-06T11:28:00+00:00",
+    "started": "2026-08-07T08:03:01+00:00",
     "hours_per_week": 10
   }
 }
