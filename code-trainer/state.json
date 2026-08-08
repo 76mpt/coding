@@ -199,34 +199,40 @@
       "node": "1.4"
     },
     "020-log-product": {
-      "status": "open",
-      "attempts": 0,
-      "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
+      "status": "solved",
+      "attempts": 2,
+      "hints_revealed": 1,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
       "rep": 0,
       "first_seen": "2026-08-06T11:53:23+00:00",
-      "node": "M00.1"
+      "node": "M00.1",
+      "solved_at": "2026-08-08T07:42:31+00:00",
+      "review_due": "2026-08-09T07:42:31+00:00"
     },
     "021-log-sum-exp": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 11,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-06T11:53:23+00:00",
-      "node": "M00.1"
+      "node": "M00.1",
+      "solved_at": "2026-08-08T08:08:44+00:00",
+      "review_due": "2026-08-11T08:08:44+00:00"
     },
     "022-entropy": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-06T11:53:23+00:00",
-      "node": "M00.1"
+      "node": "M00.1",
+      "solved_at": "2026-08-08T08:20:25+00:00",
+      "review_due": "2026-08-11T08:20:25+00:00"
     },
     "023-numerical-derivative": {
       "status": "open",
@@ -257,6 +263,26 @@
       "rep": 0,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.4"
+    },
+    "026-normalize-filename": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-08T08:31:55+00:00",
+      "node": "1.5"
+    },
+    "028-find-image-names": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-08T08:38:39+00:00",
+      "node": "1.5"
     }
   },
   "topics": {
@@ -321,10 +347,10 @@
       "hints_used": 0
     },
     "M00.1": {
-      "attempted": 0,
-      "solved": 0,
-      "clean_solved": 0,
-      "hints_used": 0
+      "attempted": 5,
+      "solved": 3,
+      "clean_solved": 2,
+      "hints_used": 1
     },
     "M00.4": {
       "attempted": 0,
@@ -719,9 +745,158 @@
       "event": "answer_unlocked",
       "id": "011-split-bill",
       "solved_first": true
+    },
+    {
+      "ts": "2026-08-08T07:38:21+00:00",
+      "event": "hint",
+      "id": "020-log-product",
+      "level": 1
+    },
+    {
+      "ts": "2026-08-08T07:42:12+00:00",
+      "event": "test_fail",
+      "id": "020-log-product",
+      "passed": 2,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-08T07:42:31+00:00",
+      "event": "solved",
+      "id": "020-log-product",
+      "attempts": 2,
+      "hints": 1,
+      "clean": false
+    },
+    {
+      "ts": "2026-08-08T07:42:42+00:00",
+      "event": "answer_unlocked",
+      "id": "020-log-product",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-08T07:56:21+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T07:57:01+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T07:57:47+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T07:58:00+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T08:01:44+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 2,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T08:02:27+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 8,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T08:02:59+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 9,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T08:04:12+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 9,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T08:04:38+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 9,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T08:06:54+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 9,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-08T08:08:44+00:00",
+      "event": "solved",
+      "id": "021-log-sum-exp",
+      "attempts": 11,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-08T08:08:56+00:00",
+      "event": "answer_unlocked",
+      "id": "021-log-sum-exp",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-08T08:20:25+00:00",
+      "event": "solved",
+      "id": "022-entropy",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-08T08:20:33+00:00",
+      "event": "answer_unlocked",
+      "id": "022-entropy",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-08T08:31:55+00:00",
+      "event": "created",
+      "id": "026-normalize-filename",
+      "node": "1.5",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-08T08:34:45+00:00",
+      "event": "created",
+      "id": "027-find-image-names",
+      "node": "1.5",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-08T08:38:39+00:00",
+      "event": "created",
+      "id": "028-find-image-names",
+      "node": "1.5",
+      "lang": "py",
+      "difficulty": "standard"
     }
   ],
-  "counter": 25,
+  "counter": 28,
   "plan": {
     "started": "2026-08-07T08:03:01+00:00",
     "hours_per_week": 10

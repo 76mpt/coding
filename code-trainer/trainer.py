@@ -723,19 +723,33 @@ def cmd_open(args):
 
 
 def pick_next_node(st: dict, cur: dict, want_node: str | None, want_lang: str | None,
-                   track: str | None = None):
+                   track: str | None = None, allowed: list[str] | None = None):
+    """挑下一個該練的節點。
+
+    allowed 是 plan.json 目前階段排定的節點 id，會優先從裡面挑；
+    都掌握了才落回 curriculum 的全域順序。
+    """
     nodes = all_nodes(cur, track)
     if want_node:
         n = find_node(cur, want_node)
         if not n:
             die(f"curriculum 裡沒有節點 {want_node}")
         return n
-    for n in nodes:
-        if want_lang and want_lang not in n.get("lang", n["stage_lang"]):
-            continue
-        if not is_mastered(n, topic_stats(st, n["id"])):
-            return n
-    return nodes[-1]
+
+    def first_unmastered(pool):
+        for n in pool:
+            if want_lang and want_lang not in n.get("lang", n["stage_lang"]):
+                continue
+            if not is_mastered(n, topic_stats(st, n["id"])):
+                return n
+        return None
+
+    if allowed:
+        by_id = {n["id"]: n for n in nodes}
+        picked = first_unmastered([by_id[i] for i in allowed if i in by_id])
+        if picked:
+            return picked
+    return first_unmastered(nodes) or nodes[-1]
 
 
 def cmd_next(args):
@@ -751,7 +765,11 @@ def cmd_next(args):
         print(f"\n  python trainer.py redo {due[0][0]}   ← 清空重寫一次")
         print("  （不想複習就加 --skip-review）\n")
 
-    node = pick_next_node(st, cur, args.node, args.lang, args.track)
+    allowed = phase_node_ids(st, args.track)
+    node = pick_next_node(st, cur, args.node, args.lang, args.track, allowed)
+    if allowed and not args.node and node["id"] not in allowed:
+        print(f"ℹ 本階段排定的{'數學' if args.track == 'math' else '程式'}軌節點"
+              f"（{' '.join(allowed)}）都掌握了，往下一階段。\n")
     stats = topic_stats(st, node["id"])
     langs = node.get("lang", node["stage_lang"])
     lang = args.lang or langs[0]
@@ -1189,6 +1207,14 @@ def node_progress(st: dict, cur: dict, ids: list[str]) -> tuple[int, int]:
     return done, len(ids)
 
 
+def phase_node_ids(st: dict, track: str | None) -> list[str] | None:
+    """目前階段（plan.json）在該軌道排定的節點 id。沒設開始日就回 None。"""
+    if track not in ("code", "math") or not PLAN_PATH.exists():
+        return None
+    pos = plan_position(st, load_plan())
+    return pos[1].get(track) if pos else None
+
+
 def cmd_plan(args):
     st = load_state()
     plan = load_plan()
@@ -1264,9 +1290,21 @@ def cmd_today(args):
         else:
             print(hr(f"② 今天的題目（{'數學軌' if want_math else '程式軌'}）"))
         track = "math" if want_math else "code"
-        nxt = pick_next_node(st, cur, None, None, track)
+        allowed = phase_node_ids(st, track)
+        nxt = pick_next_node(st, cur, None, None, track, allowed)
         print(f"  節點 {nxt['id']} {nxt['name']}")
-        print(f"  python trainer.py next{' --track math' if want_math else ''}")
+        if allowed and nxt["id"] not in allowed:
+            print(f"  （本階段排定的 {' '.join(allowed)} 都掌握了，往下一階段）")
+        ready = [p.name for p in sorted(PROBLEMS.glob("*"))
+                 if p.is_dir() and (p / "meta.json").exists()
+                 and load_meta(p)["node"] == nxt["id"]
+                 and st["problems"].get(p.name, {}).get("status") != "solved"]
+        if ready:
+            print(f"  現成未完成：{'  '.join(ready[:4])}")
+            print(f"  python trainer.py open {ready[0]}")
+        else:
+            print(f"  python trainer.py next{' --track math' if want_math else ''}"
+                  "    ← 這個節點沒有現成題目，需要 AI 教練出題")
 
     if "課程" in rhythm["slot"] and pos:
         print("\n" + hr("③ 課程"))

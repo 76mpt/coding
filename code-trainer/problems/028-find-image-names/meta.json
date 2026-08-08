@@ -1,0 +1,15 @@
+{
+  "id": "028-find-image-names",
+  "title": "從文字中挑出影像檔名",
+  "lang": "py",
+  "mode": "function",
+  "entry": "find_images",
+  "node": "1.5",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 12,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-08T08:38:39+00:00"
+}

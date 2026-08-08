@@ -1,0 +1,15 @@
+{
+  "id": "026-normalize-filename",
+  "title": "正規化檔名",
+  "lang": "py",
+  "mode": "function",
+  "entry": "normalize_filename",
+  "node": "1.5",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 11,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-08T08:31:55+00:00"
+}
