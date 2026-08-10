@@ -1207,6 +1207,73 @@ def node_progress(st: dict, cur: dict, ids: list[str]) -> tuple[int, int]:
     return done, len(ids)
 
 
+def course_done(st: dict) -> dict:
+    """已完成的課程項目：{item_id: 完成時間}。"""
+    return st.setdefault("courses", {})
+
+
+def phase_items(phase: dict) -> list[dict]:
+    """該階段的課程清單。沒定義 items 的階段回空 list（沿用 course 字串顯示）。"""
+    return phase.get("items", [])
+
+
+def find_course_item(plan: dict, item_id: str):
+    """用 id 或唯一前綴找課程項目，回傳 (phase, item)。"""
+    hits = [(ph, it) for ph in plan["phases"] for it in phase_items(ph)
+            if it["id"] == item_id]
+    if not hits:
+        hits = [(ph, it) for ph in plan["phases"] for it in phase_items(ph)
+                if it["id"].startswith(item_id)]
+    if not hits:
+        die(f"找不到課程項目 '{item_id}'（用 `python trainer.py course` 看清單）")
+    if len(hits) > 1:
+        die(f"'{item_id}' 對到多個項目：{', '.join(i['id'] for _, i in hits)}")
+    return hits[0]
+
+
+def cmd_course(args):
+    st = load_state()
+    plan = load_plan()
+    done = course_done(st)
+
+    if args.done or args.undo:
+        for item_id in (args.done or []):
+            _, it = find_course_item(plan, item_id)
+            done[it["id"]] = iso(now())
+            print(f"✓ {it['id']}  {it['title']}")
+        for item_id in (args.undo or []):
+            _, it = find_course_item(plan, item_id)
+            done.pop(it["id"], None)
+            print(f"↺ {it['id']}  {it['title']}（取消勾選）")
+        save_state(st)
+        return
+
+    pos = plan_position(st, plan)
+    cur_phase = pos[1]["id"] if pos else None
+    for ph in plan["phases"]:
+        items = phase_items(ph)
+        if not items:
+            continue
+        if args.all is False and cur_phase and ph["id"] != cur_phase:
+            continue
+        fin = [i for i in items if i["id"] in done]
+        mark = "▶" if ph["id"] == cur_phase else " "
+        left = sum(i["minutes"] for i in items if i["id"] not in done
+                   and not i.get("optional"))
+        print(hr(f"{mark} {ph['id']} 課程　{len(fin)}/{len(items)}　"
+                 f"必看還剩 {left} 分鐘"))
+        for it in items:
+            tick = "✓" if it["id"] in done else "·"
+            opt = "（加碼）" if it.get("optional") else ""
+            print(f"  {tick} {it['id']:<14} {it['minutes']:>3}分  {it['title']}{opt}")
+        print()
+
+    undefined = [ph["id"] for ph in plan["phases"] if not phase_items(ph)]
+    if undefined and args.all:
+        print(f"（{' '.join(undefined)} 還沒定義課程清單，走到那時再補）")
+    print("勾選：python trainer.py course --done 3b1b-la1 [更多 id]")
+
+
 def phase_node_ids(st: dict, track: str | None) -> list[str] | None:
     """目前階段（plan.json）在該軌道排定的節點 id。沒設開始日就回 None。"""
     if track not in ("code", "math") or not PLAN_PATH.exists():
@@ -1308,7 +1375,22 @@ def cmd_today(args):
 
     if "課程" in rhythm["slot"] and pos:
         print("\n" + hr("③ 課程"))
-        print(f"  {pos[1]['course']}")
+        items = phase_items(pos[1])
+        done = course_done(st)
+        todo = [i for i in items if i["id"] not in done and not i.get("optional")]
+        if not items:
+            print(f"  {pos[1]['course']}")
+        elif todo:
+            for it in todo[:4]:
+                print(f"  · {it['id']:<14} {it['minutes']:>3}分  {it['title']}")
+            if len(todo) > 4:
+                print(f"    …還有 {len(todo) - 4} 項（python trainer.py course）")
+            print(f"  勾選：python trainer.py course --done {todo[0]['id']}")
+        else:
+            extra = [i for i in items if i["id"] not in done]
+            print(f"  ✓ 本階段必看的課程都完成了（{len(items) - len(extra)}/{len(items)}）")
+            if extra:
+                print(f"    加碼未看：{' '.join(i['id'] for i in extra)}")
 
     if pos:
         week, phase, _, _ = pos
@@ -1519,6 +1601,12 @@ def main():
     s.add_argument("--start", metavar="YYYY-MM-DD", help="設定開始日，或用 today")
     s.add_argument("--hours", type=int, help="每週可投入時數")
     s.set_defaults(func=cmd_plan)
+
+    s = sub.add_parser("course", help="課程清單與勾選")
+    s.add_argument("--done", nargs="+", metavar="ID", help="標記為看完（可給多個，支援 id 前綴）")
+    s.add_argument("--undo", nargs="+", metavar="ID", help="取消勾選")
+    s.add_argument("--all", action="store_true", help="顯示所有階段，不只目前這個")
+    s.set_defaults(func=cmd_course)
 
     s = sub.add_parser("redo", help="清空重做一題")
     s.add_argument("id")
