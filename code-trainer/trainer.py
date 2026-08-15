@@ -251,6 +251,54 @@ def is_mastered(node: dict, stats: dict) -> bool:
     return stats["solved"] >= target and stats["clean_solved"] >= 1
 
 
+EMPTY_TOPIC = {"attempted": 0, "solved": 0, "clean_solved": 0, "hints_used": 0}
+
+
+def backfill_problem_flags(st: dict) -> None:
+    """舊版 state 沒有 ever_solved / ever_clean，從 log 補上。"""
+    solved_ids, clean_ids, hints_at_solve = set(), set(), {}
+    for e in st["log"]:
+        if e.get("event") != "solved":
+            continue
+        solved_ids.add(e.get("id"))
+        hints_at_solve[e.get("id")] = e.get("hints", 0)
+        if e.get("clean"):
+            clean_ids.add(e.get("id"))
+    for pid, ps in st["problems"].items():
+        if "ever_solved" not in ps:
+            ps["ever_solved"] = ps.get("status") == "solved" or pid in solved_ids
+        if "ever_clean" not in ps:
+            ps["ever_clean"] = pid in clean_ids
+        if "solve_hints" not in ps:
+            ps["solve_hints"] = hints_at_solve.get(pid, ps.get("hints_revealed", 0))
+
+
+def recount_topics(st: dict) -> dict:
+    """從各題的紀錄重算節點統計。
+
+    一題只算一次，`redo` 之後再通過不會重複計入 —— 節點的 target
+    要的是「做過幾個不同的題目」，不是「通過幾次」。
+    """
+    backfill_problem_flags(st)
+    topics = {node: dict(EMPTY_TOPIC) for node in st["topics"]}
+    for pid, ps in st["problems"].items():
+        touched = ps.get("ever_attempted") or ps.get("ever_solved") or ps.get("hints_revealed")
+        if not touched:
+            continue
+        d = PROBLEMS / pid
+        if not (d / "meta.json").exists():
+            continue
+        t = topics.setdefault(load_meta(d)["node"], dict(EMPTY_TOPIC))
+        t["attempted"] += 1
+        if not ps.get("ever_solved"):
+            continue
+        t["solved"] += 1
+        if ps.get("ever_clean"):
+            t["clean_solved"] += 1
+        t["hints_used"] += ps.get("solve_hints", 0)
+    return topics
+
+
 # ---------------------------------------------------------------- problems
 
 
@@ -557,7 +605,7 @@ def cmd_test(args):
         out, err = run_io(d, meta, tests, only)
 
     ps["attempts"] += 1
-    tstats = topic_stats(st, meta["node"])
+    ps["ever_attempted"] = True
 
     if err:
         print(hr(f"{pid} · 無法執行"))
@@ -603,7 +651,7 @@ def cmd_test(args):
             print(f"  你的 print 輸出：{r['stdout'][:400]}")
         if len(failed) > 1:
             print(f"\n還有 {len(failed) - 1} 筆失敗。")
-        tstats["attempted"] = tstats.get("attempted", 0) + (1 if ps["attempts"] == 1 else 0)
+        st["topics"] = recount_topics(st)
         log_event(st, "test_fail", pid, passed=len(passed), total=len(ran))
         save_state(st)
         print("\n下一步：")
@@ -617,16 +665,14 @@ def cmd_test(args):
         save_state(st)
         return
 
-    first_solve = ps["status"] != "solved"
     clean = ps["hints_revealed"] == 0 and not ps["answer_unlocked"]
     ps["status"] = "solved"
     ps["solved_at"] = iso(now())
-    if first_solve:
-        tstats["attempted"] = tstats.get("attempted", 0) + 1
-        tstats["solved"] += 1
-        if clean:
-            tstats["clean_solved"] += 1
-        tstats["hints_used"] = tstats.get("hints_used", 0) + ps["hints_revealed"]
+    ps["ever_solved"] = True
+    ps["solve_hints"] = ps["hints_revealed"]
+    if clean:
+        ps["ever_clean"] = True
+    st["topics"] = recount_topics(st)
     if clean:
         ps["rep"] = min(ps.get("rep", 0) + 1, len(REVIEW_INTERVALS_DAYS) - 1)
     days = REVIEW_INTERVALS_DAYS[ps.get("rep", 0)]
@@ -1274,6 +1320,39 @@ def cmd_course(args):
     print("勾選：python trainer.py course --done 3b1b-la1 [更多 id]")
 
 
+def cmd_recount(args):
+    st = load_state()
+    cur = load_curriculum()
+    before = json.loads(json.dumps(st["topics"]))
+    st["topics"] = recount_topics(st)
+    changed = []
+    for node in sorted(set(before) | set(st["topics"])):
+        old = before.get(node, EMPTY_TOPIC)
+        new = st["topics"].get(node, EMPTY_TOPIC)
+        if old != new:
+            changed.append((node, old, new))
+    if not changed:
+        print("✓ 統計本來就是對的，沒有變動")
+        return
+    print(hr("重算節點統計（一題只算一次）"))
+    for node, old, new in changed:
+        n = find_node(cur, node)
+        name = n["name"] if n else node
+        was = "✓掌握" if n and is_mastered(n, old) else "未掌握"
+        now_ = "✓掌握" if n and is_mastered(n, new) else "未掌握"
+        flag = "" if was == now_ else f"　{was} → {now_}"
+        print(f"  {node:<7} {name[:22]:<24} "
+              f"通過 {old['solved']}→{new['solved']}　"
+              f"自力 {old['clean_solved']}→{new['clean_solved']}{flag}")
+    if args.dry_run:
+        print("\n（--dry-run，沒有寫入。拿掉這個旗標才會存檔）")
+        return
+    backup = STATE_PATH.with_suffix(".json.bak")
+    shutil.copy2(STATE_PATH, backup)
+    save_state(st)
+    print(f"\n✓ 已更新 state.json（原檔備份到 {backup.name}）")
+
+
 def phase_node_ids(st: dict, track: str | None) -> list[str] | None:
     """目前階段（plan.json）在該軌道排定的節點 id。沒設開始日就回 None。"""
     if track not in ("code", "math") or not PLAN_PATH.exists():
@@ -1601,6 +1680,10 @@ def main():
     s.add_argument("--start", metavar="YYYY-MM-DD", help="設定開始日，或用 today")
     s.add_argument("--hours", type=int, help="每週可投入時數")
     s.set_defaults(func=cmd_plan)
+
+    s = sub.add_parser("recount", help="重算節點統計（redo 不再重複計入）")
+    s.add_argument("--dry-run", action="store_true", help="只顯示差異，不寫入")
+    s.set_defaults(func=cmd_recount)
 
     s = sub.add_parser("course", help="課程清單與勾選")
     s.add_argument("--done", nargs="+", metavar="ID", help="標記為看完（可給多個，支援 id 前綴）")

@@ -151,6 +151,9 @@ python trainer.py redo 003      # 清空重寫（舊作答存到該題的 attemp
 1. 通過 `target` 題
 2. 其中**至少一題是 0 提示 0 解答**完成的
 
+「通過 `target` 題」算的是**不同的題目**——`redo` 之後再通過同一題不會重複計入。
+統計看起來不對時用 `python trainer.py recount --dry-run` 檢查。
+
 `status` 裡的 `✓` 就是這個意思。
 
 ### 兩軌怎麼分配
@@ -215,6 +218,7 @@ e^{iθ} = cos θ + i sin θ
 | `today` | **今天該做什麼**（按表操課的入口，每天打這個就好） |
 | `plan [--start today] [--hours 10]` | 看階段路線與進度／設定日程表開始日 |
 | `course [--done ID…] [--undo ID…] [--all]` | 課程清單與勾選；`today` 只會列出還沒看的 |
+| `recount [--dry-run]` | 重算節點統計（一題只算一次，`redo` 不重複計入） |
 | `status` | 進度總覽：兩軌完成度、通過題數、連續練習天數 |
 | `curriculum [-v] [--track code\|math]` | 完整學習路線，`✓` 已掌握 / `~` 進行中；`-v` 顯示技能與資源 |
 | `next [--track math] [--node 2.5] [--lang cpp] [--difficulty ...]` | 產生下一題的出題指令（給 AI 教練看） |

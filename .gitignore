@@ -20,3 +20,6 @@ venv/
 *.exe
 *.obj
 *.o
+
+# recount 的 state 備份
+code-trainer/state.json.bak
