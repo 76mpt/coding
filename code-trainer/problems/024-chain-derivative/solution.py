@@ -7,7 +7,6 @@ def chain_derivative(layers, x: float) -> tuple[float, float]:
     for f, _ in reversed(layers):
         values.append(f(values[-1]))
     grad = 1.0
-    for i, (f, df) in enumerate(reversed(layers)):
+    for i, (f, df) in enumerate(layers):
         grad *= df(values[i])
-    
     return values[-1], grad

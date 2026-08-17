@@ -219,7 +219,7 @@ e^{iθ} = cos θ + i sin θ
 | `plan [--start today] [--hours 10]` | 看階段路線與進度／設定日程表開始日 |
 | `course [--done ID…] [--undo ID…] [--all]` | 課程清單與勾選；`today` 只會列出還沒看的 |
 | `recount [--dry-run]` | 重算節點統計（一題只算一次，`redo` 不重複計入） |
-| `status` | 進度總覽：兩軌完成度、通過題數、連續練習天數 |
+| `status` | 進度總覽：兩軌完成度、通過題數、連續練習日（中間空 1 天不算中斷） |
 | `curriculum [-v] [--track code\|math]` | 完整學習路線，`✓` 已掌握 / `~` 進行中；`-v` 顯示技能與資源 |
 | `next [--track math] [--node 2.5] [--lang cpp] [--difficulty ...]` | 產生下一題的出題指令（給 AI 教練看） |
 | `open <id>` | 顯示題目與你目前的狀態 |

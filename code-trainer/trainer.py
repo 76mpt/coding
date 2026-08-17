@@ -969,7 +969,7 @@ def cmd_status(args):
     print(hr("code-trainer 進度"))
     print(f"題目 {len(probs)} 題　通過 {len(solved)}　完全自力（0 提示 0 解答）{len(clean)}")
     dates = sorted({parse_iso(e["ts"]).date() for e in st["log"] if e["event"] in ("solved", "hint", "test_fail")})
-    print(f"練習天數 {len(dates)}　連續 {streak(dates)} 天")
+    print(f"練習天數 {len(dates)}　連續 {streak(dates)} 個練習日（空 1 天不中斷）")
     due = due_reviews(st)
     if due:
         print(f"待複習 {len(due)} 題（python trainer.py review）")
@@ -1007,19 +1007,26 @@ def cmd_status(args):
           f"\n  → python trainer.py next --track math")
 
 
+REST_DAY_ALLOWANCE = 1  # 中間空 1 天不算中斷（SCHEDULE 本來就排週日休息）
+
+
 def streak(dates: list) -> int:
+    """連續練習日。
+
+    兩次練習之間空 1 天不算中斷 —— 日程表本來就排週日休息，
+    嚴格要求日曆上連續會讓里程碑永遠達不到。空 2 天以上才歸零。
+    """
     if not dates:
         return 0
-    today = now().date()
-    if (today - dates[-1]).days > 1:
+    max_gap = REST_DAY_ALLOWANCE + 1
+    if (now().date() - dates[-1]).days > max_gap:
         return 0
-    count, cursor = 0, dates[-1]
-    for d in reversed(dates):
-        if d == cursor:
-            count += 1
-            cursor -= timedelta(days=1)
-        elif d < cursor:
+    count, prev = 1, dates[-1]
+    for d in reversed(dates[:-1]):
+        if (prev - d).days > max_gap:
             break
+        count += 1
+        prev = d
     return count
 
 
