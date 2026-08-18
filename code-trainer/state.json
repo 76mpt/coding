@@ -220,17 +220,20 @@
       "review_due": "2026-08-20T13:42:01+00:00"
     },
     "016-stats-varargs": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 2,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.3",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-08-18T14:55:04+00:00",
+      "review_due": "2026-08-21T14:55:04+00:00"
     },
     "017-merge-inventory": {
       "status": "open",
@@ -288,33 +291,35 @@
     },
     "021-log-sum-exp": {
       "status": "solved",
-      "attempts": 13,
+      "attempts": 3,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.1",
-      "solved_at": "2026-08-11T07:25:25+00:00",
-      "review_due": "2026-08-18T07:25:25+00:00",
+      "solved_at": "2026-08-18T14:35:54+00:00",
+      "review_due": "2026-09-03T14:35:54+00:00",
       "ever_solved": true,
       "ever_clean": true,
-      "solve_hints": 0
+      "solve_hints": 0,
+      "ever_attempted": true
     },
     "022-entropy": {
       "status": "solved",
-      "attempts": 14,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.1",
-      "solved_at": "2026-08-11T07:36:35+00:00",
-      "review_due": "2026-08-18T07:36:35+00:00",
+      "solved_at": "2026-08-18T14:39:57+00:00",
+      "review_due": "2026-09-03T14:39:57+00:00",
       "ever_solved": true,
       "ever_clean": true,
-      "solve_hints": 0
+      "solve_hints": 0,
+      "ever_attempted": true
     },
     "023-numerical-derivative": {
       "status": "solved",
@@ -349,19 +354,19 @@
     },
     "025-gradient-descent-1d": {
       "status": "solved",
-      "attempts": 1,
+      "attempts": 10,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.4",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-15T10:23:24+00:00",
-      "review_due": "2026-08-18T10:23:24+00:00"
+      "solved_at": "2026-08-18T14:49:43+00:00",
+      "review_due": "2026-08-25T14:49:43+00:00"
     },
     "026-normalize-filename": {
       "status": "open",
@@ -404,9 +409,9 @@
       "hints_used": 0
     },
     "1.3": {
-      "attempted": 2,
-      "solved": 2,
-      "clean_solved": 2,
+      "attempted": 3,
+      "solved": 3,
+      "clean_solved": 3,
       "hints_used": 0
     },
     "1.4": {
@@ -2126,6 +2131,161 @@
       "ts": "2026-08-17T13:42:06+00:00",
       "event": "answer_unlocked",
       "id": "015-add-tag",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-18T14:31:12+00:00",
+      "event": "redo",
+      "id": "021-log-sum-exp",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-18T14:34:27+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 9,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-18T14:35:43+00:00",
+      "event": "test_fail",
+      "id": "021-log-sum-exp",
+      "passed": 9,
+      "total": 10
+    },
+    {
+      "ts": "2026-08-18T14:35:54+00:00",
+      "event": "solved",
+      "id": "021-log-sum-exp",
+      "attempts": 3,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-18T14:36:01+00:00",
+      "event": "answer_unlocked",
+      "id": "021-log-sum-exp",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-18T14:37:21+00:00",
+      "event": "redo",
+      "id": "022-entropy",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-18T14:39:57+00:00",
+      "event": "solved",
+      "id": "022-entropy",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-18T14:40:01+00:00",
+      "event": "answer_unlocked",
+      "id": "022-entropy",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-18T14:41:16+00:00",
+      "event": "redo",
+      "id": "025-gradient-descent-1d",
+      "rep": 1
+    },
+    {
+      "ts": "2026-08-18T14:44:45+00:00",
+      "event": "test_error",
+      "id": "025-gradient-descent-1d"
+    },
+    {
+      "ts": "2026-08-18T14:45:13+00:00",
+      "event": "test_fail",
+      "id": "025-gradient-descent-1d",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-18T14:45:53+00:00",
+      "event": "test_error",
+      "id": "025-gradient-descent-1d"
+    },
+    {
+      "ts": "2026-08-18T14:46:00+00:00",
+      "event": "test_fail",
+      "id": "025-gradient-descent-1d",
+      "passed": 2,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-18T14:47:06+00:00",
+      "event": "test_fail",
+      "id": "025-gradient-descent-1d",
+      "passed": 3,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-18T14:47:09+00:00",
+      "event": "test_fail",
+      "id": "025-gradient-descent-1d",
+      "passed": 3,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-18T14:48:10+00:00",
+      "event": "test_fail",
+      "id": "025-gradient-descent-1d",
+      "passed": 2,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-18T14:48:29+00:00",
+      "event": "test_fail",
+      "id": "025-gradient-descent-1d",
+      "passed": 2,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-18T14:49:28+00:00",
+      "event": "solved",
+      "id": "025-gradient-descent-1d",
+      "attempts": 9,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-18T14:49:42+00:00",
+      "event": "answer_unlocked",
+      "id": "025-gradient-descent-1d",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-18T14:49:43+00:00",
+      "event": "solved",
+      "id": "025-gradient-descent-1d",
+      "attempts": 10,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-08-18T14:54:23+00:00",
+      "event": "test_fail",
+      "id": "016-stats-varargs",
+      "passed": 7,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-18T14:55:04+00:00",
+      "event": "solved",
+      "id": "016-stats-varargs",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-18T14:55:09+00:00",
+      "event": "answer_unlocked",
+      "id": "016-stats-varargs",
       "solved_first": true
     }
   ],
