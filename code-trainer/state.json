@@ -20,18 +20,19 @@
     },
     "002-collatz-steps": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": true,
+      "answer_unlocked": false,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-04T08:51:07+00:00",
       "node": "1.2",
-      "solved_at": "2026-08-13T11:58:39+00:00",
-      "review_due": "2026-08-20T11:58:39+00:00",
+      "solved_at": "2026-08-20T05:17:58+00:00",
+      "review_due": "2026-09-05T05:17:58+00:00",
       "ever_solved": true,
       "ever_clean": true,
-      "solve_hints": 0
+      "solve_hints": 0,
+      "ever_attempted": true
     },
     "003-apply-discount": {
       "status": "solved",
@@ -205,19 +206,19 @@
     },
     "015-add-tag": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 7,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.3",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-17T13:42:01+00:00",
-      "review_due": "2026-08-20T13:42:01+00:00"
+      "solved_at": "2026-08-20T05:29:24+00:00",
+      "review_due": "2026-08-27T05:29:24+00:00"
     },
     "016-stats-varargs": {
       "status": "solved",
@@ -279,18 +280,19 @@
     },
     "020-log-product": {
       "status": "solved",
-      "attempts": 5,
+      "attempts": 4,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.1",
-      "solved_at": "2026-08-13T12:07:45+00:00",
-      "review_due": "2026-08-20T12:07:45+00:00",
+      "solved_at": "2026-08-20T05:22:19+00:00",
+      "review_due": "2026-09-05T05:22:19+00:00",
       "ever_solved": true,
       "ever_clean": true,
-      "solve_hints": 0
+      "solve_hints": 0,
+      "ever_attempted": true
     },
     "021-log-sum-exp": {
       "status": "solved",
@@ -345,11 +347,11 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.4",
-      "solved_at": "2026-08-17T13:07:27+00:00",
-      "review_due": "2026-08-20T13:07:27+00:00",
+      "solved_at": "2026-08-20T05:12:40+00:00",
+      "review_due": "2026-08-27T05:12:40+00:00",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
@@ -2324,6 +2326,169 @@
       "ts": "2026-08-19T09:00:08+00:00",
       "event": "answer_unlocked",
       "id": "017-merge-inventory",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-20T05:03:50+00:00",
+      "event": "redo",
+      "id": "024-chain-derivative",
+      "rep": 1
+    },
+    {
+      "ts": "2026-08-20T05:07:30+00:00",
+      "event": "test_fail",
+      "id": "024-chain-derivative",
+      "passed": 0,
+      "total": 7
+    },
+    {
+      "ts": "2026-08-20T05:07:55+00:00",
+      "event": "test_fail",
+      "id": "024-chain-derivative",
+      "passed": 0,
+      "total": 7
+    },
+    {
+      "ts": "2026-08-20T05:10:54+00:00",
+      "event": "test_fail",
+      "id": "024-chain-derivative",
+      "passed": 1,
+      "total": 7
+    },
+    {
+      "ts": "2026-08-20T05:11:57+00:00",
+      "event": "test_fail",
+      "id": "024-chain-derivative",
+      "passed": 1,
+      "total": 7
+    },
+    {
+      "ts": "2026-08-20T05:12:40+00:00",
+      "event": "solved",
+      "id": "024-chain-derivative",
+      "attempts": 5,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-20T05:12:44+00:00",
+      "event": "answer_unlocked",
+      "id": "024-chain-derivative",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-20T05:15:54+00:00",
+      "event": "redo",
+      "id": "002-collatz-steps",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-20T05:17:58+00:00",
+      "event": "solved",
+      "id": "002-collatz-steps",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-20T05:18:10+00:00",
+      "event": "redo",
+      "id": "020-log-product",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-20T05:19:38+00:00",
+      "event": "test_fail",
+      "id": "020-log-product",
+      "passed": 7,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-20T05:20:56+00:00",
+      "event": "test_fail",
+      "id": "020-log-product",
+      "passed": 2,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-20T05:21:24+00:00",
+      "event": "test_fail",
+      "id": "020-log-product",
+      "passed": 7,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-20T05:22:19+00:00",
+      "event": "solved",
+      "id": "020-log-product",
+      "attempts": 4,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-20T05:22:24+00:00",
+      "event": "answer_unlocked",
+      "id": "020-log-product",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-20T05:22:49+00:00",
+      "event": "redo",
+      "id": "015-add-tag",
+      "rep": 1
+    },
+    {
+      "ts": "2026-08-20T05:25:43+00:00",
+      "event": "test_fail",
+      "id": "015-add-tag",
+      "passed": 3,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-20T05:26:08+00:00",
+      "event": "test_error",
+      "id": "015-add-tag"
+    },
+    {
+      "ts": "2026-08-20T05:26:51+00:00",
+      "event": "test_fail",
+      "id": "015-add-tag",
+      "passed": 3,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-20T05:27:06+00:00",
+      "event": "test_fail",
+      "id": "015-add-tag",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-20T05:27:18+00:00",
+      "event": "test_fail",
+      "id": "015-add-tag",
+      "passed": 4,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-20T05:27:38+00:00",
+      "event": "test_fail",
+      "id": "015-add-tag",
+      "passed": 4,
+      "total": 8
+    },
+    {
+      "ts": "2026-08-20T05:29:24+00:00",
+      "event": "solved",
+      "id": "015-add-tag",
+      "attempts": 7,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-20T05:29:31+00:00",
+      "event": "answer_unlocked",
+      "id": "015-add-tag",
       "solved_first": true
     }
   ],
