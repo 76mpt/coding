@@ -51,17 +51,20 @@
       "ever_attempted": true
     },
     "004-top-k-words": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 9,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-04T08:51:07+00:00",
       "node": "1.4",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-08-21T08:07:36+00:00",
+      "review_due": "2026-08-24T08:07:36+00:00"
     },
     "005-parse-label-line": {
       "status": "open",
@@ -222,19 +225,19 @@
     },
     "016-stats-varargs": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 3,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.3",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-18T14:55:04+00:00",
-      "review_due": "2026-08-21T14:55:04+00:00"
+      "solved_at": "2026-08-21T07:44:35+00:00",
+      "review_due": "2026-08-28T07:44:35+00:00"
     },
     "017-merge-inventory": {
       "status": "solved",
@@ -328,18 +331,19 @@
     },
     "023-numerical-derivative": {
       "status": "solved",
-      "attempts": 1,
+      "attempts": 2,
       "hints_revealed": 0,
-      "answer_unlocked": true,
+      "answer_unlocked": false,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.4",
-      "solved_at": "2026-08-14T07:07:07+00:00",
-      "review_due": "2026-08-21T07:07:07+00:00",
+      "solved_at": "2026-08-21T07:40:29+00:00",
+      "review_due": "2026-09-06T07:40:29+00:00",
       "ever_solved": true,
       "ever_clean": true,
-      "solve_hints": 0
+      "solve_hints": 0,
+      "ever_attempted": true
     },
     "024-chain-derivative": {
       "status": "solved",
@@ -420,9 +424,9 @@
       "hints_used": 0
     },
     "1.4": {
-      "attempted": 1,
-      "solved": 1,
-      "clean_solved": 1,
+      "attempted": 2,
+      "solved": 2,
+      "clean_solved": 2,
       "hints_used": 0
     },
     "1.5": {
@@ -2489,6 +2493,131 @@
       "ts": "2026-08-20T05:29:31+00:00",
       "event": "answer_unlocked",
       "id": "015-add-tag",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-21T07:39:20+00:00",
+      "event": "redo",
+      "id": "023-numerical-derivative",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-21T07:40:15+00:00",
+      "event": "test_fail",
+      "id": "023-numerical-derivative",
+      "passed": 0,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T07:40:29+00:00",
+      "event": "solved",
+      "id": "023-numerical-derivative",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-21T07:40:36+00:00",
+      "event": "redo",
+      "id": "016-stats-varargs",
+      "rep": 1
+    },
+    {
+      "ts": "2026-08-21T07:42:54+00:00",
+      "event": "test_fail",
+      "id": "016-stats-varargs",
+      "passed": 7,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T07:43:14+00:00",
+      "event": "test_fail",
+      "id": "016-stats-varargs",
+      "passed": 7,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T07:44:35+00:00",
+      "event": "solved",
+      "id": "016-stats-varargs",
+      "attempts": 3,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-21T07:44:40+00:00",
+      "event": "answer_unlocked",
+      "id": "016-stats-varargs",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-21T07:53:57+00:00",
+      "event": "test_fail",
+      "id": "004-top-k-words",
+      "passed": 0,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T07:57:35+00:00",
+      "event": "test_fail",
+      "id": "004-top-k-words",
+      "passed": 2,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T08:00:22+00:00",
+      "event": "test_fail",
+      "id": "004-top-k-words",
+      "passed": 0,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T08:01:47+00:00",
+      "event": "test_fail",
+      "id": "004-top-k-words",
+      "passed": 0,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T08:03:52+00:00",
+      "event": "test_fail",
+      "id": "004-top-k-words",
+      "passed": 0,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T08:04:11+00:00",
+      "event": "test_fail",
+      "id": "004-top-k-words",
+      "passed": 5,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T08:04:28+00:00",
+      "event": "test_fail",
+      "id": "004-top-k-words",
+      "passed": 5,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T08:05:31+00:00",
+      "event": "test_fail",
+      "id": "004-top-k-words",
+      "passed": 3,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-21T08:07:36+00:00",
+      "event": "solved",
+      "id": "004-top-k-words",
+      "attempts": 9,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-21T08:07:41+00:00",
+      "event": "answer_unlocked",
+      "id": "004-top-k-words",
       "solved_first": true
     }
   ],
