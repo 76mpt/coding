@@ -178,18 +178,19 @@
     },
     "013-digital-root": {
       "status": "solved",
-      "attempts": 4,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:40:12+00:00",
       "node": "1.2",
-      "solved_at": "2026-08-15T10:05:06+00:00",
-      "review_due": "2026-08-22T10:05:06+00:00",
+      "solved_at": "2026-08-23T16:40:23+00:00",
+      "review_due": "2026-09-08T16:40:23+00:00",
       "ever_solved": true,
       "ever_clean": true,
-      "solve_hints": 0
+      "solve_hints": 0,
+      "ever_attempted": true
     },
     "014-longest-run": {
       "status": "solved",
@@ -241,19 +242,19 @@
     },
     "017-merge-inventory": {
       "status": "solved",
-      "attempts": 4,
+      "attempts": 3,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.4",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-19T09:00:03+00:00",
-      "review_due": "2026-08-22T09:00:03+00:00"
+      "solved_at": "2026-08-23T16:47:11+00:00",
+      "review_due": "2026-08-30T16:47:11+00:00"
     },
     "018-group-by-label": {
       "status": "open",
@@ -2619,6 +2620,61 @@
       "event": "answer_unlocked",
       "id": "004-top-k-words",
       "solved_first": true
+    },
+    {
+      "ts": "2026-08-23T16:36:46+00:00",
+      "event": "redo",
+      "id": "013-digital-root",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-23T16:40:23+00:00",
+      "event": "solved",
+      "id": "013-digital-root",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-23T16:40:28+00:00",
+      "event": "answer_unlocked",
+      "id": "013-digital-root",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-23T16:40:49+00:00",
+      "event": "redo",
+      "id": "017-merge-inventory",
+      "rep": 1
+    },
+    {
+      "ts": "2026-08-23T16:46:10+00:00",
+      "event": "solved",
+      "id": "017-merge-inventory",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-23T16:46:15+00:00",
+      "event": "answer_unlocked",
+      "id": "017-merge-inventory",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-23T16:46:55+00:00",
+      "event": "test_fail",
+      "id": "017-merge-inventory",
+      "passed": 8,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-23T16:47:11+00:00",
+      "event": "solved",
+      "id": "017-merge-inventory",
+      "attempts": 3,
+      "hints": 0,
+      "clean": false
     }
   ],
   "counter": 28,
