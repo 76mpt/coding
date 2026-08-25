@@ -273,17 +273,20 @@
       "review_due": "2026-08-27T06:43:33+00:00"
     },
     "019-dedupe-keep-order": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 2,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.4",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-08-25T08:27:53+00:00",
+      "review_due": "2026-08-28T08:27:53+00:00"
     },
     "020-log-product": {
       "status": "solved",
@@ -367,19 +370,19 @@
     },
     "025-gradient-descent-1d": {
       "status": "solved",
-      "attempts": 10,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.4",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-18T14:49:43+00:00",
-      "review_due": "2026-08-25T14:49:43+00:00"
+      "solved_at": "2026-08-25T08:33:39+00:00",
+      "review_due": "2026-09-10T08:33:39+00:00"
     },
     "026-normalize-filename": {
       "status": "open",
@@ -428,9 +431,9 @@
       "hints_used": 0
     },
     "1.4": {
-      "attempted": 3,
-      "solved": 3,
-      "clean_solved": 3,
+      "attempted": 4,
+      "solved": 4,
+      "clean_solved": 4,
       "hints_used": 0
     },
     "1.5": {
@@ -2813,6 +2816,48 @@
       "ts": "2026-08-24T07:09:16+00:00",
       "event": "answer_unlocked",
       "id": "003-apply-discount",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-25T08:26:56+00:00",
+      "event": "solved",
+      "id": "019-dedupe-keep-order",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-25T08:27:01+00:00",
+      "event": "answer_unlocked",
+      "id": "019-dedupe-keep-order",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-25T08:27:53+00:00",
+      "event": "solved",
+      "id": "019-dedupe-keep-order",
+      "attempts": 2,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-08-25T08:31:30+00:00",
+      "event": "redo",
+      "id": "025-gradient-descent-1d",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-25T08:33:39+00:00",
+      "event": "solved",
+      "id": "025-gradient-descent-1d",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-25T08:33:43+00:00",
+      "event": "answer_unlocked",
+      "id": "025-gradient-descent-1d",
       "solved_first": true
     }
   ],
