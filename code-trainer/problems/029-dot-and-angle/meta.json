@@ -1,0 +1,15 @@
+{
+  "id": "029-dot-and-angle",
+  "title": "內積的兩種算法",
+  "lang": "py",
+  "mode": "function",
+  "entry": "dot_and_angle",
+  "node": "M00.2",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 11,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-25T08:34:10+00:00"
+}

@@ -409,6 +409,26 @@
       "ever_solved": false,
       "ever_clean": false,
       "solve_hints": 0
+    },
+    "029-dot-and-angle": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-25T08:34:10+00:00",
+      "node": "M00.2"
+    },
+    "030-project-and-residual": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-25T08:37:43+00:00",
+      "node": "M00.2"
     }
   },
   "topics": {
@@ -482,6 +502,12 @@
       "attempted": 3,
       "solved": 3,
       "clean_solved": 3,
+      "hints_used": 0
+    },
+    "M00.2": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
       "hints_used": 0
     }
   },
@@ -2859,9 +2885,25 @@
       "event": "answer_unlocked",
       "id": "025-gradient-descent-1d",
       "solved_first": true
+    },
+    {
+      "ts": "2026-08-25T08:34:10+00:00",
+      "event": "created",
+      "id": "029-dot-and-angle",
+      "node": "M00.2",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-25T08:37:43+00:00",
+      "event": "created",
+      "id": "030-project-and-residual",
+      "node": "M00.2",
+      "lang": "py",
+      "difficulty": "standard"
     }
   ],
-  "counter": 28,
+  "counter": 30,
   "plan": {
     "started": "2026-08-07T08:03:01+00:00",
     "hours_per_week": 10

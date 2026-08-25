@@ -1,0 +1,15 @@
+{
+  "id": "030-project-and-residual",
+  "title": "投影與殘差正交",
+  "lang": "py",
+  "mode": "function",
+  "entry": "project",
+  "node": "M00.2",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 13,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-25T08:37:43+00:00"
+}
