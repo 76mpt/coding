@@ -385,17 +385,20 @@
       "review_due": "2026-09-10T08:33:39+00:00"
     },
     "026-normalize-filename": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 18,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-08T08:31:55+00:00",
       "node": "1.5",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-08-26T10:08:42+00:00",
+      "review_due": "2026-08-29T10:08:42+00:00"
     },
     "028-find-image-names": {
       "status": "open",
@@ -418,7 +421,10 @@
       "ever_unlocked": false,
       "rep": 0,
       "first_seen": "2026-08-25T08:34:10+00:00",
-      "node": "M00.2"
+      "node": "M00.2",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
     },
     "030-project-and-residual": {
       "status": "open",
@@ -428,7 +434,40 @@
       "ever_unlocked": false,
       "rep": 0,
       "first_seen": "2026-08-25T08:37:43+00:00",
-      "node": "M00.2"
+      "node": "M00.2",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "031-box-areas": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-26T10:14:47+00:00",
+      "node": "1.6"
+    },
+    "032-label-maps": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-26T10:16:09+00:00",
+      "node": "1.6"
+    },
+    "033-label-stats": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-26T10:19:07+00:00",
+      "node": "1.6"
     }
   },
   "topics": {
@@ -457,9 +496,9 @@
       "hints_used": 0
     },
     "1.5": {
-      "attempted": 0,
-      "solved": 0,
-      "clean_solved": 0,
+      "attempted": 1,
+      "solved": 1,
+      "clean_solved": 1,
       "hints_used": 0
     },
     "2.1": {
@@ -505,6 +544,12 @@
       "hints_used": 0
     },
     "M00.2": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "1.6": {
       "attempted": 0,
       "solved": 0,
       "clean_solved": 0,
@@ -2901,9 +2946,175 @@
       "node": "M00.2",
       "lang": "py",
       "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-26T09:58:31+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 0,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T09:59:00+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 0,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T09:59:12+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 0,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T09:59:23+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 0,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T09:59:57+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 0,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:00:18+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 0,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:00:55+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 9,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:01:26+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 10,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:01:57+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 10,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:03:47+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 4,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:04:19+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 4,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:04:39+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 10,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:05:00+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 10,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:06:07+00:00",
+      "event": "solved",
+      "id": "026-normalize-filename",
+      "attempts": 14,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-26T10:06:12+00:00",
+      "event": "answer_unlocked",
+      "id": "026-normalize-filename",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-26T10:07:38+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 0,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:08:08+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 0,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:08:18+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 10,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-26T10:08:42+00:00",
+      "event": "solved",
+      "id": "026-normalize-filename",
+      "attempts": 18,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-08-26T10:14:27+00:00",
+      "event": "created",
+      "id": "031-box-areas",
+      "node": "1.6",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-26T10:14:47+00:00",
+      "event": "created",
+      "id": "031-box-areas",
+      "node": "1.6",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-26T10:16:09+00:00",
+      "event": "created",
+      "id": "032-label-maps",
+      "node": "1.6",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-26T10:19:07+00:00",
+      "event": "created",
+      "id": "033-label-stats",
+      "node": "1.6",
+      "lang": "py",
+      "difficulty": "standard"
     }
   ],
-  "counter": 30,
+  "counter": 33,
   "plan": {
     "started": "2026-08-07T08:03:01+00:00",
     "hours_per_week": 10

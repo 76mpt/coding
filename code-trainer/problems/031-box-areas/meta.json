@@ -1,0 +1,15 @@
+{
+  "id": "031-box-areas",
+  "title": "篩選偵測框的面積",
+  "lang": "py",
+  "mode": "function",
+  "entry": "box_areas",
+  "node": "1.6",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-26T10:14:47+00:00"
+}

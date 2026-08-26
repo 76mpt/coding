@@ -1,56 +1,56 @@
 {
   "title": "程式新手 → CV 研究者　按表操課日程",
-  "assumption": "每週約 10 小時（平日 5 天各 60–90 分鐘 + 週六 2–3 小時）。時數不同請看 SCHEDULE.md 的換算表。",
-  "hours_per_week": 10,
+  "assumption": "每週約 16 小時：平日 5 天各 150 分鐘 + 週六 210 分鐘，週日休息。時段內做滿為止，最少一題新題；提早做完就往下一題，不要空著。時數不同請看 SCHEDULE.md 的換算表。",
+  "hours_per_week": 16,
   "rhythm": [
     {
       "day": "週一",
       "slot": "程式軌新題",
-      "minutes": 75,
-      "detail": "sync → review → next → 解題"
+      "minutes": 150,
+      "detail": "sync → review → 新題；時段沒用完就接下一題"
     },
     {
       "day": "週二",
       "slot": "數學軌新題",
-      "minutes": 75,
-      "detail": "next --track math → 解題"
+      "minutes": 150,
+      "detail": "next --track math → 解題；時段沒用完就接下一題"
     },
     {
       "day": "週三",
       "slot": "程式軌新題",
-      "minutes": 75,
-      "detail": "解題 + 看標準解"
+      "minutes": 150,
+      "detail": "解題 + 看標準解；時段沒用完就接下一題"
     },
     {
       "day": "週四",
       "slot": "複習 + 課程",
-      "minutes": 75,
-      "detail": "review 到期題 → 課程影片 40 分鐘"
+      "minutes": 150,
+      "detail": "review 到期題 → 課程影片 → 有餘力再開一題新的"
     },
     {
       "day": "週五",
       "slot": "程式軌新題",
-      "minutes": 75,
+      "minutes": 150,
       "detail": "解題 + 請 AI review 你的 code"
     },
     {
       "day": "週六",
       "slot": "課程 + 數學軌",
-      "minutes": 150,
-      "detail": "課程 90 分鐘 → 數學軌一題"
+      "minutes": 210,
+      "detail": "課程 → 數學軌解題；週六時段最長，適合啃硬題"
     },
     {
       "day": "週日",
       "slot": "休息／補進度",
       "minutes": 0,
-      "detail": "落後就補；沒落後就真的休息，跑 status 看一週成果"
+      "detail": "休息／補進度。落後就補；沒落後就真的休息"
     }
   ],
   "phases": [
     {
       "id": "P0",
       "name": "起步：建立習慣，先解決最痛的兩塊",
-      "weeks": 4,
+      "weeks": 2,
       "code": [
         "1.1",
         "1.2",
@@ -117,7 +117,7 @@
     {
       "id": "P1",
       "name": "基本功完成",
-      "weeks": 8,
+      "weeks": 5,
       "code": [
         "1.5",
         "1.6",
@@ -178,7 +178,7 @@
     {
       "id": "P2",
       "name": "演算法主體 + 線代核心",
-      "weeks": 12,
+      "weeks": 10,
       "code": [
         "2.3",
         "2.4",
@@ -203,7 +203,7 @@
     {
       "id": "P3",
       "name": "C++ 上手 + 機率與最佳化",
-      "weeks": 12,
+      "weeks": 17,
       "code": [
         "2.10",
         "2.11",
@@ -230,7 +230,7 @@
     {
       "id": "P4",
       "name": "訊號、卷積、進入 3D 視覺",
-      "weeks": 12,
+      "weeks": 23,
       "code": [
         "3.4",
         "3.5",
@@ -257,7 +257,7 @@
     {
       "id": "P5",
       "name": "SLAM 核心：李群與 BA",
-      "weeks": 12,
+      "weeks": 20,
       "code": [
         "5.6",
         "5.7",
@@ -282,7 +282,7 @@
     {
       "id": "P6",
       "name": "研究就緒：工程實務 + 學習理論",
-      "weeks": 12,
+      "weeks": 14,
       "code": [
         "4.4",
         "4.5",
@@ -309,7 +309,7 @@
     {
       "id": "P7",
       "name": "依研究方向深入",
-      "weeks": 16,
+      "weeks": 22,
       "code": [
         "3.6",
         "3.7",
@@ -337,18 +337,23 @@
   "scaling": [
     {
       "hours": 6,
-      "factor": 1.7,
+      "factor": 2.67,
       "note": "平日 3 天 + 週六，約 3 題/週"
     },
     {
       "hours": 10,
-      "factor": 1.0,
-      "note": "基準：平日 5 天 + 週六，約 5 題/週"
+      "factor": 1.6,
+      "note": "平日 5 天 + 週六，約 5 題/週"
     },
     {
       "hours": 16,
-      "factor": 0.65,
-      "note": "平日 5 天各 2 小時 + 週末，約 8 題/週"
+      "factor": 1.0,
+      "note": "基準：平日 5 天各 2.5 小時 + 週六 3.5 小時"
+    },
+    {
+      "hours": 23,
+      "factor": 0.7,
+      "note": "不建議：瓶頸是消化，不是時間"
     }
   ]
 }
