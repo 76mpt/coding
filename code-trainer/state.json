@@ -210,19 +210,19 @@
     },
     "015-add-tag": {
       "status": "solved",
-      "attempts": 7,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.3",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-20T05:29:24+00:00",
-      "review_due": "2026-08-27T05:29:24+00:00"
+      "solved_at": "2026-08-27T06:34:27+00:00",
+      "review_due": "2026-09-12T06:34:27+00:00"
     },
     "016-stats-varargs": {
       "status": "solved",
@@ -258,19 +258,19 @@
     },
     "018-group-by-label": {
       "status": "solved",
-      "attempts": 1,
+      "attempts": 6,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.4",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-24T06:43:33+00:00",
-      "review_due": "2026-08-27T06:43:33+00:00"
+      "solved_at": "2026-08-27T08:36:19+00:00",
+      "review_due": "2026-09-03T08:36:19+00:00"
     },
     "019-dedupe-keep-order": {
       "status": "solved",
@@ -358,11 +358,11 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.4",
-      "solved_at": "2026-08-20T05:12:40+00:00",
-      "review_due": "2026-08-27T05:12:40+00:00",
+      "solved_at": "2026-08-27T06:53:06+00:00",
+      "review_due": "2026-09-12T06:53:06+00:00",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
@@ -414,17 +414,20 @@
       "solve_hints": 0
     },
     "029-dot-and-angle": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 5,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-25T08:34:10+00:00",
       "node": "M00.2",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-08-27T11:24:58+00:00",
+      "review_due": "2026-08-30T11:24:58+00:00"
     },
     "030-project-and-residual": {
       "status": "open",
@@ -447,7 +450,10 @@
       "ever_unlocked": false,
       "rep": 0,
       "first_seen": "2026-08-26T10:14:47+00:00",
-      "node": "1.6"
+      "node": "1.6",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
     },
     "032-label-maps": {
       "status": "open",
@@ -457,7 +463,10 @@
       "ever_unlocked": false,
       "rep": 0,
       "first_seen": "2026-08-26T10:16:09+00:00",
-      "node": "1.6"
+      "node": "1.6",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
     },
     "033-label-stats": {
       "status": "open",
@@ -467,7 +476,75 @@
       "ever_unlocked": false,
       "rep": 0,
       "first_seen": "2026-08-26T10:19:07+00:00",
-      "node": "1.6"
+      "node": "1.6",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "034-matmul-by-hand": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-27T08:47:06+00:00",
+      "node": "M00.3",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "035-det-and-area": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-27T08:48:26+00:00",
+      "node": "M00.3",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "036-parse-annotation": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-27T08:52:22+00:00",
+      "node": "1.7",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "037-load-annotations": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-27T08:55:09+00:00",
+      "node": "1.7",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "038-read-label-file": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-27T08:57:26+00:00",
+      "node": "1.7",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
     }
   },
   "topics": {
@@ -544,12 +621,24 @@
       "hints_used": 0
     },
     "M00.2": {
+      "attempted": 1,
+      "solved": 1,
+      "clean_solved": 1,
+      "hints_used": 0
+    },
+    "1.6": {
       "attempted": 0,
       "solved": 0,
       "clean_solved": 0,
       "hints_used": 0
     },
-    "1.6": {
+    "M00.3": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "1.7": {
       "attempted": 0,
       "solved": 0,
       "clean_solved": 0,
@@ -3112,9 +3201,230 @@
       "node": "1.6",
       "lang": "py",
       "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-27T06:32:50+00:00",
+      "event": "redo",
+      "id": "015-add-tag",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-27T06:34:27+00:00",
+      "event": "solved",
+      "id": "015-add-tag",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-27T06:34:33+00:00",
+      "event": "answer_unlocked",
+      "id": "015-add-tag",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-27T06:35:32+00:00",
+      "event": "redo",
+      "id": "024-chain-derivative",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-27T06:50:56+00:00",
+      "event": "test_fail",
+      "id": "024-chain-derivative",
+      "passed": 1,
+      "total": 7
+    },
+    {
+      "ts": "2026-08-27T06:51:08+00:00",
+      "event": "test_fail",
+      "id": "024-chain-derivative",
+      "passed": 1,
+      "total": 7
+    },
+    {
+      "ts": "2026-08-27T06:51:27+00:00",
+      "event": "test_fail",
+      "id": "024-chain-derivative",
+      "passed": 1,
+      "total": 7
+    },
+    {
+      "ts": "2026-08-27T06:52:21+00:00",
+      "event": "test_fail",
+      "id": "024-chain-derivative",
+      "passed": 1,
+      "total": 7
+    },
+    {
+      "ts": "2026-08-27T06:53:06+00:00",
+      "event": "solved",
+      "id": "024-chain-derivative",
+      "attempts": 5,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-27T06:53:12+00:00",
+      "event": "answer_unlocked",
+      "id": "024-chain-derivative",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-27T08:23:01+00:00",
+      "event": "redo",
+      "id": "018-group-by-label",
+      "rep": 1
+    },
+    {
+      "ts": "2026-08-27T08:30:05+00:00",
+      "event": "test_fail",
+      "id": "018-group-by-label",
+      "passed": 1,
+      "total": 6
+    },
+    {
+      "ts": "2026-08-27T08:31:19+00:00",
+      "event": "test_fail",
+      "id": "018-group-by-label",
+      "passed": 1,
+      "total": 6
+    },
+    {
+      "ts": "2026-08-27T08:34:23+00:00",
+      "event": "test_fail",
+      "id": "018-group-by-label",
+      "passed": 1,
+      "total": 6
+    },
+    {
+      "ts": "2026-08-27T08:35:03+00:00",
+      "event": "test_fail",
+      "id": "018-group-by-label",
+      "passed": 1,
+      "total": 6
+    },
+    {
+      "ts": "2026-08-27T08:35:20+00:00",
+      "event": "test_fail",
+      "id": "018-group-by-label",
+      "passed": 1,
+      "total": 6
+    },
+    {
+      "ts": "2026-08-27T08:36:19+00:00",
+      "event": "solved",
+      "id": "018-group-by-label",
+      "attempts": 6,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-27T08:36:24+00:00",
+      "event": "answer_unlocked",
+      "id": "018-group-by-label",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-27T08:47:06+00:00",
+      "event": "created",
+      "id": "034-matmul-by-hand",
+      "node": "M00.3",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-27T08:48:26+00:00",
+      "event": "created",
+      "id": "035-det-and-area",
+      "node": "M00.3",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-27T08:52:22+00:00",
+      "event": "created",
+      "id": "036-parse-annotation",
+      "node": "1.7",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-27T08:54:05+00:00",
+      "event": "created",
+      "id": "037-load-annotations",
+      "node": "1.7",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-27T08:55:09+00:00",
+      "event": "created",
+      "id": "037-load-annotations",
+      "node": "1.7",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-27T08:56:57+00:00",
+      "event": "created",
+      "id": "038-read-label-file",
+      "node": "1.7",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-27T08:57:26+00:00",
+      "event": "created",
+      "id": "038-read-label-file",
+      "node": "1.7",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-27T11:21:09+00:00",
+      "event": "test_fail",
+      "id": "029-dot-and-angle",
+      "passed": 3,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-27T11:22:11+00:00",
+      "event": "test_fail",
+      "id": "029-dot-and-angle",
+      "passed": 3,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-27T11:22:40+00:00",
+      "event": "test_fail",
+      "id": "029-dot-and-angle",
+      "passed": 3,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-27T11:23:03+00:00",
+      "event": "test_fail",
+      "id": "029-dot-and-angle",
+      "passed": 5,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-27T11:24:58+00:00",
+      "event": "solved",
+      "id": "029-dot-and-angle",
+      "attempts": 5,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-27T11:25:02+00:00",
+      "event": "answer_unlocked",
+      "id": "029-dot-and-angle",
+      "solved_first": true
     }
   ],
-  "counter": 33,
+  "counter": 38,
   "plan": {
     "started": "2026-08-07T08:03:01+00:00",
     "hours_per_week": 10
@@ -3128,6 +3438,7 @@
     "hy-ce": "2026-08-10T10:06:10+00:00",
     "3b1b-e": "2026-08-10T10:06:17+00:00",
     "junyi-explog": "2026-08-11T07:05:16+00:00",
-    "junyi-diff": "2026-08-11T07:05:16+00:00"
+    "junyi-diff": "2026-08-11T07:05:16+00:00",
+    "3b1b-la6": "2026-08-27T08:22:37+00:00"
   }
 }

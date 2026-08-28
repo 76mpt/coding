@@ -1,0 +1,15 @@
+{
+  "id": "037-load-annotations",
+  "title": "壞行跳過，好行保留",
+  "lang": "py",
+  "mode": "function",
+  "entry": "load_annotations",
+  "node": "1.7",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-27T08:55:09+00:00"
+}

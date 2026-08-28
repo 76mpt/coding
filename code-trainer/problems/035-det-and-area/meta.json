@@ -1,0 +1,15 @@
+{
+  "id": "035-det-and-area",
+  "title": "行列式與面積縮放",
+  "lang": "py",
+  "mode": "function",
+  "entry": "det_and_area",
+  "node": "M00.3",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-27T08:48:26+00:00"
+}
