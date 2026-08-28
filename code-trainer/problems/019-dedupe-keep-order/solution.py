@@ -1,14 +1,4 @@
 def dedupe_keep_order(items: list) -> tuple[list, int]:
     """回傳 (去重後保留順序的 list, 被移除的數量)。"""
-    result = []
-    seen = set()
-    count = 0
-    for item in items:
-        if item not in seen:
-            seen.add(item)
-            result.append(item)
-        else:
-            count += 1
-    return result, count
-# result = list(dict.formkeys(items))
-# return result, len(items) - len(result)
+    kept = list(dict.fromkeys(items))
+    return kept, len(items) - len(kept)
