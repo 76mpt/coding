@@ -1,0 +1,15 @@
+{
+  "id": "039-bounding-box-class",
+  "title": "BoundingBox 類別",
+  "lang": "py",
+  "mode": "function",
+  "entry": "make_boxes",
+  "node": "1.8",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 12,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-28T11:12:04+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "042-complexity-showdown",
+  "title": "同一件事的四種寫法",
+  "lang": "py",
+  "mode": "function",
+  "entry": "common_labels",
+  "node": "1.9",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-28T11:16:36+00:00"
+}

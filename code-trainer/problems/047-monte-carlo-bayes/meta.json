@@ -1,0 +1,15 @@
+{
+  "id": "047-monte-carlo-bayes",
+  "title": "用模擬驗證貝氏",
+  "lang": "py",
+  "mode": "function",
+  "entry": "simulate_posterior",
+  "node": "M00.6",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-29T07:03:20+00:00"
+}

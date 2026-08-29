@@ -1,0 +1,15 @@
+{
+  "id": "040-class-vs-instance-attr",
+  "title": "類別屬性與實例屬性",
+  "lang": "py",
+  "mode": "function",
+  "entry": "build_datasets",
+  "node": "1.8",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 8,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-28T11:13:37+00:00"
+}

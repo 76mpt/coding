@@ -389,19 +389,19 @@
     },
     "026-normalize-filename": {
       "status": "solved",
-      "attempts": 18,
+      "attempts": 6,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-08-08T08:31:55+00:00",
       "node": "1.5",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-26T10:08:42+00:00",
-      "review_due": "2026-08-29T10:08:42+00:00"
+      "solved_at": "2026-08-29T09:21:17+00:00",
+      "review_due": "2026-09-05T09:21:17+00:00"
     },
     "028-find-image-names": {
       "status": "solved",
@@ -453,7 +453,7 @@
     },
     "031-box-areas": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 3,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
@@ -464,8 +464,8 @@
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-28T10:52:53+00:00",
-      "review_due": "2026-08-31T10:52:53+00:00"
+      "solved_at": "2026-08-29T09:21:45+00:00",
+      "review_due": "2026-09-01T09:21:45+00:00"
     },
     "032-label-maps": {
       "status": "solved",
@@ -501,7 +501,7 @@
     },
     "034-matmul-by-hand": {
       "status": "solved",
-      "attempts": 1,
+      "attempts": 2,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
@@ -512,8 +512,8 @@
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-28T10:29:47+00:00",
-      "review_due": "2026-08-31T10:29:47+00:00"
+      "solved_at": "2026-08-29T09:21:45+00:00",
+      "review_due": "2026-09-01T09:21:45+00:00"
     },
     "035-det-and-area": {
       "status": "solved",
@@ -566,6 +566,171 @@
       "rep": 0,
       "first_seen": "2026-08-27T08:57:26+00:00",
       "node": "1.7",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "039-bounding-box-class": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-28T11:12:04+00:00",
+      "node": "1.8",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "040-class-vs-instance-attr": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-28T11:13:37+00:00",
+      "node": "1.8",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "041-detection-dunders": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-28T11:15:18+00:00",
+      "node": "1.8",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "042-complexity-showdown": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-28T11:16:36+00:00",
+      "node": "1.9",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "043-hidden-costs": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-28T11:18:23+00:00",
+      "node": "1.9",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "044-rotate-points": {
+      "status": "solved",
+      "attempts": 1,
+      "hints_revealed": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
+      "first_seen": "2026-08-29T06:58:32+00:00",
+      "node": "M00.5",
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-08-29T09:17:21+00:00",
+      "review_due": "2026-09-01T09:17:21+00:00"
+    },
+    "045-compose-rotations": {
+      "status": "solved",
+      "attempts": 1,
+      "hints_revealed": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
+      "first_seen": "2026-08-29T07:00:01+00:00",
+      "node": "M00.5",
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-08-29T09:32:45+00:00",
+      "review_due": "2026-09-01T09:32:45+00:00"
+    },
+    "046-bayes-posterior": {
+      "status": "solved",
+      "attempts": 1,
+      "hints_revealed": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
+      "first_seen": "2026-08-29T07:01:24+00:00",
+      "node": "M00.6",
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-08-29T09:41:12+00:00",
+      "review_due": "2026-09-01T09:41:12+00:00"
+    },
+    "047-monte-carlo-bayes": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-29T07:03:20+00:00",
+      "node": "M00.6",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "048-variance-two-ways": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-29T07:05:03+00:00",
+      "node": "M00.6",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "049-geometric-series": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-29T07:06:31+00:00",
+      "node": "M00.7",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "050-harmonic-and-logn": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-08-29T07:08:15+00:00",
+      "node": "M00.7",
       "ever_solved": false,
       "ever_clean": false,
       "solve_hints": 0
@@ -663,6 +828,36 @@
       "hints_used": 0
     },
     "1.7": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "1.8": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "1.9": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
+    },
+    "M00.5": {
+      "attempted": 2,
+      "solved": 2,
+      "clean_solved": 2,
+      "hints_used": 0
+    },
+    "M00.6": {
+      "attempted": 1,
+      "solved": 1,
+      "clean_solved": 1,
+      "hints_used": 0
+    },
+    "M00.7": {
       "attempted": 0,
       "solved": 0,
       "clean_solved": 0,
@@ -3806,9 +4001,235 @@
       "event": "answer_unlocked",
       "id": "033-label-stats",
       "solved_first": true
+    },
+    {
+      "ts": "2026-08-28T11:12:04+00:00",
+      "event": "created",
+      "id": "039-bounding-box-class",
+      "node": "1.8",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-28T11:13:37+00:00",
+      "event": "created",
+      "id": "040-class-vs-instance-attr",
+      "node": "1.8",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-28T11:15:18+00:00",
+      "event": "created",
+      "id": "041-detection-dunders",
+      "node": "1.8",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-28T11:16:36+00:00",
+      "event": "created",
+      "id": "042-complexity-showdown",
+      "node": "1.9",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-28T11:18:01+00:00",
+      "event": "created",
+      "id": "043-hidden-costs",
+      "node": "1.9",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-28T11:18:23+00:00",
+      "event": "created",
+      "id": "043-hidden-costs",
+      "node": "1.9",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-29T06:57:17+00:00",
+      "event": "redo",
+      "id": "026-normalize-filename",
+      "rep": 1
+    },
+    {
+      "ts": "2026-08-29T06:58:32+00:00",
+      "event": "created",
+      "id": "044-rotate-points",
+      "node": "M00.5",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-29T07:00:01+00:00",
+      "event": "created",
+      "id": "045-compose-rotations",
+      "node": "M00.5",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-29T07:01:24+00:00",
+      "event": "created",
+      "id": "046-bayes-posterior",
+      "node": "M00.6",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-29T07:03:00+00:00",
+      "event": "created",
+      "id": "047-monte-carlo-bayes",
+      "node": "M00.6",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-29T07:03:20+00:00",
+      "event": "created",
+      "id": "047-monte-carlo-bayes",
+      "node": "M00.6",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-29T07:05:03+00:00",
+      "event": "created",
+      "id": "048-variance-two-ways",
+      "node": "M00.6",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-29T07:06:31+00:00",
+      "event": "created",
+      "id": "049-geometric-series",
+      "node": "M00.7",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-08-29T07:08:15+00:00",
+      "event": "created",
+      "id": "050-harmonic-and-logn",
+      "node": "M00.7",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-08-29T07:19:28+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 10,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-29T07:20:08+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 10,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-29T07:20:17+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 9,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-29T07:21:24+00:00",
+      "event": "test_fail",
+      "id": "026-normalize-filename",
+      "passed": 10,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-29T07:21:37+00:00",
+      "event": "solved",
+      "id": "026-normalize-filename",
+      "attempts": 5,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-29T07:21:41+00:00",
+      "event": "answer_unlocked",
+      "id": "026-normalize-filename",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-29T09:17:21+00:00",
+      "event": "solved",
+      "id": "044-rotate-points",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-29T09:17:25+00:00",
+      "event": "answer_unlocked",
+      "id": "044-rotate-points",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-29T09:21:17+00:00",
+      "event": "solved",
+      "id": "026-normalize-filename",
+      "attempts": 6,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-08-29T09:21:45+00:00",
+      "event": "solved",
+      "id": "034-matmul-by-hand",
+      "attempts": 2,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-08-29T09:21:45+00:00",
+      "event": "solved",
+      "id": "031-box-areas",
+      "attempts": 3,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-08-29T09:32:45+00:00",
+      "event": "solved",
+      "id": "045-compose-rotations",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-29T09:32:48+00:00",
+      "event": "answer_unlocked",
+      "id": "045-compose-rotations",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-29T09:41:12+00:00",
+      "event": "solved",
+      "id": "046-bayes-posterior",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-29T09:41:15+00:00",
+      "event": "answer_unlocked",
+      "id": "046-bayes-posterior",
+      "solved_first": true
     }
   ],
-  "counter": 38,
+  "counter": 50,
   "plan": {
     "started": "2026-08-07T08:03:01+00:00",
     "hours_per_week": 10
@@ -3823,6 +4244,8 @@
     "3b1b-e": "2026-08-10T10:06:17+00:00",
     "junyi-explog": "2026-08-11T07:05:16+00:00",
     "junyi-diff": "2026-08-11T07:05:16+00:00",
-    "3b1b-la6": "2026-08-27T08:22:37+00:00"
+    "3b1b-la6": "2026-08-27T08:22:37+00:00",
+    "3b1b-la9": "2026-08-29T08:47:15+00:00",
+    "3b1b-la13": "2026-08-29T08:47:15+00:00"
   }
 }

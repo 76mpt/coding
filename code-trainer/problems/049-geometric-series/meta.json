@@ -1,0 +1,15 @@
+{
+  "id": "049-geometric-series",
+  "title": "等比級數與收斂條件",
+  "lang": "py",
+  "mode": "function",
+  "entry": "geometric",
+  "node": "M00.7",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-29T07:06:31+00:00"
+}

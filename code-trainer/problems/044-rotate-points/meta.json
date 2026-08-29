@@ -1,0 +1,15 @@
+{
+  "id": "044-rotate-points",
+  "title": "手寫旋轉矩陣",
+  "lang": "py",
+  "mode": "function",
+  "entry": "rotate_points",
+  "node": "M00.5",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-29T06:58:32+00:00"
+}

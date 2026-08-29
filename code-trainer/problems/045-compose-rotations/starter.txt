@@ -1,0 +1,11 @@
+import math
+
+
+def rotation_matrix(theta: float) -> list:
+    """回傳 2x2 旋轉矩陣 [[cos, -sin], [sin, cos]]。"""
+    # TODO
+
+
+def compose_rotations(alpha: float, beta: float) -> tuple:
+    """回傳 (R(a)@R(b), R(a+b), e^{ia}*e^{ib}, e^{i(a+b)})。"""
+    # TODO: 矩陣乘法要自己算（034 寫過），複數用 complex()

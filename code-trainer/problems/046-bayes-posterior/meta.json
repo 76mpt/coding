@@ -1,0 +1,15 @@
+{
+  "id": "046-bayes-posterior",
+  "title": "貝氏定理與偽陽性",
+  "lang": "py",
+  "mode": "function",
+  "entry": "posterior",
+  "node": "M00.6",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-29T07:01:24+00:00"
+}

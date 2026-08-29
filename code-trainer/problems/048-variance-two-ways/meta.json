@@ -1,0 +1,15 @@
+{
+  "id": "048-variance-two-ways",
+  "title": "變異數的兩種公式",
+  "lang": "py",
+  "mode": "function",
+  "entry": "variance_two_ways",
+  "node": "M00.6",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-29T07:05:03+00:00"
+}

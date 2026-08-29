@@ -1,0 +1,15 @@
+{
+  "id": "041-detection-dunders",
+  "title": "讓物件能比較、排序、去重",
+  "lang": "py",
+  "mode": "function",
+  "entry": "rank_detections",
+  "node": "1.8",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "source_style": "leetcode",
+  "created": "2026-08-28T11:15:18+00:00"
+}
