@@ -245,19 +245,19 @@
     },
     "017-merge-inventory": {
       "status": "solved",
-      "attempts": 3,
+      "attempts": 2,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.4",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-23T16:47:11+00:00",
-      "review_due": "2026-08-30T16:47:11+00:00"
+      "solved_at": "2026-08-30T05:38:06+00:00",
+      "review_due": "2026-09-15T05:38:06+00:00"
     },
     "018-group-by-label": {
       "status": "solved",
@@ -425,15 +425,15 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-08-25T08:34:10+00:00",
       "node": "M00.2",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-27T11:24:58+00:00",
-      "review_due": "2026-08-30T11:24:58+00:00"
+      "solved_at": "2026-08-30T05:30:15+00:00",
+      "review_due": "2026-09-06T05:30:15+00:00"
     },
     "030-project-and-residual": {
       "status": "solved",
@@ -4226,6 +4226,81 @@
       "ts": "2026-08-29T09:41:15+00:00",
       "event": "answer_unlocked",
       "id": "046-bayes-posterior",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-30T05:14:05+00:00",
+      "event": "redo",
+      "id": "029-dot-and-angle",
+      "rep": 1
+    },
+    {
+      "ts": "2026-08-30T05:27:06+00:00",
+      "event": "test_fail",
+      "id": "029-dot-and-angle",
+      "passed": 3,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-30T05:27:20+00:00",
+      "event": "test_fail",
+      "id": "029-dot-and-angle",
+      "passed": 3,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-30T05:28:07+00:00",
+      "event": "test_fail",
+      "id": "029-dot-and-angle",
+      "passed": 3,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-30T05:29:27+00:00",
+      "event": "test_fail",
+      "id": "029-dot-and-angle",
+      "passed": 3,
+      "total": 11
+    },
+    {
+      "ts": "2026-08-30T05:30:15+00:00",
+      "event": "solved",
+      "id": "029-dot-and-angle",
+      "attempts": 5,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-30T05:30:19+00:00",
+      "event": "answer_unlocked",
+      "id": "029-dot-and-angle",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-08-30T05:31:26+00:00",
+      "event": "redo",
+      "id": "017-merge-inventory",
+      "rep": 2
+    },
+    {
+      "ts": "2026-08-30T05:35:22+00:00",
+      "event": "test_fail",
+      "id": "017-merge-inventory",
+      "passed": 6,
+      "total": 9
+    },
+    {
+      "ts": "2026-08-30T05:38:06+00:00",
+      "event": "solved",
+      "id": "017-merge-inventory",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-08-30T05:38:12+00:00",
+      "event": "answer_unlocked",
+      "id": "017-merge-inventory",
       "solved_first": true
     }
   ],

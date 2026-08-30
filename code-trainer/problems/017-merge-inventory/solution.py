@@ -1,7 +1,7 @@
 def merge_inventory(a: dict, b: dict) -> dict:
     """合併兩份庫存，數量相加，移除 <= 0 的項目。不可修改 a 和 b。"""
-    merged = dict(a)
+    result = a.copy()
     for key, value in b.items():
-        merged[key] = merged.get(key, 0) + value
-    merged = {k: v for k, v in merged.items() if v != 0}
-    return merged
+        result[key] = result.get(key, 0) + value
+    result = {key: value for key, value in result.items() if value != 0}
+    return result
