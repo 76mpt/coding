@@ -4,11 +4,11 @@ def project(a: list[float], b: list[float]) -> tuple[list[float], list[float]]:
     #       2) 算係數 (a·b)/(b·b)  3) 乘回 b 得到 p  4) r = a - p
     if len(a) != len(b):
         raise ValueError
-    a_dot = sum(x * y for x, y in zip(a, b))
-    b_dot = sum(y * y for y in b)
-    if b_dot == 0:
+    dot_ab = sum(x * y for x, y in zip(a, b))
+    dot_bb = sum(y * y for y in b)
+    if dot_bb == 0.0:
         raise ValueError
-    coef = (a_dot / b_dot)
-    projected = [coef * y for y in b]
+    coef = dot_ab / dot_bb
+    projected = [coef * y for  y in b]
     remain = [x - y for x, y in zip(a, projected)]
     return projected, remain

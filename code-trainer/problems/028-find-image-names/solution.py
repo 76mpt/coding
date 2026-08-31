@@ -12,3 +12,5 @@ def find_images(text: str) -> list[str]:
                 seen.add(name.lower())
                 result.append(name)
     return result
+        
+

@@ -892,13 +892,20 @@ def weak_spots(st: dict, cur: dict) -> list[str]:
 
 
 def due_reviews(st: dict) -> list[tuple[str, int]]:
+    """今天（含）之前到期的複習。
+
+    比的是**日期**不是時間戳——排程只精確到天，
+    用時間戳的話「今天稍晚才到點」的題目早上不會出現，
+    你就看不到當天完整的份量。
+    """
+    today = now().date()
     out = []
     for pid, ps in st["problems"].items():
         if ps.get("status") != "solved" or not ps.get("review_due"):
             continue
         if not (PROBLEMS / pid).is_dir():
             continue
-        delta = (now() - parse_iso(ps["review_due"])).days
+        delta = (today - parse_iso(ps["review_due"]).date()).days
         if delta >= 0:
             out.append((pid, delta))
     return sorted(out, key=lambda x: -x[1])
@@ -917,12 +924,17 @@ def cmd_review(args):
             pid, when = upcoming[0]
             print(f"下一個：{pid} · {parse_iso(when).date()}")
         return
-    print(hr(f"到期複習 {len(due)} 題"))
+    overdue = sum(1 for _, d in due if d > 0)
+    head = f"今天要複習 {len(due)} 題"
+    if overdue:
+        head += f"（其中 {overdue} 題逾期）"
+    print(hr(head))
     for pid, days in due:
         meta = load_meta(problem_dir(pid))
         ps = st["problems"][pid]
+        when = "今天到期" if days == 0 else f"逾期 {days} 天"
         print(f"  {pid} · {meta['title']}")
-        print(f"      節點 {meta['node']}　第 {ps.get('rep', 0)} 輪　逾期 {days} 天")
+        print(f"      節點 {meta['node']}　第 {ps.get('rep', 0)} 輪　{when}")
     print(f"\n開始：python trainer.py redo {due[0][0]}")
 
 
@@ -1423,9 +1435,10 @@ def cmd_today(args):
     due = due_reviews(st)
     if due:
         print(hr(f"① 先複習 {len(due)} 題（優先於新題）"))
-        for pid, days in due[:3]:
+        for pid, days in due:
             meta = load_meta(problem_dir(pid))
-            print(f"  python trainer.py redo {pid}    ← {meta['title']}（逾期 {days} 天）")
+            when = "今天" if days == 0 else f"逾期 {days} 天"
+            print(f"  python trainer.py redo {pid}    ← {meta['title']}（{when}）")
         print()
 
     if rhythm["minutes"] == 0:
