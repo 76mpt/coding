@@ -6,5 +6,4 @@ def rotate_points(points: list, theta: float) -> list:
     # TODO: cos/sin 只要算一次，然後對每個點套用旋轉公式
     c = math.cos(theta)
     s = math.sin(theta)
-    answer = [(x * c - y * s, x * s + y * c) for x, y in points]
-    return answer
+    return [((c * x) - (s * y), (s * x) + (c * y)) for x, y in points]
