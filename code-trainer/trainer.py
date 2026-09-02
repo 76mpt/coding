@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import collections
 import hashlib
 import json
 import os
@@ -391,6 +392,8 @@ def create_problem(spec: dict, quiet: bool = False) -> str:
         "hint_count": len(spec["hints"]),
         "test_count": len(spec["tests"]),
         "timeout": spec.get("timeout", DEFAULT_TIMEOUT),
+        "est_minutes": spec.get("est_minutes")
+                       or node_minutes(spec["node"], spec.get("difficulty", "standard")),
         "source_style": spec.get("source_style", "leetcode"),
         "created": iso(now()),
     }
@@ -403,6 +406,7 @@ def create_problem(spec: dict, quiet: bool = False) -> str:
         "",
         f"- 階段：{node.get('stage_name', '?')} / {spec['node']} {node.get('name', '')}",
         f"- 語言：{'Python' if lang == 'py' else 'C++'}　難度：{meta['difficulty']}"
+        f"　估時：{meta['est_minutes']} 分"
         f"　互動方式：{'實作函式' if mode == 'function' else '標準輸入 / 標準輸出'}",
     ]
     if mode == "function":
@@ -484,13 +488,56 @@ def run_py_function(d: Path, meta: dict, tests: list, only: int | None):
         return json.loads(opath.read_text(encoding="utf-8")), None
 
 
+GPP_HINTS = (
+    r"C:\Users\{user}\AppData\Local\Microsoft\WinGet\Packages"
+    r"\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe",
+    r"C:\msys64\ucrt64\bin\g++.exe",
+    r"C:\msys64\mingw64\bin\g++.exe",
+    r"C:\mingw64\bin\g++.exe",
+    r"C:\MinGW\bin\g++.exe",
+)
+
+
+def cpp_compiler(quiet: bool = False) -> str | None:
+    """找 g++。順序：環境變數 → config.json → PATH → 常見安裝位置。
+
+    winget 裝的 WinLibs 不會把 g++ 放進 PATH（它只建了幾個 alias），
+    所以這裡要能自己找到，不然使用者得重開終端才能編譯 C++ 題。
+    """
+    env = os.environ.get("TRAINER_GPP")
+    if env and Path(env).exists():
+        return env
+
+    cfg = load_config()
+    saved = cfg.get("gpp")
+    if saved and Path(saved).exists():
+        return saved
+
+    found = shutil.which("g++")
+    if not found:
+        user = os.environ.get("USERNAME", "")
+        for hint in GPP_HINTS:
+            cand = Path(hint.replace("{user}", user))
+            if cand.exists():
+                found = str(cand)
+                break
+
+    if found:
+        cfg["gpp"] = found
+        save_config(cfg)
+        if not quiet:
+            print(f"ℹ 找到 g++：{found}\n  （記在 config.json，要換用 "
+                  f"`python trainer.py doctor --pick-gpp <路徑>`）\n")
+    return found
+
+
 def compile_cpp(d: Path) -> tuple[Path | None, str]:
     srcs = sorted(p for p in d.glob("*.cpp"))
     if not srcs:
         return None, "找不到 .cpp 檔"
-    gpp = shutil.which("g++")
+    gpp = cpp_compiler()
     if not gpp:
-        return None, "找不到 g++（請安裝 MSYS2 / MinGW 並加入 PATH）"
+        return None, "找不到 g++（請安裝 MSYS2 / MinGW，或用 doctor --pick-gpp 指定路徑）"
     key = hashlib.sha1(
         ("|".join(f"{p.name}:{p.stat().st_mtime_ns}" for p in srcs)).encode()
     ).hexdigest()[:12]
@@ -762,6 +809,8 @@ def cmd_open(args):
     print(f"狀態 {ps['status']}　嘗試 {ps['attempts']} 次　"
           f"提示 {ps['hints_revealed']}/{meta['hint_count']}　"
           f"解答 {'已解鎖' if ps['answer_unlocked'] else '未解鎖'}")
+    print(f"估時 {est_minutes(meta['id'])} 分"
+          f"　（差太多就改：python trainer.py est {meta['id'][:3]} <分鐘>）")
     print(f"作答檔：{(d / LANG_FILE[meta['lang']]).as_posix()}")
 
 
@@ -1099,6 +1148,14 @@ def cmd_curriculum(args):
 
 
 def cmd_doctor(args):
+    if getattr(args, "pick_gpp", None):
+        exe = str(Path(args.pick_gpp).resolve())
+        if not Path(exe).exists():
+            die(f"找不到 {exe}")
+        cfg = load_config()
+        cfg["gpp"] = exe
+        save_config(cfg)
+        print(f"✓ 已指定 g++：{exe}")
     if args.pick:
         exe = str(Path(args.pick).resolve())
         if not Path(exe).exists():
@@ -1127,13 +1184,15 @@ def cmd_doctor(args):
         ok = can_import(exe, mod)
         print(f"  {'✓' if ok else '–'} {mod:<8}{'可用' if ok else '未安裝（' + note + '）'}")
 
-    gpp = shutil.which("g++")
+    gpp = cpp_compiler(quiet=True)
     if gpp:
         v = subprocess.run([gpp, "--version"], capture_output=True, text=True,
                            encoding="utf-8", errors="replace").stdout.splitlines()[0]
         print(f"  ✓ g++     {v}")
     else:
-        print("  ✗ g++     找不到（C++ 題目無法編譯，請安裝 MSYS2/MinGW 並加入 PATH）")
+        print("  ✗ g++     找不到（C++ 題目無法編譯）")
+        print("            winget install BrechtSanders.WinLibs.POSIX.UCRT --source winget")
+        print("            或 python trainer.py doctor --pick-gpp <g++ 的完整路徑>")
 
     print()
     print(f"題庫          {len(list(PROBLEMS.glob('*/meta.json')))} 題")
@@ -1337,6 +1396,271 @@ def cmd_course(args):
     if undefined and args.all:
         print(f"（{' '.join(undefined)} 還沒定義課程清單，走到那時再補）")
     print("勾選：python trainer.py course --done 3b1b-la1 [更多 id]")
+
+
+# 各階段每題的估時（小時）。依實際難度分層，S1/M00 用你的實測校準過。
+# 還沒出題的節點只能用表估；已出的題各自帶 est_minutes（見 meta.json）
+DEFAULT_MINUTES = {
+    "1":   {"warmup": 20, "standard": 30, "hard": 45},
+    "2":   {"warmup": 40, "standard": 60, "hard": 90},
+    "3":   {"warmup": 50, "standard": 75, "hard": 110},
+    "4":   {"warmup": 40, "standard": 60, "hard": 90},
+    "5":   {"warmup": 50, "standard": 75, "hard": 110},
+    "M00": {"warmup": 25, "standard": 45, "hard": 70},
+    "M0":  {"warmup": 45, "standard": 75, "hard": 110},
+    "M1":  {"warmup": 70, "standard": 110, "hard": 160},
+    "M2":  {"warmup": 90, "standard": 140, "hard": 200},
+    "M3":  {"warmup": 60, "standard": 100, "hard": 150},
+    "M4":  {"warmup": 60, "standard": 100, "hard": 150},
+    "M5":  {"warmup": 90, "standard": 150, "hard": 220},
+}
+REVIEW_OVERHEAD = 1.2   # 每題一生 6 次複習，總成本約為初次的 1.2 倍
+REVIEW_MINUTES = 8      # 一次複習抓幾分鐘
+
+
+def node_bucket(nid: str) -> str:
+    """1.8 → "1"；M00.7 → "M00"；M2.3 → "M2"。"""
+    head = nid.split(".")[0]
+    return head if head in DEFAULT_MINUTES else "1"
+
+
+def node_minutes(nid: str, difficulty: str = "standard") -> int:
+    """該節點還沒出的題，大概要多久。"""
+    return DEFAULT_MINUTES.get(node_bucket(nid), DEFAULT_MINUTES["1"]).get(difficulty, 30)
+
+
+def est_minutes(pid: str) -> int:
+    """這一題的估時。題目自己標的優先，沒標才回頭用節點的表。"""
+    d = PROBLEMS / pid
+    if not (d / "meta.json").exists():
+        return 30
+    m = load_meta(d)
+    v = m.get("est_minutes")
+    if isinstance(v, (int, float)) and v > 0:
+        return int(v)
+    return node_minutes(m["node"], m.get("difficulty", "standard"))
+
+
+def cmd_est(args):
+    """看／改每題的估時。做完覺得不準就自己調，pace 立刻跟著變。"""
+    st = load_state()
+    if args.id and args.minutes is not None:
+        d = problem_dir(args.id)
+        pid = d.name
+        m = load_meta(d)
+        before = m.get("est_minutes", node_minutes(m["node"], m.get("difficulty", "standard")))
+        m["est_minutes"] = int(args.minutes)
+        (d / "meta.json").write_text(
+            json.dumps(m, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"✓ {pid}　{before} 分 → {args.minutes} 分")
+        return
+    if args.id:
+        pid = problem_dir(args.id).name
+        print(f"{pid}　{est_minutes(pid)} 分")
+        return
+
+    rows = []
+    for d in sorted(PROBLEMS.glob("*")):
+        if not (d / "meta.json").exists():
+            continue
+        m = load_meta(d)
+        solved = st["problems"].get(d.name, {}).get("status") == "solved"
+        if args.todo and solved:
+            continue
+        rows.append((m["node"], d.name, m["difficulty"], est_minutes(d.name), solved))
+    rows.sort(key=lambda r: r[1])
+    total = sum(r[3] for r in rows)
+    print(hr(f"估時　{len(rows)} 題　共 {total / 60:.1f} 小時"))
+    for nid, pid, diff, mins, solved in rows:
+        print(f"  {'✓' if solved else ' '} {pid:<34}{nid:<7}{diff:<9}{mins:>4} 分")
+    print()
+    print(f"  改一題：python trainer.py est {rows[0][1][:3] if rows else '041'} 50")
+
+
+def _track_queue(st, cur, node_ids):
+    """該軌道還沒做的題，依節點順序。現成的給 id，不夠的給待出題佔位。"""
+    unsolved = {}
+    for d in sorted(PROBLEMS.glob("*")):
+        if not (d / "meta.json").exists():
+            continue
+        ps = st["problems"].get(d.name, {})
+        if ps.get("status") != "solved":
+            unsolved.setdefault(load_meta(d)["node"], []).append(d.name)
+    q = []
+    for nid in node_ids:
+        n = find_node(cur, nid)
+        if not n:
+            continue
+        need = n.get("target", 3) - min(topic_stats(st, nid)["solved"], n.get("target", 3))
+        ready = unsolved.get(nid, [])
+        for i in range(need):
+            pid = ready[i] if i < len(ready) else None
+            q.append((nid, pid, est_minutes(pid) if pid else node_minutes(nid)))
+    return q
+
+
+def _reviews_by_day(st):
+    """已排定的複習，依日期分組。"""
+    out = collections.defaultdict(list)
+    for pid, ps in st["problems"].items():
+        if ps.get("status") == "solved" and ps.get("review_due"):
+            if (PROBLEMS / pid).is_dir():
+                out[parse_iso(ps["review_due"]).date()].append(pid)
+    return out
+
+
+def spent_today(st):
+    """今天已經花掉的分鐘。複習算 REVIEW_MINUTES，新題算它自己的估時。
+
+    不扣掉這段，排程會把已經用掉的時段再發一次。
+    """
+    today = now().date().isoformat()
+    redone = {e["id"] for e in st["log"]
+              if e["ts"][:10] == today and e["event"] == "redo"}
+    mins, rv, new = 0, 0, 0
+    for e in st["log"]:
+        if e["ts"][:10] != today or e["event"] != "solved":
+            continue
+        if e["id"] in redone:
+            mins += REVIEW_MINUTES
+            rv += 1
+        else:
+            mins += est_minutes(e["id"])
+            new += 1
+    return mins, rv, new
+
+
+def print_schedule(st, cur, plan, phase, days):
+    """把剩下的題排進未來幾個練習日。時間預算制，不是一天一題。"""
+    code_q = _track_queue(st, cur, phase["code"])
+    math_q = _track_queue(st, cur, phase["math"])
+    reviews = _reviews_by_day(st)
+    course_left = sum(i["minutes"] for i in phase_items(phase)
+                      if i["id"] not in course_done(st) and not i.get("optional"))
+
+    done_min, done_rv, done_new = spent_today(st)
+    print(hr(f"未來 {days} 個練習日怎麼排"))
+    if done_min:
+        print(f"  今天已完成　複習 {done_rv} 題　新題 {done_new} 題"
+              f"　用掉 {done_min} 分")
+    print("  日期        時段   複習    新題")
+    today = now().date()
+    day = today - timedelta(days=1)
+    shown = 0
+    while shown < days and (code_q or math_q):
+        day += timedelta(days=1)
+        r = plan["rhythm"][day.weekday()]
+        if r["minutes"] == 0:
+            continue
+        shown += 1
+        if day == today:
+            # 今天要算上逾期的，不是只有正好今天到期的
+            due = [pid for pid, _ in due_reviews(st)]
+        else:
+            due = reviews.get(day, [])
+        budget = r["minutes"] - len(due) * REVIEW_MINUTES
+        if day == today:
+            budget -= done_min
+        if "課程" in r["slot"] and course_left > 0:
+            spend = min(course_left, 45)
+            budget -= spend
+            course_left -= spend
+        want_math = "數學軌" in r["slot"]
+        first, second = (math_q, code_q) if want_math else (code_q, math_q)
+
+        picked = []
+        for q in (first, second):
+            while q and budget > 0:
+                nid, pid, cost = q[0]
+                if picked and cost > budget:
+                    break
+                q.pop(0)
+                name = pid or f"[{nid} 待出題]"
+                picked.append(f"{name}({cost}分)")
+                budget -= cost
+            # 主軌塞不下了就換另一軌填滿時段
+
+        wd = "一二三四五六日"[day.weekday()]
+        label = "今天  " if day == today else f"{day.strftime('%m-%d')}"
+        rv = f"{len(due)} 題" if due else ("已清" if day == today and done_rv else "  — ")
+        print(f"  {label}({wd}) {r['minutes']:>4}分  {rv:<6}"
+              f"{'  '.join(picked) if picked else '（本階段題目做完了）'}")
+    if code_q or math_q:
+        print()
+        print(f"  之後還有 {len(code_q) + len(math_q)} 題沒排進來")
+    else:
+        print()
+        print(f"  ✓ {phase['id']} 的題目在上面就做完了")
+
+def cmd_pace(args):
+    """算出當前階段還要多久、每天該做幾題幾小時。"""
+    st = load_state()
+    cur = load_curriculum()
+    plan = load_plan()
+    pos = plan_position(st, plan)
+    if not pos:
+        die("還沒設定日程表開始日：python trainer.py plan --start today")
+    _, phase, week_in_phase, _ = pos
+
+    weekly_min = sum(r["minutes"] for r in plan["rhythm"])
+    work_days = sum(1 for r in plan["rhythm"] if r["minutes"] > 0)
+
+    ids = phase["code"] + phase["math"]
+    done = 0
+    for nid in ids:
+        n = find_node(cur, nid)
+        if n:
+            done += min(topic_stats(st, nid)["solved"], n.get("target", 3))
+    # 剩下的題逐題加總估時，跟下面的排班表用同一份資料
+    queue = _track_queue(st, cur, phase["code"]) + _track_queue(st, cur, phase["math"])
+    left = len(queue)
+    left_h = sum(c for _, _, c in queue) / 60 * (1 + REVIEW_OVERHEAD)
+
+    weeks_left = phase["weeks"] - week_in_phase + 1
+    days_left = max(1, weeks_left * work_days)
+
+    print(hr(f"{phase['id']} {phase['name']}　第 {week_in_phase}/{phase['weeks']} 週"))
+    print(f"  題目　　{done} / {done + left} 完成，還剩 {left} 題")
+    print(f"  估計工時 {left_h:.0f} 小時（含複習）")
+    print(f"  剩餘　　{weeks_left} 週　≈ {days_left} 個練習日"
+          f"（每週 {work_days} 天）")
+    print()
+    print(hr("要跟上進度，每天平均"))
+    print(f"  題數　　{left / days_left:.1f} 題／練習日")
+    print(f"  時數　　{left_h / days_left * 60:.0f} 分鐘／練習日"
+          f"　（時段排定 {weekly_min / work_days:.0f} 分）")
+    ratio = (left_h / days_left * 60) / (weekly_min / work_days)
+    if ratio > 1.15:
+        print(f"  ⚠ 需要的時間是排定時段的 {ratio:.1f} 倍——階段週數可能低估了")
+    elif ratio < 0.6:
+        print(f"  ℹ 只需要排定時段的 {ratio:.0%}，可以往前多做或加深課程")
+    else:
+        print("  ✓ 跟排定的時段吻合")
+
+    dates = sorted({parse_iso(e["ts"]).date()
+                    for e in st["log"] if e["event"] in ("solved", "hint", "test_fail")})
+    solved_days = collections.Counter()
+    first = {}
+    for e in st["log"]:
+        if e["event"] == "solved":
+            first.setdefault(e["id"], e["ts"][:10])
+    for d in first.values():
+        solved_days[d] += 1
+    if dates:
+        recent = [d for d in dates if (now().date() - d).days < 14]
+        n_new = sum(solved_days[str(d)] for d in recent)
+        print()
+        print(hr("你最近兩週的實際速度"))
+        print(f"  練習日 {len(recent)} 天　新題 {n_new} 題"
+              f"　→ {n_new / max(1, len(recent)):.1f} 題／練習日")
+        need = left / days_left
+        if n_new / max(1, len(recent)) < need * 0.85:
+            print(f"  ⚠ 低於需要的 {need:.1f} 題／日")
+        else:
+            print(f"  ✓ 高於或等於需要的 {need:.1f} 題／日")
+
+    print()
+    print_schedule(st, cur, plan, phase, args.days)
 
 
 def cmd_recount(args):
@@ -1701,6 +2025,16 @@ def main():
     s.add_argument("--hours", type=int, help="每週可投入時數")
     s.set_defaults(func=cmd_plan)
 
+    s = sub.add_parser("est", help="看／改每題的估計時間（pace 排程用的就是這個）")
+    s.add_argument("id", nargs="?", help="題號；省略則列出全部")
+    s.add_argument("minutes", nargs="?", type=int, help="新的估時（分鐘）")
+    s.add_argument("--todo", action="store_true", help="只列還沒做的")
+    s.set_defaults(func=cmd_est)
+
+    s = sub.add_parser("pace", help="每日配速：還剩幾題、每天做幾題、未來幾天怎麼排")
+    s.add_argument("--days", type=int, default=7, metavar="N", help="排幾個練習日（預設 7）")
+    s.set_defaults(func=cmd_pace)
+
     s = sub.add_parser("recount", help="重算節點統計（redo 不再重複計入）")
     s.add_argument("--dry-run", action="store_true", help="只顯示差異，不寫入")
     s.set_defaults(func=cmd_recount)
@@ -1725,6 +2059,7 @@ def main():
     s.set_defaults(func=cmd_log)
 
     s = sub.add_parser("doctor", help="環境檢查")
+    s.add_argument("--pick-gpp", metavar="GPP", help="指定 g++ 的完整路徑")
     s.add_argument("--pick", metavar="PYTHON", help="指定執行解答用的 Python 直譯器路徑")
     s.set_defaults(func=cmd_doctor)
 

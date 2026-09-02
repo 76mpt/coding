@@ -218,6 +218,8 @@ e^{iθ} = cos θ + i sin θ
 | `today` | **今天該做什麼**（按表操課的入口，每天打這個就好） |
 | `plan [--start today] [--hours 10]` | 看階段路線與進度／設定日程表開始日 |
 | `course [--done ID…] [--undo ID…] [--all]` | 課程清單與勾選；`today` 只會列出還沒看的 |
+| `pace [--days N]` | 每日配速：還剩幾題幾小時、每天該做幾題，並把題目**逐題排進**未來幾天（預設 7 天） |
+| `est [<id> [分鐘]] [--todo]` | 看／改每題的估時，`pace` 就是拿這個排程；做完覺得不準就調 |
 | `recount [--dry-run]` | 重算節點統計（一題只算一次，`redo` 不重複計入） |
 | `status` | 進度總覽：兩軌完成度、通過題數、連續練習日（中間空 1 天不算中斷） |
 | `curriculum [-v] [--track code\|math]` | 完整學習路線，`✓` 已掌握 / `~` 進行中；`-v` 顯示技能與資源 |
@@ -629,6 +631,7 @@ AI 教練用 `python trainer.py new --spec <file.json>` 建題，建完**必須*
 | `tests` | ✅ | 見下表 |
 | `reference_md` | ✅ | 標準解 + 最佳解 + 複雜度 + 常見錯誤 |
 | `verify_code` | | 參考實作原始碼，供 `verify` 驗證測資 |
+| `est_minutes` | | 估計花多久（分鐘），`pace` 排程用；省略則依節點與難度自動給 |
 | `timeout` | | 每筆測資的秒數上限，預設 10 |
 | `extra_files` | | `{檔名: 內容}`，例如 C++ 的 driver |
 

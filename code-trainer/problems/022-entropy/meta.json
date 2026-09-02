@@ -16,5 +16,6 @@
   "test_count": 10,
   "timeout": 10.0,
   "source_style": "leetcode",
-  "created": "2026-08-06T11:53:23+00:00"
+  "created": "2026-08-06T11:53:23+00:00",
+  "est_minutes": 50
 }

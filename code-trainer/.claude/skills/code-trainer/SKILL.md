@@ -75,6 +75,7 @@ python trainer.py next
   "lang": "py",
   "node": "2.1",
   "difficulty": "warmup | standard | challenge | contest",
+  "est_minutes": 45,          // 估計要花多久；pace 排程靠這個，務必依題目實際份量給
   "mode": "function | io",
   "entry": "函式名（function 模式必填）",
   "statement_md": "題目敘述（markdown）",
