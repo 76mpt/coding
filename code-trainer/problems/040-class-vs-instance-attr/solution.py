@@ -10,9 +10,11 @@ class Dataset:
         Dataset.count += 1
 
     def add(self, sample):
+        # TODO
         self.samples.append(sample)
 
     def __len__(self):
+        # TODO
         return len(self.samples)
 
 
@@ -20,10 +22,10 @@ def build_datasets(specs: list) -> tuple[list, int]:
     """specs 是 [(名字, [樣本,...]), ...]。回傳 (datasets, Dataset.count)。"""
     # TODO: 先把 Dataset.count 歸零，再建立
     Dataset.count = 0
-    datasets = []
-    for name, samples in specs:
+    dataset = []
+    for name, sample in specs:
         ds = Dataset(name)
-        for s in samples:
+        for s in sample:
             ds.add(s)
-        datasets.append(ds)
-    return datasets, Dataset.count
+        dataset.append(ds)
+    return dataset, Dataset.count

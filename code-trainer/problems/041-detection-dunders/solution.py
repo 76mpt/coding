@@ -7,29 +7,27 @@ class Detection:
         self.score = score
 
     # TODO: __repr__ / __eq__ / __hash__ / __lt__
+    def __repr__(self):
+        return f"Detection({self.label!r}, {self.box}, {self.score})"
     def __eq__(self, other):
         if not isinstance(other, Detection):
             return NotImplemented
         return self.label == other.label and self.box == other.box
-    
     def __hash__(self):
         return hash((self.label, self.box))
-    
     def __lt__(self, other):
         if not isinstance(other, Detection):
             return NotImplemented
         return self.score < other.score
-    
-    def __repr__(self):
-        return f"Detection({self.label!r}, {self.box}, {self.score})"
+
 
 def rank_detections(raw: list) -> list:
     """建物件 → 去重（留第一個）→ 依分數由高到低、同分依 label 字典序。"""
     seen = set()
-    unique_detection = []
+    unique = []
     for label, box, score in raw:
         det = Detection(label, box, score)
         if det not in seen:
             seen.add(det)
-            unique_detection.append(det)
-    return sorted(unique_detection, key=lambda x: (-x.score, x.label))
+            unique.append(det)
+    return sorted(unique, key = lambda x: (-x.score, x.label))

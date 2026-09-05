@@ -3,6 +3,10 @@ def variance_two_ways(xs: list) -> tuple:
     # TODO: 兩個都要照各自的公式算，不要互相抄
     if not xs:
         raise ValueError
+    vari_det = 0.0
+    vari = 0.0
     n = len(xs)
-    mean_u = sum(xs) / n
-    return (sum((x - mean_u) ** 2 for x in xs) / n, sum(x ** 2  for x in xs) / n - mean_u ** 2)
+    miu = sum(xs) / n
+    vari_det = sum((x - miu) ** 2 for x in xs) / n
+    vari = sum(x ** 2 for x in xs) / n - miu ** 2 
+    return vari_det, vari
