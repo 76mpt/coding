@@ -7,10 +7,12 @@ def dot_and_angle(a: list[float], b: list[float]) -> tuple[float, float]:
     #       3) 算兩個長度 4) 算 cos 並夾回 [-1, 1] 5) arccos
     if len(a) != len(b):
         raise ValueError
-    dot_prod = sum((x * y) for x, y in zip(a, b))
-    a_dot = math.hypot(*a)
-    b_dot = math.hypot(*b)
-    if a_dot == 0 or b_dot == 0:
+    coor = 0.0
+    for i in range(len(a)):
+        coor += a[i] * b[i]
+    dot_a = math.sqrt(sum(x * x for x in a))
+    dot_b = math.sqrt(sum(x * x for x in b))
+    if dot_a == 0.0 or dot_b == 0.0:
         raise ValueError
-    dot_angle = math.acos(max(min(dot_prod / (a_dot * b_dot), 1), -1))
-    return dot_prod, dot_angle
+    theta = math.acos(max(-1.0, min(1.0, coor / (dot_a * dot_b))))
+    return coor, theta

@@ -1,0 +1,16 @@
+{
+  "id": "051-compose-linear-maps",
+  "title": "合成變換就是矩陣相乘",
+  "lang": "py",
+  "mode": "function",
+  "entry": "compose_report",
+  "node": "M0.1",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 8,
+  "timeout": 10.0,
+  "est_minutes": 40,
+  "source_style": "leetcode",
+  "created": "2026-09-07T11:45:47+00:00"
+}

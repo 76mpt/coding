@@ -1,0 +1,16 @@
+{
+  "id": "052-change-of-basis",
+  "title": "換一組基底看同一個變換",
+  "lang": "py",
+  "mode": "function",
+  "entry": "basis_report",
+  "node": "M0.1",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 9,
+  "timeout": 10.0,
+  "est_minutes": 65,
+  "source_style": "leetcode",
+  "created": "2026-09-07T11:48:04+00:00"
+}

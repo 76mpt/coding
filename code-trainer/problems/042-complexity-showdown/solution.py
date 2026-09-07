@@ -4,8 +4,8 @@ def common_labels(a: list[str], b: list[str]) -> list[str]:
     seen = set()
     b_set = set(b)
     result = []
-    for item in a:
-        if item not in seen and item in b_set:
-            result.append(item)
-            seen.add(item)
+    for label in a:
+        if label in b_set and label not in seen:
+            result.append(label)
+            seen.add(label)
     return result
