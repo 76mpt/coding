@@ -3,7 +3,7 @@
   "title": "合成變換就是矩陣相乘",
   "lang": "py",
   "mode": "function",
-  "entry": "compose_report",
+  "entry": "compose_maps",
   "node": "M0.1",
   "difficulty": "warmup",
   "tags": [],
@@ -12,5 +12,5 @@
   "timeout": 10.0,
   "est_minutes": 40,
   "source_style": "leetcode",
-  "created": "2026-09-07T11:45:47+00:00"
+  "created": "2026-09-08T10:23:15+00:00"
 }

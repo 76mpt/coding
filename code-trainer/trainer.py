@@ -406,7 +406,6 @@ def create_problem(spec: dict, quiet: bool = False) -> str:
         "",
         f"- 階段：{node.get('stage_name', '?')} / {spec['node']} {node.get('name', '')}",
         f"- 語言：{'Python' if lang == 'py' else 'C++'}　難度：{meta['difficulty']}"
-        f"　估時：{meta['est_minutes']} 分"
         f"　互動方式：{'實作函式' if mode == 'function' else '標準輸入 / 標準輸出'}",
     ]
     if mode == "function":

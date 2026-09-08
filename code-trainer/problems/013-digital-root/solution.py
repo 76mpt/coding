@@ -1,11 +1,12 @@
 def digital_root(n: int) -> tuple[int, int]:
     """回傳 (數位根, 相加的輪數)。"""
-    steps = 0
+    # TODO
+    step = 0
     while n >= 10:
-        cur = 0
+        result = 0
         while n > 0:
-            cur += n % 10
-            n = n // 10
-        n = cur
-        steps += 1
-    return n, steps
+            result += n % 10
+            n //= 10
+        n = result
+        step += 1
+    return n, step

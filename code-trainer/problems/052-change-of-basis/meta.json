@@ -3,7 +3,7 @@
   "title": "換一組基底看同一個變換",
   "lang": "py",
   "mode": "function",
-  "entry": "basis_report",
+  "entry": "change_of_basis",
   "node": "M0.1",
   "difficulty": "standard",
   "tags": [],
@@ -12,5 +12,5 @@
   "timeout": 10.0,
   "est_minutes": 65,
   "source_style": "leetcode",
-  "created": "2026-09-07T11:48:04+00:00"
+  "created": "2026-09-08T10:23:15+00:00"
 }
