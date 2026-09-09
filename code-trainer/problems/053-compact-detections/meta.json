@@ -1,0 +1,16 @@
+{
+  "id": "053-compact-detections",
+  "title": "就地過濾偵測框",
+  "lang": "py",
+  "mode": "function",
+  "entry": "compact",
+  "node": "2.1",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "est_minutes": 55,
+  "source_style": "leetcode",
+  "created": "2026-09-09T08:06:13+00:00"
+}

@@ -1,0 +1,9 @@
+def shortest_window(counts, target):
+    """找最短的連續區間，使區間和 >= target。
+
+    counts: list[int]，非負
+    target: int
+    回傳最短長度；找不到回傳 0。
+    """
+    # TODO
+    pass

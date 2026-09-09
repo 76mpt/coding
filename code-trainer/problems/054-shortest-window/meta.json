@@ -1,0 +1,16 @@
+{
+  "id": "054-shortest-window",
+  "title": "最短的達標區間",
+  "lang": "py",
+  "mode": "function",
+  "entry": "shortest_window",
+  "node": "2.1",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "est_minutes": 65,
+  "source_style": "leetcode",
+  "created": "2026-09-09T08:08:48+00:00"
+}

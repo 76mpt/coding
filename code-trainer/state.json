@@ -40,11 +40,11 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-08-04T08:51:07+00:00",
       "node": "1.3",
-      "solved_at": "2026-08-24T07:09:12+00:00",
-      "review_due": "2026-09-09T07:09:12+00:00",
+      "solved_at": "2026-09-09T08:05:59+00:00",
+      "review_due": "2026-10-14T08:05:59+00:00",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
@@ -200,15 +200,15 @@
     },
     "014-longest-run": {
       "status": "solved",
-      "attempts": 8,
+      "attempts": 3,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-08-06T11:40:12+00:00",
       "node": "1.2",
-      "solved_at": "2026-08-24T07:06:22+00:00",
-      "review_due": "2026-09-09T07:06:22+00:00",
+      "solved_at": "2026-09-09T08:10:53+00:00",
+      "review_due": "2026-10-14T08:10:53+00:00",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
@@ -775,17 +775,20 @@
       "review_due": "2026-09-15T08:40:29+00:00"
     },
     "051-compose-linear-maps": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 3,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-09-08T10:23:15+00:00",
       "node": "M0.1",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-09-09T08:26:05+00:00",
+      "review_due": "2026-09-12T08:26:05+00:00"
     },
     "052-change-of-basis": {
       "status": "solved",
@@ -802,6 +805,38 @@
       "solve_hints": 0,
       "solved_at": "2026-09-08T10:41:54+00:00",
       "review_due": "2026-09-11T10:41:54+00:00"
+    },
+    "053-compact-detections": {
+      "status": "solved",
+      "attempts": 3,
+      "hints_revealed": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
+      "first_seen": "2026-09-09T08:06:13+00:00",
+      "node": "2.1",
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-09-09T08:48:54+00:00",
+      "review_due": "2026-09-12T08:48:54+00:00"
+    },
+    "054-shortest-window": {
+      "status": "solved",
+      "attempts": 1,
+      "hints_revealed": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
+      "first_seen": "2026-09-09T08:08:48+00:00",
+      "node": "2.1",
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-09-09T09:05:09+00:00",
+      "review_due": "2026-09-12T09:05:09+00:00"
     }
   },
   "topics": {
@@ -836,9 +871,9 @@
       "hints_used": 0
     },
     "2.1": {
-      "attempted": 1,
-      "solved": 1,
-      "clean_solved": 1,
+      "attempted": 3,
+      "solved": 3,
+      "clean_solved": 3,
       "hints_used": 0
     },
     "2.5": {
@@ -932,157 +967,13 @@
       "hints_used": 0
     },
     "M0.1": {
-      "attempted": 1,
-      "solved": 1,
-      "clean_solved": 1,
+      "attempted": 2,
+      "solved": 2,
+      "clean_solved": 2,
       "hints_used": 0
     }
   },
   "log": [
-    {
-      "ts": "2026-08-21T08:01:47+00:00",
-      "event": "test_fail",
-      "id": "004-top-k-words",
-      "passed": 0,
-      "total": 9
-    },
-    {
-      "ts": "2026-08-21T08:03:52+00:00",
-      "event": "test_fail",
-      "id": "004-top-k-words",
-      "passed": 0,
-      "total": 9
-    },
-    {
-      "ts": "2026-08-21T08:04:11+00:00",
-      "event": "test_fail",
-      "id": "004-top-k-words",
-      "passed": 5,
-      "total": 9
-    },
-    {
-      "ts": "2026-08-21T08:04:28+00:00",
-      "event": "test_fail",
-      "id": "004-top-k-words",
-      "passed": 5,
-      "total": 9
-    },
-    {
-      "ts": "2026-08-21T08:05:31+00:00",
-      "event": "test_fail",
-      "id": "004-top-k-words",
-      "passed": 3,
-      "total": 9
-    },
-    {
-      "ts": "2026-08-21T08:07:36+00:00",
-      "event": "solved",
-      "id": "004-top-k-words",
-      "attempts": 9,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-21T08:07:41+00:00",
-      "event": "answer_unlocked",
-      "id": "004-top-k-words",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-23T16:36:46+00:00",
-      "event": "redo",
-      "id": "013-digital-root",
-      "rep": 2
-    },
-    {
-      "ts": "2026-08-23T16:40:23+00:00",
-      "event": "solved",
-      "id": "013-digital-root",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-23T16:40:28+00:00",
-      "event": "answer_unlocked",
-      "id": "013-digital-root",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-23T16:40:49+00:00",
-      "event": "redo",
-      "id": "017-merge-inventory",
-      "rep": 1
-    },
-    {
-      "ts": "2026-08-23T16:46:10+00:00",
-      "event": "solved",
-      "id": "017-merge-inventory",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-23T16:46:15+00:00",
-      "event": "answer_unlocked",
-      "id": "017-merge-inventory",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-23T16:46:55+00:00",
-      "event": "test_fail",
-      "id": "017-merge-inventory",
-      "passed": 8,
-      "total": 9
-    },
-    {
-      "ts": "2026-08-23T16:47:11+00:00",
-      "event": "solved",
-      "id": "017-merge-inventory",
-      "attempts": 3,
-      "hints": 0,
-      "clean": false
-    },
-    {
-      "ts": "2026-08-24T06:43:33+00:00",
-      "event": "solved",
-      "id": "018-group-by-label",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-24T06:43:40+00:00",
-      "event": "answer_unlocked",
-      "id": "018-group-by-label",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-24T06:44:37+00:00",
-      "event": "redo",
-      "id": "004-top-k-words",
-      "rep": 1
-    },
-    {
-      "ts": "2026-08-24T06:55:15+00:00",
-      "event": "solved",
-      "id": "004-top-k-words",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-24T06:55:20+00:00",
-      "event": "answer_unlocked",
-      "id": "004-top-k-words",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-24T06:56:02+00:00",
-      "event": "redo",
-      "id": "014-longest-run",
-      "rep": 2
-    },
     {
       "ts": "2026-08-24T07:00:42+00:00",
       "event": "test_fail",
@@ -4417,9 +4308,158 @@
       "event": "answer_unlocked",
       "id": "052-change-of-basis",
       "solved_first": true
+    },
+    {
+      "ts": "2026-09-09T08:04:20+00:00",
+      "event": "redo",
+      "id": "003-apply-discount",
+      "rep": 3
+    },
+    {
+      "ts": "2026-09-09T08:05:59+00:00",
+      "event": "solved",
+      "id": "003-apply-discount",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-09T08:06:03+00:00",
+      "event": "answer_unlocked",
+      "id": "003-apply-discount",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-09T08:06:07+00:00",
+      "event": "redo",
+      "id": "014-longest-run",
+      "rep": 3
+    },
+    {
+      "ts": "2026-09-09T08:06:13+00:00",
+      "event": "created",
+      "id": "053-compact-detections",
+      "node": "2.1",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-09-09T08:08:48+00:00",
+      "event": "created",
+      "id": "054-shortest-window",
+      "node": "2.1",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-09-09T08:10:02+00:00",
+      "event": "solved",
+      "id": "014-longest-run",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-09T08:10:05+00:00",
+      "event": "answer_unlocked",
+      "id": "014-longest-run",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-09T08:10:46+00:00",
+      "event": "solved",
+      "id": "014-longest-run",
+      "attempts": 2,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-09-09T08:10:53+00:00",
+      "event": "solved",
+      "id": "014-longest-run",
+      "attempts": 3,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-09-09T08:15:51+00:00",
+      "event": "test_fail",
+      "id": "051-compose-linear-maps",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-09-09T08:25:12+00:00",
+      "event": "test_fail",
+      "id": "051-compose-linear-maps",
+      "passed": 0,
+      "total": 8
+    },
+    {
+      "ts": "2026-09-09T08:26:05+00:00",
+      "event": "solved",
+      "id": "051-compose-linear-maps",
+      "attempts": 3,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-09T08:26:10+00:00",
+      "event": "answer_unlocked",
+      "id": "051-compose-linear-maps",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-09T08:46:27+00:00",
+      "event": "test_fail",
+      "id": "053-compact-detections",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-09-09T08:48:30+00:00",
+      "event": "solved",
+      "id": "053-compact-detections",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-09T08:48:34+00:00",
+      "event": "answer_unlocked",
+      "id": "053-compact-detections",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-09T08:48:53+00:00",
+      "event": "answer_unlocked",
+      "id": "053-compact-detections",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-09T08:48:54+00:00",
+      "event": "solved",
+      "id": "053-compact-detections",
+      "attempts": 3,
+      "hints": 0,
+      "clean": false
+    },
+    {
+      "ts": "2026-09-09T09:05:09+00:00",
+      "event": "solved",
+      "id": "054-shortest-window",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-09T09:05:13+00:00",
+      "event": "answer_unlocked",
+      "id": "054-shortest-window",
+      "solved_first": true
     }
   ],
-  "counter": 52,
+  "counter": 54,
   "plan": {
     "started": "2026-08-07T08:03:01+00:00",
     "hours_per_week": 10
