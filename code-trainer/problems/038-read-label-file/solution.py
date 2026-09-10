@@ -23,9 +23,13 @@ def parse_annotation(line: str) -> tuple[str, list[int]]:
 def read_label_file(path) -> tuple[dict, int]:
     """讀標註檔，回傳 ({label: 次數}, 壞行數)。檔案問題要讓例外往上拋。"""
     # TODO: with open(..., encoding="utf-8") 讀檔 → 逐行解析 → 統計
+    if not path:
+        raise FileNotFoundError
+    result = {}
+    count = 0
     with open(path, encoding="utf-8") as f:
-        result = {}
-        bad = 0
+        if not f:
+            return result, count
         for line in f:
             if not line.strip():
                 continue
@@ -33,6 +37,5 @@ def read_label_file(path) -> tuple[dict, int]:
                 label, _ = parse_annotation(line)
                 result[label] = result.get(label, 0) + 1
             except BadAnnotation:
-                bad += 1
-        return result, bad
-
+                count += 1
+    return result, count

@@ -6,15 +6,20 @@ def parse_annotation(line: str) -> tuple[str, list[int]]:
     """把一行標註解析成 (label, [x1, y1, x2, y2])。壞資料拋 BadAnnotation。"""
     # TODO: 1) 切欄位並檢查數量 2) 轉 int（轉不動要拋 BadAnnotation）
     #       3) 檢查 x2 > x1 且 y2 > y1
-    line = line.split()
-    if len(line) != 5:
+    text = line.strip().split()
+    if len(text) != 5:
         raise BadAnnotation
-    label = line[0]
+    label = text[0]
+    if not label:
+        raise BadAnnotation
+    box = text[1:]
     try:
-        box = [int(value) for value in line[1:]]
+        x1 = int(box[0])
+        y1 = int(box[1])
+        x2 = int(box[2])
+        y2 = int(box[3])
+        if x2 <= x1 or y2 <= y1:
+            raise BadAnnotation
     except:
         raise BadAnnotation
-    x1, y1, x2, y2 = box
-    if x1 >= x2 or y1 >= y2:
-        raise BadAnnotation
-    return label, box
+    return label, [x1, y1, x2, y2]
