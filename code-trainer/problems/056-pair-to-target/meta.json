@@ -1,0 +1,16 @@
+{
+  "id": "056-pair-to-target",
+  "title": "湊出目標批次大小",
+  "lang": "py",
+  "mode": "function",
+  "entry": "find_pair",
+  "node": "2.2",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 11,
+  "timeout": 10.0,
+  "est_minutes": 40,
+  "source_style": "leetcode",
+  "created": "2026-09-11T07:08:30+00:00"
+}
