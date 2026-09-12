@@ -10,11 +10,9 @@ class Dataset:
         Dataset.count += 1
 
     def add(self, sample):
-        # TODO
         self.samples.append(sample)
 
     def __len__(self):
-        # TODO
         return len(self.samples)
 
 

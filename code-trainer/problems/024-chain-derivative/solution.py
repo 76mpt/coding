@@ -3,12 +3,12 @@ def chain_derivative(layers, x: float) -> tuple[float, float]:
 
     回傳 (合成函數的值, 導數)。
     """
-    x0 = x
-    values = []
+    der = []
     result = 1.0
-    for layer, _ in reversed(layers):
-        values.append(x0)
-        x0 = layer(x0)
+    x0 = x
+    for f, _ in reversed(layers):
+        der.append(x0)
+        x0 = f(x0)
     for i, (_, df) in enumerate(reversed(layers)):
-        result *= df(values[i])
+        result *= df(der[i])
     return x0, result

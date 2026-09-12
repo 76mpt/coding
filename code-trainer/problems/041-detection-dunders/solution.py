@@ -20,7 +20,6 @@ class Detection:
             return NotImplemented
         return self.score < other.score
 
-
 def rank_detections(raw: list) -> list:
     """建物件 → 去重（留第一個）→ 依分數由高到低、同分依 label 字典序。"""
     seen = set()
@@ -30,4 +29,4 @@ def rank_detections(raw: list) -> list:
         if det not in seen:
             seen.add(det)
             unique.append(det)
-    return sorted(unique, key = lambda x: (-x.score, x.label))
+    return sorted(unique, key = lambda x:(-x.score, x.label))
