@@ -12,10 +12,9 @@ def gram_schmidt(vectors):
         for q in Q:
             coeff = dot(q, vector)
             w = [wi - coeff * qi for wi, qi in zip(w, q)]
-            length = dot(w, w) ** 0.5
-        Q.append([wi / length] for wi in w)
+        length = dot(w, w) ** 0.5
+        Q.append([wi / length for wi in w])
     G = [[dot(a, b) for b in Q] for a in Q]
-    G = [[float(sum(Q[i][d] * Q[j][d] for d in range(len(Q[i])))) for j in range(k)] for i in range(k)]
     rebuild = [[sum(dot(q, vector) * q[i] for q in Q) for i in range(len(vector))] for vector in vectors]
     return Q, G, rebuild
 

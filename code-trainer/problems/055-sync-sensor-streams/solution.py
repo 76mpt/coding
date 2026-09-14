@@ -7,12 +7,12 @@ def nearest_imu(cam, imu):
     """
     result = []
     j = 0
-    for t in cam:
-        while j + 1 < len(imu) and imu[j + 1] < t:
+    for frame in cam:
+        while j + 1 < len(imu) and imu[j + 1] < frame:
             j += 1
         if j + 1 < len(imu):
-            left = abs(imu[j] - t)
-            right = abs(imu[j + 1] - t)
+            left = abs(imu[j] - frame)
+            right = abs(imu[j + 1] - frame)
             if right < left:
                 j += 1
         result.append(j)
