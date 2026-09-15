@@ -5,5 +5,13 @@ def count_segments(deltas, k):
     k: int
     回傳 int
     """
-    # TODO
-    pass
+    count = 0
+    cur = 0
+    seen = {0: 1}
+    for x in deltas:
+        cur += x
+        target = cur - k
+        if target in seen:
+            count += seen[target]
+        seen[cur] = seen.get(cur, 0) + 1
+    return count

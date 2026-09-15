@@ -252,15 +252,15 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-08-06T11:45:30+00:00",
       "node": "1.4",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-30T05:38:06+00:00",
-      "review_due": "2026-09-15T05:38:06+00:00"
+      "solved_at": "2026-09-15T08:51:59+00:00",
+      "review_due": "2026-10-20T08:51:59+00:00"
     },
     "018-group-by-label": {
       "status": "solved",
@@ -760,19 +760,19 @@
     },
     "050-harmonic-and-logn": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 4,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-29T07:08:15+00:00",
       "node": "M00.7",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-08T08:40:29+00:00",
-      "review_due": "2026-09-15T08:40:29+00:00"
+      "solved_at": "2026-09-15T08:56:07+00:00",
+      "review_due": "2026-10-01T08:56:07+00:00"
     },
     "051-compose-linear-maps": {
       "status": "solved",
@@ -903,17 +903,20 @@
       "review_due": "2026-09-17T10:12:48+00:00"
     },
     "059-zero-drift-segments": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-09-11T08:51:43+00:00",
       "node": "2.2",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-09-15T09:43:26+00:00",
+      "review_due": "2026-09-18T09:43:26+00:00"
     },
     "060-gram-schmidt": {
       "status": "solved",
@@ -932,17 +935,20 @@
       "review_due": "2026-09-17T08:36:32+00:00"
     },
     "061-rank-and-null-space": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 3,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-09-11T08:51:43+00:00",
       "node": "M0.2",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-09-15T09:09:23+00:00",
+      "review_due": "2026-09-18T09:09:23+00:00"
     }
   },
   "topics": {
@@ -1079,143 +1085,19 @@
       "hints_used": 0
     },
     "2.2": {
-      "attempted": 3,
-      "solved": 3,
-      "clean_solved": 3,
+      "attempted": 4,
+      "solved": 4,
+      "clean_solved": 4,
       "hints_used": 0
     },
     "M0.2": {
-      "attempted": 1,
-      "solved": 1,
-      "clean_solved": 1,
+      "attempted": 2,
+      "solved": 2,
+      "clean_solved": 2,
       "hints_used": 0
     }
   },
   "log": [
-    {
-      "ts": "2026-08-28T11:13:37+00:00",
-      "event": "created",
-      "id": "040-class-vs-instance-attr",
-      "node": "1.8",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-28T11:15:18+00:00",
-      "event": "created",
-      "id": "041-detection-dunders",
-      "node": "1.8",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-28T11:16:36+00:00",
-      "event": "created",
-      "id": "042-complexity-showdown",
-      "node": "1.9",
-      "lang": "py",
-      "difficulty": "warmup"
-    },
-    {
-      "ts": "2026-08-28T11:18:01+00:00",
-      "event": "created",
-      "id": "043-hidden-costs",
-      "node": "1.9",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-28T11:18:23+00:00",
-      "event": "created",
-      "id": "043-hidden-costs",
-      "node": "1.9",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-29T06:57:17+00:00",
-      "event": "redo",
-      "id": "026-normalize-filename",
-      "rep": 1
-    },
-    {
-      "ts": "2026-08-29T06:58:32+00:00",
-      "event": "created",
-      "id": "044-rotate-points",
-      "node": "M00.5",
-      "lang": "py",
-      "difficulty": "warmup"
-    },
-    {
-      "ts": "2026-08-29T07:00:01+00:00",
-      "event": "created",
-      "id": "045-compose-rotations",
-      "node": "M00.5",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-29T07:01:24+00:00",
-      "event": "created",
-      "id": "046-bayes-posterior",
-      "node": "M00.6",
-      "lang": "py",
-      "difficulty": "warmup"
-    },
-    {
-      "ts": "2026-08-29T07:03:00+00:00",
-      "event": "created",
-      "id": "047-monte-carlo-bayes",
-      "node": "M00.6",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-29T07:03:20+00:00",
-      "event": "created",
-      "id": "047-monte-carlo-bayes",
-      "node": "M00.6",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-29T07:05:03+00:00",
-      "event": "created",
-      "id": "048-variance-two-ways",
-      "node": "M00.6",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-29T07:06:31+00:00",
-      "event": "created",
-      "id": "049-geometric-series",
-      "node": "M00.7",
-      "lang": "py",
-      "difficulty": "warmup"
-    },
-    {
-      "ts": "2026-08-29T07:08:15+00:00",
-      "event": "created",
-      "id": "050-harmonic-and-logn",
-      "node": "M00.7",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-08-29T07:19:28+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 10,
-      "total": 11
-    },
-    {
-      "ts": "2026-08-29T07:20:08+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 10,
-      "total": 11
-    },
     {
       "ts": "2026-08-29T07:20:17+00:00",
       "event": "test_fail",
@@ -4548,6 +4430,116 @@
       "ts": "2026-09-14T10:12:51+00:00",
       "event": "answer_unlocked",
       "id": "058-voxel-downsample",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-15T08:49:11+00:00",
+      "event": "redo",
+      "id": "017-merge-inventory",
+      "rep": 3
+    },
+    {
+      "ts": "2026-09-15T08:50:48+00:00",
+      "event": "test_fail",
+      "id": "017-merge-inventory",
+      "passed": 2,
+      "total": 9
+    },
+    {
+      "ts": "2026-09-15T08:51:59+00:00",
+      "event": "solved",
+      "id": "017-merge-inventory",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-15T08:52:03+00:00",
+      "event": "answer_unlocked",
+      "id": "017-merge-inventory",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-15T08:52:42+00:00",
+      "event": "redo",
+      "id": "050-harmonic-and-logn",
+      "rep": 2
+    },
+    {
+      "ts": "2026-09-15T08:54:59+00:00",
+      "event": "test_fail",
+      "id": "050-harmonic-and-logn",
+      "passed": 5,
+      "total": 10
+    },
+    {
+      "ts": "2026-09-15T08:55:32+00:00",
+      "event": "test_fail",
+      "id": "050-harmonic-and-logn",
+      "passed": 1,
+      "total": 10
+    },
+    {
+      "ts": "2026-09-15T08:55:43+00:00",
+      "event": "test_fail",
+      "id": "050-harmonic-and-logn",
+      "passed": 9,
+      "total": 10
+    },
+    {
+      "ts": "2026-09-15T08:56:07+00:00",
+      "event": "solved",
+      "id": "050-harmonic-and-logn",
+      "attempts": 4,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-15T08:56:11+00:00",
+      "event": "answer_unlocked",
+      "id": "050-harmonic-and-logn",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-15T09:08:42+00:00",
+      "event": "test_fail",
+      "id": "061-rank-and-null-space",
+      "passed": 1,
+      "total": 11
+    },
+    {
+      "ts": "2026-09-15T09:09:08+00:00",
+      "event": "test_fail",
+      "id": "061-rank-and-null-space",
+      "passed": 3,
+      "total": 11
+    },
+    {
+      "ts": "2026-09-15T09:09:23+00:00",
+      "event": "solved",
+      "id": "061-rank-and-null-space",
+      "attempts": 3,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-15T09:09:27+00:00",
+      "event": "answer_unlocked",
+      "id": "061-rank-and-null-space",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-15T09:43:26+00:00",
+      "event": "solved",
+      "id": "059-zero-drift-segments",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-15T09:43:31+00:00",
+      "event": "answer_unlocked",
+      "id": "059-zero-drift-segments",
       "solved_first": true
     }
   ],
