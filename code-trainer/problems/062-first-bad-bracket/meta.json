@@ -1,0 +1,16 @@
+{
+  "id": "062-first-bad-bracket",
+  "title": "找出第一個壞掉的括號",
+  "lang": "py",
+  "mode": "function",
+  "entry": "first_bad_bracket",
+  "node": "2.3",
+  "difficulty": "warmup",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 14,
+  "timeout": 10.0,
+  "est_minutes": 45,
+  "source_style": "leetcode",
+  "created": "2026-09-16T09:24:41+00:00"
+}

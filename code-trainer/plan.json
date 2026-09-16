@@ -247,7 +247,80 @@
       ],
       "course": "MIT 18.06（Strang）＋ MIT 18.S096 矩陣微分",
       "focus": "M0.5 SVD 是整條數學線的樞紐，值得多花一週。M0.8 手推反向傳播是分水嶺。",
-      "milestone": "手推線性層 + softmax + cross-entropy 的反向傳播，數值與 PyTorch autograd 對上；LeetCode Medium 能自力解"
+      "milestone": "手推線性層 + softmax + cross-entropy 的反向傳播，數值與 PyTorch autograd 對上；LeetCode Medium 能自力解",
+      "items": [
+        {
+          "id": "mit1806-15",
+          "title": "MIT 18.06 Lec 15 Projections onto subspaces → M0.3",
+          "minutes": 50
+        },
+        {
+          "id": "mit1806-16",
+          "title": "MIT 18.06 Lec 16 Projection matrices and least squares → M0.3",
+          "minutes": 50
+        },
+        {
+          "id": "su-la-08",
+          "title": "蘇柏青 線代 第8講（5部）特徵值、特徵多項式、對角化 → M0.4",
+          "minutes": 94
+        },
+        {
+          "id": "su-la-11",
+          "title": "蘇柏青 線代 第11講（4部）對稱矩陣 → M0.4",
+          "minutes": 48
+        },
+        {
+          "id": "mit1806-29",
+          "title": "MIT 18.06 Lec 29 Singular value decomposition → M0.5 樞紐",
+          "minutes": 50
+        },
+        {
+          "id": "mit1806-33",
+          "title": "MIT 18.06 Lec 33 Left and right inverses; pseudoinverse → M0.5",
+          "minutes": 50
+        },
+        {
+          "id": "d2l-backprop",
+          "title": "李沐《動手學深度學習》前向傳播、反向傳播與計算圖 → M0.8",
+          "minutes": 60
+        },
+        {
+          "id": "mit1806-21-22",
+          "title": "MIT 18.06 Lec 21–22 特徵值、對角化與 A 的冪（蘇柏青第8講的英文版，擇一）",
+          "minutes": 100,
+          "optional": true
+        },
+        {
+          "id": "mit1806-25",
+          "title": "MIT 18.06 Lec 25 Symmetric matrices and positive definiteness（對照蘇柏青第11講）",
+          "minutes": 50,
+          "optional": true
+        },
+        {
+          "id": "mit18s096",
+          "title": "MIT 18.S096 Matrix Calculus for ML and Beyond → M0.7、M0.8（英文，最對口）",
+          "minutes": 300,
+          "optional": true
+        },
+        {
+          "id": "trefethen-12",
+          "title": "Trefethen & Bau《Numerical Linear Algebra》Lecture 12 條件數 → M0.6（讀本）",
+          "minutes": 60,
+          "optional": true
+        },
+        {
+          "id": "su-la-12-15",
+          "title": "蘇柏青 線代 第12–15講（20部）抽象向量空間與內積空間 → 收尾統整",
+          "minutes": 245,
+          "optional": true
+        },
+        {
+          "id": "mit6006",
+          "title": "MIT 6.006 Introduction to Algorithms → 搭配 2.3–2.9（程式軌唯一的影片課程）",
+          "minutes": 600,
+          "optional": true
+        }
+      ]
     },
     {
       "id": "P3",

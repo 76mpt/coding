@@ -52,19 +52,19 @@
     },
     "004-top-k-words": {
       "status": "solved",
-      "attempts": 4,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-08-04T08:51:07+00:00",
       "node": "1.4",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-31T08:13:48+00:00",
-      "review_due": "2026-09-16T08:13:48+00:00"
+      "solved_at": "2026-09-16T09:33:14+00:00",
+      "review_due": "2026-10-21T09:33:14+00:00"
     },
     "005-parse-label-line": {
       "status": "solved",
@@ -440,19 +440,19 @@
     },
     "030-project-and-residual": {
       "status": "solved",
-      "attempts": 9,
+      "attempts": 5,
       "hints_revealed": 0,
-      "answer_unlocked": false,
+      "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-08-25T08:37:43+00:00",
       "node": "M00.2",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-08-31T09:26:49+00:00",
-      "review_due": "2026-09-16T09:26:49+00:00"
+      "solved_at": "2026-09-16T09:43:16+00:00",
+      "review_due": "2026-10-21T09:43:16+00:00"
     },
     "031-box-areas": {
       "status": "solved",
@@ -949,6 +949,19 @@
       "ever_attempted": true,
       "solved_at": "2026-09-15T09:09:23+00:00",
       "review_due": "2026-09-18T09:09:23+00:00"
+    },
+    "062-first-bad-bracket": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-09-16T09:24:41+00:00",
+      "node": "2.3",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
     }
   },
   "topics": {
@@ -1095,89 +1108,15 @@
       "solved": 2,
       "clean_solved": 2,
       "hints_used": 0
+    },
+    "2.3": {
+      "attempted": 0,
+      "solved": 0,
+      "clean_solved": 0,
+      "hints_used": 0
     }
   },
   "log": [
-    {
-      "ts": "2026-08-29T07:20:17+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 9,
-      "total": 11
-    },
-    {
-      "ts": "2026-08-29T07:21:24+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 10,
-      "total": 11
-    },
-    {
-      "ts": "2026-08-29T07:21:37+00:00",
-      "event": "solved",
-      "id": "026-normalize-filename",
-      "attempts": 5,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-29T07:21:41+00:00",
-      "event": "answer_unlocked",
-      "id": "026-normalize-filename",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-29T09:17:21+00:00",
-      "event": "solved",
-      "id": "044-rotate-points",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-29T09:17:25+00:00",
-      "event": "answer_unlocked",
-      "id": "044-rotate-points",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-29T09:21:17+00:00",
-      "event": "solved",
-      "id": "026-normalize-filename",
-      "attempts": 6,
-      "hints": 0,
-      "clean": false
-    },
-    {
-      "ts": "2026-08-29T09:21:45+00:00",
-      "event": "solved",
-      "id": "034-matmul-by-hand",
-      "attempts": 2,
-      "hints": 0,
-      "clean": false
-    },
-    {
-      "ts": "2026-08-29T09:21:45+00:00",
-      "event": "solved",
-      "id": "031-box-areas",
-      "attempts": 3,
-      "hints": 0,
-      "clean": false
-    },
-    {
-      "ts": "2026-08-29T09:32:45+00:00",
-      "event": "solved",
-      "id": "045-compose-rotations",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-29T09:32:48+00:00",
-      "event": "answer_unlocked",
-      "id": "045-compose-rotations",
-      "solved_first": true
-    },
     {
       "ts": "2026-08-29T09:41:12+00:00",
       "event": "solved",
@@ -4541,9 +4480,85 @@
       "event": "answer_unlocked",
       "id": "059-zero-drift-segments",
       "solved_first": true
+    },
+    {
+      "ts": "2026-09-16T09:22:22+00:00",
+      "event": "redo",
+      "id": "004-top-k-words",
+      "rep": 3
+    },
+    {
+      "ts": "2026-09-16T09:24:41+00:00",
+      "event": "created",
+      "id": "062-first-bad-bracket",
+      "node": "2.3",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-09-16T09:33:14+00:00",
+      "event": "solved",
+      "id": "004-top-k-words",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-16T09:33:26+00:00",
+      "event": "answer_unlocked",
+      "id": "004-top-k-words",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-16T09:33:50+00:00",
+      "event": "redo",
+      "id": "030-project-and-residual",
+      "rep": 3
+    },
+    {
+      "ts": "2026-09-16T09:37:42+00:00",
+      "event": "test_fail",
+      "id": "030-project-and-residual",
+      "passed": 1,
+      "total": 13
+    },
+    {
+      "ts": "2026-09-16T09:40:31+00:00",
+      "event": "test_fail",
+      "id": "030-project-and-residual",
+      "passed": 3,
+      "total": 13
+    },
+    {
+      "ts": "2026-09-16T09:41:34+00:00",
+      "event": "test_fail",
+      "id": "030-project-and-residual",
+      "passed": 9,
+      "total": 13
+    },
+    {
+      "ts": "2026-09-16T09:42:31+00:00",
+      "event": "test_fail",
+      "id": "030-project-and-residual",
+      "passed": 5,
+      "total": 13
+    },
+    {
+      "ts": "2026-09-16T09:43:16+00:00",
+      "event": "solved",
+      "id": "030-project-and-residual",
+      "attempts": 5,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-16T09:43:19+00:00",
+      "event": "answer_unlocked",
+      "id": "030-project-and-residual",
+      "solved_first": true
     }
   ],
-  "counter": 61,
+  "counter": 62,
   "plan": {
     "started": "2026-08-07T08:03:01+00:00",
     "hours_per_week": 10
@@ -4563,6 +4578,7 @@
     "3b1b-la13": "2026-08-29T08:47:15+00:00",
     "su-la-05": "2026-09-05T08:58:55+00:00",
     "su-la-06": "2026-09-10T10:36:39+00:00",
-    "su-la-07": "2026-09-14T08:33:31+00:00"
+    "su-la-07": "2026-09-14T08:33:31+00:00",
+    "su-la-09": "2026-09-16T15:27:37+00:00"
   }
 }
