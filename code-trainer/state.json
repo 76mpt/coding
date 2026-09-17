@@ -84,19 +84,19 @@
     },
     "006-container-with-most-water": {
       "status": "solved",
-      "attempts": 1,
+      "attempts": 2,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 2,
+      "rep": 3,
       "first_seen": "2026-08-04T08:51:07+00:00",
       "node": "2.1",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-10T08:50:50+00:00",
-      "review_due": "2026-09-17T08:50:50+00:00"
+      "solved_at": "2026-09-17T05:45:22+00:00",
+      "review_due": "2026-10-03T05:45:22+00:00"
     },
     "007-min-shipping-capacity": {
       "status": "open",
@@ -872,35 +872,35 @@
     },
     "057-complete-frames": {
       "status": "solved",
-      "attempts": 4,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-09-11T08:51:42+00:00",
       "node": "2.2",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-14T10:02:07+00:00",
-      "review_due": "2026-09-17T10:02:07+00:00"
+      "solved_at": "2026-09-17T05:53:40+00:00",
+      "review_due": "2026-09-24T05:53:40+00:00"
     },
     "058-voxel-downsample": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-09-11T08:51:42+00:00",
       "node": "2.2",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-14T10:12:48+00:00",
-      "review_due": "2026-09-17T10:12:48+00:00"
+      "solved_at": "2026-09-17T06:04:38+00:00",
+      "review_due": "2026-09-24T06:04:39+00:00"
     },
     "059-zero-drift-segments": {
       "status": "solved",
@@ -920,19 +920,19 @@
     },
     "060-gram-schmidt": {
       "status": "solved",
-      "attempts": 7,
+      "attempts": 2,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-09-11T08:51:43+00:00",
       "node": "M0.2",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-14T08:36:32+00:00",
-      "review_due": "2026-09-17T08:36:32+00:00"
+      "solved_at": "2026-09-17T06:13:52+00:00",
+      "review_due": "2026-09-24T06:13:52+00:00"
     },
     "061-rank-and-null-space": {
       "status": "solved",
@@ -1117,108 +1117,6 @@
     }
   },
   "log": [
-    {
-      "ts": "2026-08-29T09:41:12+00:00",
-      "event": "solved",
-      "id": "046-bayes-posterior",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-29T09:41:15+00:00",
-      "event": "answer_unlocked",
-      "id": "046-bayes-posterior",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-30T05:14:05+00:00",
-      "event": "redo",
-      "id": "029-dot-and-angle",
-      "rep": 1
-    },
-    {
-      "ts": "2026-08-30T05:27:06+00:00",
-      "event": "test_fail",
-      "id": "029-dot-and-angle",
-      "passed": 3,
-      "total": 11
-    },
-    {
-      "ts": "2026-08-30T05:27:20+00:00",
-      "event": "test_fail",
-      "id": "029-dot-and-angle",
-      "passed": 3,
-      "total": 11
-    },
-    {
-      "ts": "2026-08-30T05:28:07+00:00",
-      "event": "test_fail",
-      "id": "029-dot-and-angle",
-      "passed": 3,
-      "total": 11
-    },
-    {
-      "ts": "2026-08-30T05:29:27+00:00",
-      "event": "test_fail",
-      "id": "029-dot-and-angle",
-      "passed": 3,
-      "total": 11
-    },
-    {
-      "ts": "2026-08-30T05:30:15+00:00",
-      "event": "solved",
-      "id": "029-dot-and-angle",
-      "attempts": 5,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-30T05:30:19+00:00",
-      "event": "answer_unlocked",
-      "id": "029-dot-and-angle",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-30T05:31:26+00:00",
-      "event": "redo",
-      "id": "017-merge-inventory",
-      "rep": 2
-    },
-    {
-      "ts": "2026-08-30T05:35:22+00:00",
-      "event": "test_fail",
-      "id": "017-merge-inventory",
-      "passed": 6,
-      "total": 9
-    },
-    {
-      "ts": "2026-08-30T05:38:06+00:00",
-      "event": "solved",
-      "id": "017-merge-inventory",
-      "attempts": 2,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-08-30T05:38:12+00:00",
-      "event": "answer_unlocked",
-      "id": "017-merge-inventory",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-08-31T08:02:38+00:00",
-      "event": "redo",
-      "id": "004-top-k-words",
-      "rep": 2
-    },
-    {
-      "ts": "2026-08-31T08:12:29+00:00",
-      "event": "test_fail",
-      "id": "004-top-k-words",
-      "passed": 5,
-      "total": 9
-    },
     {
       "ts": "2026-08-31T08:12:43+00:00",
       "event": "test_fail",
@@ -4556,6 +4454,106 @@
       "event": "answer_unlocked",
       "id": "030-project-and-residual",
       "solved_first": true
+    },
+    {
+      "ts": "2026-09-17T05:40:35+00:00",
+      "event": "redo",
+      "id": "006-container-with-most-water",
+      "rep": 2
+    },
+    {
+      "ts": "2026-09-17T05:44:01+00:00",
+      "event": "test_fail",
+      "id": "006-container-with-most-water",
+      "passed": 5,
+      "total": 8
+    },
+    {
+      "ts": "2026-09-17T05:45:22+00:00",
+      "event": "solved",
+      "id": "006-container-with-most-water",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-17T05:45:25+00:00",
+      "event": "answer_unlocked",
+      "id": "006-container-with-most-water",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-17T05:45:39+00:00",
+      "event": "redo",
+      "id": "057-complete-frames",
+      "rep": 1
+    },
+    {
+      "ts": "2026-09-17T05:46:32+00:00",
+      "event": "redo",
+      "id": "057-complete-frames",
+      "rep": 1
+    },
+    {
+      "ts": "2026-09-17T05:53:40+00:00",
+      "event": "solved",
+      "id": "057-complete-frames",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-17T05:53:43+00:00",
+      "event": "answer_unlocked",
+      "id": "057-complete-frames",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-17T05:56:01+00:00",
+      "event": "redo",
+      "id": "058-voxel-downsample",
+      "rep": 1
+    },
+    {
+      "ts": "2026-09-17T06:04:39+00:00",
+      "event": "solved",
+      "id": "058-voxel-downsample",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-17T06:04:43+00:00",
+      "event": "answer_unlocked",
+      "id": "058-voxel-downsample",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-09-17T06:09:16+00:00",
+      "event": "redo",
+      "id": "060-gram-schmidt",
+      "rep": 1
+    },
+    {
+      "ts": "2026-09-17T06:13:32+00:00",
+      "event": "test_fail",
+      "id": "060-gram-schmidt",
+      "passed": 0,
+      "total": 9
+    },
+    {
+      "ts": "2026-09-17T06:13:52+00:00",
+      "event": "solved",
+      "id": "060-gram-schmidt",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-09-17T06:13:58+00:00",
+      "event": "answer_unlocked",
+      "id": "060-gram-schmidt",
+      "solved_first": true
     }
   ],
   "counter": 62,
@@ -4579,6 +4577,7 @@
     "su-la-05": "2026-09-05T08:58:55+00:00",
     "su-la-06": "2026-09-10T10:36:39+00:00",
     "su-la-07": "2026-09-14T08:33:31+00:00",
-    "su-la-09": "2026-09-16T15:27:37+00:00"
+    "su-la-09": "2026-09-16T15:27:37+00:00",
+    "su-la-10": "2026-09-17T06:44:23+00:00"
   }
 }

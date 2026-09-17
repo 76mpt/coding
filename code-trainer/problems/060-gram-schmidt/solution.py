@@ -17,4 +17,3 @@ def gram_schmidt(vectors):
     G = [[dot(a, b) for b in Q] for a in Q]
     rebuild = [[sum(dot(q, vector) * q[i] for q in Q) for i in range(len(vector))] for vector in vectors]
     return Q, G, rebuild
-
