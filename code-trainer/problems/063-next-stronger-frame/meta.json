@@ -1,0 +1,16 @@
+{
+  "id": "063-next-stronger-frame",
+  "title": "下一個更有信心的幀",
+  "lang": "py",
+  "mode": "function",
+  "entry": "next_stronger",
+  "node": "2.3",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 12,
+  "timeout": 10.0,
+  "est_minutes": 65,
+  "source_style": "leetcode",
+  "created": "2026-09-18T08:21:56+00:00"
+}

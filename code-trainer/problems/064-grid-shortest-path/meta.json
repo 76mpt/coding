@@ -1,0 +1,16 @@
+{
+  "id": "064-grid-shortest-path",
+  "title": "佔據網格上的最短路徑",
+  "lang": "py",
+  "mode": "function",
+  "entry": "shortest_path",
+  "node": "2.3",
+  "difficulty": "standard",
+  "tags": [],
+  "hint_count": 4,
+  "test_count": 13,
+  "timeout": 10.0,
+  "est_minutes": 70,
+  "source_style": "leetcode",
+  "created": "2026-09-18T08:21:56+00:00"
+}
