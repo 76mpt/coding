@@ -5,8 +5,10 @@ def shortest_window(counts, target):
     target: int
     回傳最短長度；找不到回傳 0。
     """
-    left = 0
+    # TODO
+    pass
     cur = 0
+    left = 0
     best = len(counts) + 1
     for right in range(len(counts)):
         cur += counts[right]
@@ -15,3 +17,5 @@ def shortest_window(counts, target):
             cur -= counts[left]
             left += 1
     return 0 if best == len(counts) + 1 else best
+    
+    

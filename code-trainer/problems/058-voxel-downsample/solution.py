@@ -7,22 +7,22 @@ def voxel_downsample(points, size):
     """
     # TODO
     pass
-    voxel = {}
-    for x, y ,z in points:
+    vox = {}
+    for x, y, z in points:
         i = int(x // size)
         j = int(y // size)
         k = int(z // size)
         key = (i, j, k)
-        if key not in voxel:
-            voxel[key] = [0.0, 0.0, 0.0, 0]
-        voxel[key][0] += x
-        voxel[key][1] += y
-        voxel[key][2] += z
-        voxel[key][3] += 1
-    voxel_coor = []
+        if key not in vox:
+            vox[key] = [0.0, 0.0, 0.0, 0]
+        vox[key][0] += x
+        vox[key][1] += y
+        vox[key][2] += z
+        vox[key][3] += 1
+    vox_coor = []
     center = []
-    for key in sorted(voxel):
-        sx, sy, sz, count = voxel[key]
-        voxel_coor.append(list(key))
+    for key in sorted(vox):
+        sx, sy, sz, count = vox[key]
+        vox_coor.append(list(key))
         center.append([sx / count, sy / count, sz / count])
-    return voxel_coor, center
+    return vox_coor, center

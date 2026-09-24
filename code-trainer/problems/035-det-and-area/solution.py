@@ -4,5 +4,5 @@ def det_and_area(M: list[list[float]]) -> tuple[float, float]:
     #       2) 兩個基底向量的像：(a,c) 和 (b,d)
     #       3) 面積 = |叉積|
     (a, b), (c, d) = M
-    det = a * d - b * c
+    det = a * d - c * b
     return det, abs(det)

@@ -5,13 +5,13 @@ def compose_maps(A, B, points):
     points: [[x, y], ...]
     回傳 (先B再A的點, 只套C的點, A·B, B·A)。
     """
-    def apply(M, p):
-        return [M[0][0] * p[0] + M[0][1] * p[1], M[1][0] * p[0] + M[1][1] * p[1]]
-    def matmul(X, Y):
-        return [[sum(X[i][k] * Y[k][j] for k in range(2)) for j in range(2)] for i in range(2)]
-    
+    # TODO
+    pass
+    def matmul(A, B):
+        return [[sum(A[i][k] * B[k][j] for k in range(len(A[0]))) for j in range(len(B))] for i in range(len(A))]
+    def apply(A, point):
+        return [A[0][0] * point[0] + A[0][1] * point[1], A[1][0] * point[0] + A[1][1] * point[1]]
     res = [apply(A, apply(B, point)) for point in points]
     mat = matmul(A, B)
     res_C = [apply(mat, point) for point in points]
     return res, res_C, mat, matmul(B, A)
-

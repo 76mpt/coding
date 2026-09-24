@@ -9,16 +9,13 @@ def first_bad_bracket(s):
     for i, text in enumerate(s):
         if text in '([{':
             stack.append((text, i))
-        elif text in ')}]':
+        elif text in ')]}':
             if not stack:
                 return i
-            
-            left, left_i = stack[-1]
+            left, _ = stack[-1]
             if left != pairs[text]:
                 return i
-            
             stack.pop()
     if stack:
         return stack[0][1]
     return -1
-

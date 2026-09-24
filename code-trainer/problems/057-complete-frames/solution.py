@@ -4,39 +4,37 @@ def complete_frames(filenames):
     filenames: list[str]，格式很髒，不合法的直接忽略
     回傳 list[int]
     """
-    # TODO
-    pass
-    camera = {}
-    for filename in filenames:
-        filename = filename.strip()
-        if "." not in filename:
+    cameras = {}
+    for file in filenames:
+        file = file.strip()
+        if not "." in file:
             continue
-        name, ext = filename.rsplit(".", 1)
+        cam, ext = file.rsplit('.', 1)
         if ext.lower() not in ("png", "jpg", "jpeg"):
             continue
-            
-        name = name.lower()
-        if not name.startswith("cam"):
-            continue
-        name = name[3:]
-        if name.count("_") + name.count("-") != 1:
-            continue
-        if "_" in name:
-            cam, frame = name.split("_")
-        else:
-            cam, frame = name.split("-")
-        if not cam.isdigit() or not frame.isdigit():
-            continue
-        cam = int(cam)
-        frame = int(frame)
-        if cam not in camera:
-            camera[cam] = set()
-        camera[cam].add(frame)
 
-    if not camera:
+        cam = cam.lower()
+        if not cam.startswith("cam"):
+            continue
+        cam = cam[3:]
+        if cam.count("_") + cam.count("-") != 1:
+            continue
+        if "_" in cam:
+            camera, frame = cam.split("_")
+        if "-" in cam:
+            camera, frame = cam.split("-")
+        if not camera.isdigit() or not frame.isdigit():
+            continue
+        camera = int(camera)
+        frame = int(frame)
+        if camera not in cameras:
+            cameras[camera] = set()
+        cameras[camera].add(frame)
+
+    if not cameras:
         return []
     result = None
-    for frame in camera.values():
+    for frame in cameras.values():
         if result is None:
             result = frame.copy()
         else:

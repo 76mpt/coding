@@ -4,6 +4,8 @@ def gram_schmidt(vectors):
     vectors: k 個長度 n 的向量
     回傳 (Q, G, rebuilt)，見題目說明。
     """
+    # TODO
+    pass
     def dot(a, b):
         return sum(x * y for x, y in zip(a, b))
     Q = []

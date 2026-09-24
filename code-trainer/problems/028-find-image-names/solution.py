@@ -8,11 +8,11 @@ def find_images(text: str) -> list[str]:
     for file in files:
         if not "." in file:
             continue
-        stem, dot, ext = file.rpartition(".")
+        stem, dot, ext = file.rpartition('.')
         if not stem:
             continue
         if ext.lower() == "jpg" or ext.lower() == "jpeg" or ext.lower() == "png":
-            if (stem + dot + ext).lower() not in seen:
+            if(stem + dot + ext).lower() not in seen:
                 result.append(stem + dot + ext)
                 seen.add((stem + dot + ext).lower())
     return result

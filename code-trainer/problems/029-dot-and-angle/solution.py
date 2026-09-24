@@ -16,3 +16,4 @@ def dot_and_angle(a: list[float], b: list[float]) -> tuple[float, float]:
         raise ValueError
     theta = math.acos(max(-1.0, min(1.0, coor / (dot_a * dot_b))))
     return coor, theta
+    

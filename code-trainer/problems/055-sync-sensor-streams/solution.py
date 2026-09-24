@@ -5,15 +5,18 @@ def nearest_imu(cam, imu):
     imu: list[int]，嚴格遞增，至少一筆
     回傳 list[int]，長度同 cam。
     """
-    result = []
+    # TODO
+    pass
+    cam_frame = []
     j = 0
-    for frame in cam:
-        while j + 1 < len(imu) and imu[j + 1] < frame:
+    for target in cam:
+        while j + 1 < len(imu) and imu[j + 1] < target:
             j += 1
         if j + 1 < len(imu):
-            left = abs(imu[j] - frame)
-            right = abs(imu[j + 1] - frame)
+            left = abs(imu[j] - target)
+            right = abs(imu[j + 1] - target)
             if right < left:
                 j += 1
-        result.append(j)
-    return result
+        cam_frame.append(j)
+    return cam_frame
+            
