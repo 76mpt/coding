@@ -8,8 +8,8 @@ def count_segments(deltas, k):
     seen = {0: 1}
     cur = 0
     count = 0
-    for dig in deltas:
-        cur += dig
+    for digit in deltas:
+        cur += digit
         target = cur - k
         if target in seen:
             count += seen[target]
