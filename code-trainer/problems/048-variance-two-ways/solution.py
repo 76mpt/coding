@@ -5,6 +5,6 @@ def variance_two_ways(xs: list) -> tuple:
         raise ValueError
     n = len(xs)
     miu = sum(xs) / n
-    defi = (1 / n) * sum((x - miu) ** 2 for x in xs)
-    ext = sum(x ** 2  for x in xs) / n - miu ** 2
-    return defi, ext
+    defini = (1 / n) * sum((x - miu) ** 2 for x in xs)
+    extend =  sum(x ** 2 for x in xs) / n - miu ** 2
+    return defini, extend
