@@ -12,7 +12,6 @@ class BoundingBox:
         
 
     # TODO: width / height / area / center 用 @property
-    # TODO: __repr__
     @property
     def width(self):
         return self.x2 - self.x1
@@ -24,10 +23,13 @@ class BoundingBox:
         return self.height * self.width
     @property
     def center(self):
-        return (self.width / 2 + self.x1) , (self.height / 2 + self.y1) 
+        return (self.x1 + self.width / 2), (self.y1 + self.height / 2)
+    # TODO: __repr__
     def __repr__(self) -> str:
         return f"BoundingBox({self.x1}, {self.y1}, {self.x2}, {self.y2})"
 
+
 def make_boxes(raw: list) -> list:
     """把 [(x1,y1,x2,y2), ...] 變成 [BoundingBox, ...]。"""
-    return [BoundingBox(*line) for line in raw]
+    return [BoundingBox(*data) for data in raw]
+

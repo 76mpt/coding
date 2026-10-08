@@ -1,0 +1,20 @@
+{
+  "id": "067-chain-midpoint-and-loop",
+  "title": "追蹤鏈的中點與迴圈",
+  "lang": "py",
+  "mode": "function",
+  "entry": "scan_chain",
+  "node": "2.4",
+  "difficulty": "warmup",
+  "tags": [
+    "linked-list",
+    "two-pointers",
+    "floyd"
+  ],
+  "hint_count": 4,
+  "test_count": 12,
+  "timeout": 10.0,
+  "est_minutes": 50,
+  "source_style": "leetcode",
+  "created": "2026-10-08T05:35:40+00:00"
+}

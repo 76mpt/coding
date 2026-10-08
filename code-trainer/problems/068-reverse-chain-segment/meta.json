@@ -1,0 +1,21 @@
+{
+  "id": "068-reverse-chain-segment",
+  "title": "反轉軌跡中的一段",
+  "lang": "py",
+  "mode": "function",
+  "entry": "reverse_between",
+  "node": "2.4",
+  "difficulty": "standard",
+  "tags": [
+    "linked-list",
+    "dummy-head",
+    "reverse",
+    "in-place"
+  ],
+  "hint_count": 4,
+  "test_count": 12,
+  "timeout": 10.0,
+  "est_minutes": 70,
+  "source_style": "leetcode",
+  "created": "2026-10-08T05:40:08+00:00"
+}

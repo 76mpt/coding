@@ -15,10 +15,8 @@ class Dataset:
     def __len__(self):
         return len(self.samples)
 
-
 def build_datasets(specs: list) -> tuple[list, int]:
     """specs 是 [(名字, [樣本,...]), ...]。回傳 (datasets, Dataset.count)。"""
-    # TODO: 先把 Dataset.count 歸零，再建立
     Dataset.count = 0
     dataset = []
     for name, sample in specs:
