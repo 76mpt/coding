@@ -1004,15 +1004,15 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-09-26T08:06:43+00:00",
       "node": "M0.3",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-10-06T05:52:31+00:00",
-      "review_due": "2026-10-09T05:52:31+00:00"
+      "solved_at": "2026-10-09T08:37:08+00:00",
+      "review_due": "2026-10-16T08:37:08+00:00"
     },
     "066-fit-line-least-squares": {
       "status": "solved",
@@ -1020,41 +1020,116 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-09-26T08:06:44+00:00",
       "node": "M0.3",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-10-06T05:57:20+00:00",
-      "review_due": "2026-10-09T05:57:20+00:00"
+      "solved_at": "2026-10-09T08:42:50+00:00",
+      "review_due": "2026-10-16T08:42:50+00:00"
     },
     "067-chain-midpoint-and-loop": {
+      "status": "solved",
+      "attempts": 3,
+      "hints_revealed": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
+      "first_seen": "2026-10-08T05:35:40+00:00",
+      "node": "2.4",
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-10-09T08:59:12+00:00",
+      "review_due": "2026-10-12T08:59:12+00:00"
+    },
+    "068-reverse-chain-segment": {
+      "status": "solved",
+      "attempts": 1,
+      "hints_revealed": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
+      "first_seen": "2026-10-08T05:40:08+00:00",
+      "node": "2.4",
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-10-09T09:04:52+00:00",
+      "review_due": "2026-10-12T09:04:52+00:00"
+    },
+    "069-weighted-least-squares": {
       "status": "open",
       "attempts": 0,
       "hints_revealed": 0,
       "answer_unlocked": false,
       "ever_unlocked": false,
       "rep": 0,
-      "first_seen": "2026-10-08T05:35:40+00:00",
+      "first_seen": "2026-10-09T08:50:59+00:00",
+      "node": "M0.3",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "070-fold-chain": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-10-09T08:55:43+00:00",
       "node": "2.4",
       "ever_solved": false,
       "ever_clean": false,
       "solve_hints": 0
     },
-    "068-reverse-chain-segment": {
+    "071-power-iteration": {
       "status": "open",
       "attempts": 0,
       "hints_revealed": 0,
       "answer_unlocked": false,
       "ever_unlocked": false,
       "rep": 0,
-      "first_seen": "2026-10-08T05:40:08+00:00",
-      "node": "2.4",
+      "first_seen": "2026-10-09T09:04:18+00:00",
+      "node": "M0.4",
       "ever_solved": false,
       "ever_clean": false,
       "solve_hints": 0
+    },
+    "072-search-bounds": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-10-09T09:09:10+00:00",
+      "node": "2.5"
+    },
+    "073-search-rotated": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-10-09T09:12:38+00:00",
+      "node": "2.5"
+    },
+    "074-max-cut-length": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-10-09T09:17:35+00:00",
+      "node": "2.5"
     }
   },
   "topics": {
@@ -1215,6 +1290,12 @@
       "hints_used": 0
     },
     "2.4": {
+      "attempted": 2,
+      "solved": 2,
+      "clean_solved": 2,
+      "hints_used": 0
+    },
+    "M0.4": {
       "attempted": 0,
       "solved": 0,
       "clean_solved": 0,
@@ -1222,131 +1303,6 @@
     }
   },
   "log": [
-    {
-      "ts": "2026-09-04T07:49:58+00:00",
-      "event": "test_fail",
-      "id": "047-monte-carlo-bayes",
-      "passed": 4,
-      "total": 9
-    },
-    {
-      "ts": "2026-09-04T07:50:30+00:00",
-      "event": "test_fail",
-      "id": "047-monte-carlo-bayes",
-      "passed": 4,
-      "total": 9
-    },
-    {
-      "ts": "2026-09-04T07:51:05+00:00",
-      "event": "solved",
-      "id": "047-monte-carlo-bayes",
-      "attempts": 3,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-04T07:51:16+00:00",
-      "event": "answer_unlocked",
-      "id": "047-monte-carlo-bayes",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-04T07:51:40+00:00",
-      "event": "redo",
-      "id": "048-variance-two-ways",
-      "rep": 1
-    },
-    {
-      "ts": "2026-09-04T07:54:51+00:00",
-      "event": "test_fail",
-      "id": "048-variance-two-ways",
-      "passed": 9,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-04T07:56:09+00:00",
-      "event": "solved",
-      "id": "048-variance-two-ways",
-      "attempts": 2,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-04T07:56:14+00:00",
-      "event": "answer_unlocked",
-      "id": "048-variance-two-ways",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-04T08:12:24+00:00",
-      "event": "test_fail",
-      "id": "042-complexity-showdown",
-      "passed": 6,
-      "total": 9
-    },
-    {
-      "ts": "2026-09-04T08:16:00+00:00",
-      "event": "solved",
-      "id": "042-complexity-showdown",
-      "attempts": 2,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-04T08:16:04+00:00",
-      "event": "answer_unlocked",
-      "id": "042-complexity-showdown",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-04T08:23:14+00:00",
-      "event": "solved",
-      "id": "043-hidden-costs",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-04T08:23:18+00:00",
-      "event": "answer_unlocked",
-      "id": "043-hidden-costs",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-04T08:29:14+00:00",
-      "event": "test_fail",
-      "id": "049-geometric-series",
-      "passed": 5,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-04T08:29:43+00:00",
-      "event": "test_fail",
-      "id": "049-geometric-series",
-      "passed": 7,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-04T08:30:05+00:00",
-      "event": "test_fail",
-      "id": "049-geometric-series",
-      "passed": 9,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-04T08:30:42+00:00",
-      "event": "solved",
-      "id": "049-geometric-series",
-      "attempts": 4,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-04T08:30:45+00:00",
-      "event": "answer_unlocked",
-      "id": "049-geometric-series",
-      "solved_first": true
-    },
     {
       "ts": "2026-09-04T08:31:41+00:00",
       "event": "answer_unlocked",
@@ -4651,9 +4607,137 @@
       "event": "answer_unlocked",
       "id": "041-detection-dunders",
       "solved_first": true
+    },
+    {
+      "ts": "2026-10-09T08:31:29+00:00",
+      "event": "redo",
+      "id": "065-project-onto-subspace",
+      "rep": 1
+    },
+    {
+      "ts": "2026-10-09T08:37:08+00:00",
+      "event": "solved",
+      "id": "065-project-onto-subspace",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-09T08:37:12+00:00",
+      "event": "answer_unlocked",
+      "id": "065-project-onto-subspace",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-09T08:37:22+00:00",
+      "event": "redo",
+      "id": "066-fit-line-least-squares",
+      "rep": 1
+    },
+    {
+      "ts": "2026-10-09T08:42:50+00:00",
+      "event": "solved",
+      "id": "066-fit-line-least-squares",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-09T08:42:53+00:00",
+      "event": "answer_unlocked",
+      "id": "066-fit-line-least-squares",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-09T08:50:59+00:00",
+      "event": "created",
+      "id": "069-weighted-least-squares",
+      "node": "M0.3",
+      "lang": "py",
+      "difficulty": "challenge"
+    },
+    {
+      "ts": "2026-10-09T08:55:43+00:00",
+      "event": "created",
+      "id": "070-fold-chain",
+      "node": "2.4",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-10-09T08:57:56+00:00",
+      "event": "test_error",
+      "id": "067-chain-midpoint-and-loop"
+    },
+    {
+      "ts": "2026-10-09T08:58:27+00:00",
+      "event": "test_fail",
+      "id": "067-chain-midpoint-and-loop",
+      "passed": 8,
+      "total": 12
+    },
+    {
+      "ts": "2026-10-09T08:59:12+00:00",
+      "event": "solved",
+      "id": "067-chain-midpoint-and-loop",
+      "attempts": 3,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-09T08:59:16+00:00",
+      "event": "answer_unlocked",
+      "id": "067-chain-midpoint-and-loop",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-09T09:04:18+00:00",
+      "event": "created",
+      "id": "071-power-iteration",
+      "node": "M0.4",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-10-09T09:04:52+00:00",
+      "event": "solved",
+      "id": "068-reverse-chain-segment",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-09T09:04:55+00:00",
+      "event": "answer_unlocked",
+      "id": "068-reverse-chain-segment",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-09T09:09:10+00:00",
+      "event": "created",
+      "id": "072-search-bounds",
+      "node": "2.5",
+      "lang": "py",
+      "difficulty": "warmup"
+    },
+    {
+      "ts": "2026-10-09T09:12:38+00:00",
+      "event": "created",
+      "id": "073-search-rotated",
+      "node": "2.5",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-10-09T09:17:35+00:00",
+      "event": "created",
+      "id": "074-max-cut-length",
+      "node": "2.5",
+      "lang": "py",
+      "difficulty": "standard"
     }
   ],
-  "counter": 68,
+  "counter": 74,
   "plan": {
     "started": "2026-08-17T00:00:00",
     "hours_per_week": 16

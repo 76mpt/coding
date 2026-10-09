@@ -1,0 +1,20 @@
+{
+  "id": "073-search-rotated",
+  "title": "旋轉過的陣列裡搜尋",
+  "lang": "py",
+  "mode": "function",
+  "entry": "search_rotated",
+  "node": "2.5",
+  "difficulty": "standard",
+  "tags": [
+    "binary-search",
+    "rotated-array",
+    "ring-buffer"
+  ],
+  "hint_count": 4,
+  "test_count": 11,
+  "timeout": 10.0,
+  "est_minutes": 70,
+  "source_style": "leetcode",
+  "created": "2026-10-09T09:12:38+00:00"
+}

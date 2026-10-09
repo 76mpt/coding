@@ -17,5 +17,17 @@ class ListNode:
 
 def reverse_between(head, left, right):
     """把鏈上第 left 到第 right 個節點原地反轉，回傳整條鏈的新開頭。"""
-    # TODO
-    return head
+    if head is None:
+        return None
+    dummy = ListNode(0, head)
+    prev = dummy
+
+    for _ in range(left - 1):
+        prev = prev.next
+    curr = prev.next
+    for _ in range(right - left):
+        move = curr.next
+        curr.next = move.next
+        move.next = prev.next
+        prev.next = move
+    return dummy.next

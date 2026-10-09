@@ -1,0 +1,20 @@
+{
+  "id": "071-power-iteration",
+  "title": "冪迭代找主特徵值",
+  "lang": "py",
+  "mode": "function",
+  "entry": "power_iteration",
+  "node": "M0.4",
+  "difficulty": "warmup",
+  "tags": [
+    "eigenvalue",
+    "power-iteration",
+    "rayleigh-quotient"
+  ],
+  "hint_count": 4,
+  "test_count": 11,
+  "timeout": 10.0,
+  "est_minutes": 55,
+  "source_style": "math",
+  "created": "2026-10-09T09:04:18+00:00"
+}

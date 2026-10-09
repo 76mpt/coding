@@ -5,6 +5,8 @@ def project_onto(basis, v):
     v: 長度 n 的向量
     回傳 (p, r, dots, p2)，見題目說明。
     """
+    # TODO
+    pass
     def dot(a, b):
         return sum(x * y for x, y in zip(a, b))
     def norm(v):
@@ -33,5 +35,4 @@ def project_onto(basis, v):
     r = [float(v[i]) - p[i] for i in range(len(v))]
     dots = [dot(r, a) for a in basis]
     p2 = proj(qs, p)
-    return (p, r, dots, p2) 
-
+    return p, r, dots, p2

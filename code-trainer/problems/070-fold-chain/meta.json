@@ -1,0 +1,22 @@
+{
+  "id": "070-fold-chain",
+  "title": "把軌跡對折重排",
+  "lang": "py",
+  "mode": "function",
+  "entry": "fold_chain",
+  "node": "2.4",
+  "difficulty": "standard",
+  "tags": [
+    "linked-list",
+    "two-pointers",
+    "reverse",
+    "merge",
+    "in-place"
+  ],
+  "hint_count": 4,
+  "test_count": 12,
+  "timeout": 10.0,
+  "est_minutes": 75,
+  "source_style": "leetcode",
+  "created": "2026-10-09T08:55:43+00:00"
+}

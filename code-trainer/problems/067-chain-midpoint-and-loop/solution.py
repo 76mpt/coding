@@ -18,4 +18,16 @@ class ListNode:
 def scan_chain(head):
     """掃描一條鏈，回傳 (has_loop, length, mid_val)。"""
     # TODO
-    return (False, 0, None)
+    slow = fast = head
+    while fast is not None and fast.next is not None:
+        slow = slow.next
+        fast = fast.next.next
+        if slow is fast:
+            return(True, -1, None)
+
+    n = 0
+    node = head
+    while node is not None:
+        n += 1
+        node = node.next
+    return (False, n, slow.val if slow is not None else None)

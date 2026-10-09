@@ -1,0 +1,21 @@
+{
+  "id": "069-weighted-least-squares",
+  "title": "加權最小平方與過定方程組",
+  "lang": "py",
+  "mode": "function",
+  "entry": "weighted_lstsq",
+  "node": "M0.3",
+  "difficulty": "challenge",
+  "tags": [
+    "least-squares",
+    "normal-equation",
+    "weighted",
+    "gaussian-elimination"
+  ],
+  "hint_count": 4,
+  "test_count": 11,
+  "timeout": 10.0,
+  "est_minutes": 95,
+  "source_style": "math",
+  "created": "2026-10-09T08:50:59+00:00"
+}
