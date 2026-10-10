@@ -13,15 +13,14 @@ def shortest_path(grid):
         return -1
     if m == 1 and n == 1:
         return 0
-    queue = deque([(0, 0, 0)])
+    que = deque([(0, 0, 0)])
     grid[0][0] = 1
     directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-    while queue:
-        r, c, steps = queue.popleft()
+    while que:
+        r, c, steps = que.popleft()
         for dr, dc in directions:
             nr = r + dr
             nc = c + dc
-
             if not (0 <= nr < m and 0 <= nc < n):
                 continue
             if grid[nr][nc] == 1:
@@ -29,6 +28,5 @@ def shortest_path(grid):
             if nr == m - 1 and nc == n - 1:
                 return steps + 1
             grid[nr][nc] = 1
-            queue.append((nr, nc, steps + 1))
-
+            que.append((nr, nc, steps + 1))
     return -1

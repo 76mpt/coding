@@ -4,6 +4,8 @@ def next_stronger(scores):
     scores: list[int]
     回傳 list[int]，長度同 scores
     """
+    # TODO
+    pass
     n = len(scores)
     answer = [-1] * n
     stack = []

@@ -636,31 +636,31 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-08-28T11:16:36+00:00",
       "node": "1.9",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-14T08:42:48+00:00",
-      "review_due": "2026-10-10T08:42:48+00:00"
+      "solved_at": "2026-10-10T07:56:40+00:00",
+      "review_due": "2026-11-14T07:56:40+00:00"
     },
     "043-hidden-costs": {
       "status": "solved",
-      "attempts": 9,
+      "attempts": 2,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-08-28T11:18:23+00:00",
       "node": "1.9",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-14T08:55:49+00:00",
-      "review_due": "2026-10-10T08:55:49+00:00"
+      "solved_at": "2026-10-10T08:00:05+00:00",
+      "review_due": "2026-11-14T08:00:05+00:00"
     },
     "044-rotate-points": {
       "status": "solved",
@@ -744,19 +744,19 @@
     },
     "049-geometric-series": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 8,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-08-29T07:06:31+00:00",
       "node": "M00.7",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-14T09:00:19+00:00",
-      "review_due": "2026-10-10T09:00:19+00:00"
+      "solved_at": "2026-10-10T08:08:58+00:00",
+      "review_due": "2026-11-14T08:08:58+00:00"
     },
     "050-harmonic-and-logn": {
       "status": "solved",
@@ -968,19 +968,19 @@
     },
     "063-next-stronger-frame": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-09-18T08:21:56+00:00",
       "node": "2.3",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-10-07T13:08:12+00:00",
-      "review_due": "2026-10-10T13:08:12+00:00"
+      "solved_at": "2026-10-10T08:10:47+00:00",
+      "review_due": "2026-10-17T08:10:47+00:00"
     },
     "064-grid-shortest-path": {
       "status": "solved",
@@ -988,15 +988,15 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 1,
+      "rep": 2,
       "first_seen": "2026-09-18T08:21:56+00:00",
       "node": "2.3",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-10-07T13:29:15+00:00",
-      "review_due": "2026-10-10T13:29:15+00:00"
+      "solved_at": "2026-10-10T08:24:38+00:00",
+      "review_due": "2026-10-17T08:24:38+00:00"
     },
     "065-project-onto-subspace": {
       "status": "solved",
@@ -1063,17 +1063,20 @@
       "review_due": "2026-10-12T09:04:52+00:00"
     },
     "069-weighted-least-squares": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-10-09T08:50:59+00:00",
       "node": "M0.3",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-10-10T08:36:18+00:00",
+      "review_due": "2026-10-13T08:36:18+00:00"
     },
     "070-fold-chain": {
       "status": "open",
@@ -1109,7 +1112,10 @@
       "ever_unlocked": false,
       "rep": 0,
       "first_seen": "2026-10-09T09:09:10+00:00",
-      "node": "2.5"
+      "node": "2.5",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
     },
     "073-search-rotated": {
       "status": "open",
@@ -1119,7 +1125,10 @@
       "ever_unlocked": false,
       "rep": 0,
       "first_seen": "2026-10-09T09:12:38+00:00",
-      "node": "2.5"
+      "node": "2.5",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
     },
     "074-max-cut-length": {
       "status": "open",
@@ -1129,7 +1138,10 @@
       "ever_unlocked": false,
       "rep": 0,
       "first_seen": "2026-10-09T09:17:35+00:00",
-      "node": "2.5"
+      "node": "2.5",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
     }
   },
   "topics": {
@@ -1284,9 +1296,9 @@
       "hints_used": 0
     },
     "M0.3": {
-      "attempted": 2,
-      "solved": 2,
-      "clean_solved": 2,
+      "attempted": 3,
+      "solved": 3,
+      "clean_solved": 3,
       "hints_used": 0
     },
     "2.4": {
@@ -1303,190 +1315,6 @@
     }
   },
   "log": [
-    {
-      "ts": "2026-09-04T08:31:41+00:00",
-      "event": "answer_unlocked",
-      "id": "049-geometric-series",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-04T08:31:43+00:00",
-      "event": "test_fail",
-      "id": "049-geometric-series",
-      "passed": 3,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-04T08:32:10+00:00",
-      "event": "solved",
-      "id": "049-geometric-series",
-      "attempts": 6,
-      "hints": 0,
-      "clean": false
-    },
-    {
-      "ts": "2026-09-04T08:32:12+00:00",
-      "event": "answer_unlocked",
-      "id": "049-geometric-series",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-05T06:46:40+00:00",
-      "event": "redo",
-      "id": "002-collatz-steps",
-      "rep": 3
-    },
-    {
-      "ts": "2026-09-05T06:48:50+00:00",
-      "event": "test_fail",
-      "id": "002-collatz-steps",
-      "passed": 0,
-      "total": 6
-    },
-    {
-      "ts": "2026-09-05T06:48:56+00:00",
-      "event": "solved",
-      "id": "002-collatz-steps",
-      "attempts": 2,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-05T06:49:00+00:00",
-      "event": "answer_unlocked",
-      "id": "002-collatz-steps",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-05T06:49:06+00:00",
-      "event": "redo",
-      "id": "020-log-product",
-      "rep": 3
-    },
-    {
-      "ts": "2026-09-05T06:52:06+00:00",
-      "event": "test_fail",
-      "id": "020-log-product",
-      "passed": 2,
-      "total": 9
-    },
-    {
-      "ts": "2026-09-05T06:52:17+00:00",
-      "event": "test_fail",
-      "id": "020-log-product",
-      "passed": 8,
-      "total": 9
-    },
-    {
-      "ts": "2026-09-05T06:52:56+00:00",
-      "event": "test_fail",
-      "id": "020-log-product",
-      "passed": 8,
-      "total": 9
-    },
-    {
-      "ts": "2026-09-05T06:54:35+00:00",
-      "event": "solved",
-      "id": "020-log-product",
-      "attempts": 4,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-05T06:54:39+00:00",
-      "event": "answer_unlocked",
-      "id": "020-log-product",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-05T06:55:13+00:00",
-      "event": "redo",
-      "id": "026-normalize-filename",
-      "rep": 2
-    },
-    {
-      "ts": "2026-09-05T07:01:19+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 0,
-      "total": 11
-    },
-    {
-      "ts": "2026-09-05T07:03:03+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 0,
-      "total": 11
-    },
-    {
-      "ts": "2026-09-05T07:03:15+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 6,
-      "total": 11
-    },
-    {
-      "ts": "2026-09-05T07:05:30+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 6,
-      "total": 11
-    },
-    {
-      "ts": "2026-09-05T07:05:49+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 6,
-      "total": 11
-    },
-    {
-      "ts": "2026-09-05T07:06:16+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 6,
-      "total": 11
-    },
-    {
-      "ts": "2026-09-05T07:06:19+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 6,
-      "total": 11
-    },
-    {
-      "ts": "2026-09-05T07:06:29+00:00",
-      "event": "test_fail",
-      "id": "026-normalize-filename",
-      "passed": 8,
-      "total": 11
-    },
-    {
-      "ts": "2026-09-05T07:08:23+00:00",
-      "event": "solved",
-      "id": "026-normalize-filename",
-      "attempts": 9,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-05T07:08:27+00:00",
-      "event": "answer_unlocked",
-      "id": "026-normalize-filename",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-05T07:09:18+00:00",
-      "event": "redo",
-      "id": "039-bounding-box-class",
-      "rep": 1
-    },
-    {
-      "ts": "2026-09-05T07:16:14+00:00",
-      "event": "test_fail",
-      "id": "039-bounding-box-class",
-      "passed": 1,
-      "total": 12
-    },
     {
       "ts": "2026-09-05T07:16:49+00:00",
       "event": "test_fail",
@@ -4735,6 +4563,190 @@
       "node": "2.5",
       "lang": "py",
       "difficulty": "standard"
+    },
+    {
+      "ts": "2026-10-10T07:52:48+00:00",
+      "event": "redo",
+      "id": "042-complexity-showdown",
+      "rep": 3
+    },
+    {
+      "ts": "2026-10-10T07:55:29+00:00",
+      "event": "test_fail",
+      "id": "042-complexity-showdown",
+      "passed": 6,
+      "total": 9
+    },
+    {
+      "ts": "2026-10-10T07:56:40+00:00",
+      "event": "solved",
+      "id": "042-complexity-showdown",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-10T07:56:47+00:00",
+      "event": "answer_unlocked",
+      "id": "042-complexity-showdown",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-10T07:56:50+00:00",
+      "event": "redo",
+      "id": "043-hidden-costs",
+      "rep": 3
+    },
+    {
+      "ts": "2026-10-10T07:59:56+00:00",
+      "event": "test_fail",
+      "id": "043-hidden-costs",
+      "passed": 1,
+      "total": 9
+    },
+    {
+      "ts": "2026-10-10T08:00:05+00:00",
+      "event": "solved",
+      "id": "043-hidden-costs",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-10T08:00:08+00:00",
+      "event": "answer_unlocked",
+      "id": "043-hidden-costs",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-10T08:00:30+00:00",
+      "event": "redo",
+      "id": "049-geometric-series",
+      "rep": 3
+    },
+    {
+      "ts": "2026-10-10T08:04:05+00:00",
+      "event": "test_fail",
+      "id": "049-geometric-series",
+      "passed": 2,
+      "total": 10
+    },
+    {
+      "ts": "2026-10-10T08:04:43+00:00",
+      "event": "test_fail",
+      "id": "049-geometric-series",
+      "passed": 1,
+      "total": 10
+    },
+    {
+      "ts": "2026-10-10T08:06:37+00:00",
+      "event": "test_fail",
+      "id": "049-geometric-series",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-10-10T08:06:48+00:00",
+      "event": "test_fail",
+      "id": "049-geometric-series",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-10-10T08:07:47+00:00",
+      "event": "test_fail",
+      "id": "049-geometric-series",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-10-10T08:07:53+00:00",
+      "event": "test_fail",
+      "id": "049-geometric-series",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-10-10T08:08:12+00:00",
+      "event": "test_fail",
+      "id": "049-geometric-series",
+      "passed": 0,
+      "total": 10
+    },
+    {
+      "ts": "2026-10-10T08:08:58+00:00",
+      "event": "solved",
+      "id": "049-geometric-series",
+      "attempts": 8,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-10T08:09:01+00:00",
+      "event": "answer_unlocked",
+      "id": "049-geometric-series",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-10T08:09:07+00:00",
+      "event": "redo",
+      "id": "063-next-stronger-frame",
+      "rep": 1
+    },
+    {
+      "ts": "2026-10-10T08:10:47+00:00",
+      "event": "solved",
+      "id": "063-next-stronger-frame",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-10T08:10:51+00:00",
+      "event": "answer_unlocked",
+      "id": "063-next-stronger-frame",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-10T08:14:44+00:00",
+      "event": "redo",
+      "id": "064-grid-shortest-path",
+      "rep": 1
+    },
+    {
+      "ts": "2026-10-10T08:22:31+00:00",
+      "event": "test_fail",
+      "id": "064-grid-shortest-path",
+      "passed": 0,
+      "total": 13
+    },
+    {
+      "ts": "2026-10-10T08:24:38+00:00",
+      "event": "solved",
+      "id": "064-grid-shortest-path",
+      "attempts": 2,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-10T08:24:52+00:00",
+      "event": "answer_unlocked",
+      "id": "064-grid-shortest-path",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-10T08:36:18+00:00",
+      "event": "solved",
+      "id": "069-weighted-least-squares",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-10T08:36:22+00:00",
+      "event": "answer_unlocked",
+      "id": "069-weighted-least-squares",
+      "solved_first": true
     }
   ],
   "counter": 74,
