@@ -18,4 +18,30 @@ class ListNode:
 def fold_chain(head):
     """把鏈對折重排成 L0 -> Ln-1 -> L1 -> Ln-2 -> ...，回傳新的鏈頭。"""
     # TODO
+    if head is None or head.next is None:
+        return head
+    slow = fast = head
+    while fast.next and fast.next.next:
+        slow = slow.next
+        fast = fast.next.next
+    second = slow.next
+    slow.next = None
+
+    prev = None
+    curr = second
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+    first = head
+    second = prev
+    while second:
+        first_next = first.next
+        second_next = second.next
+
+        first.next = second
+        second.next = first_next
+        first = first_next
+        second = second_next
     return head

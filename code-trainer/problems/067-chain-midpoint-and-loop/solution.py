@@ -23,8 +23,8 @@ def scan_chain(head):
         slow = slow.next
         fast = fast.next.next
         if slow is fast:
-            return(True, -1, None)
-
+            return (True, -1, None)
+    
     n = 0
     node = head
     while node is not None:

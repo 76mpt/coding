@@ -4,16 +4,18 @@ def first_bad_bracket(s):
     s: str，含 ()[]{} 與其他可忽略的字元
     回傳 int
     """
+    # TODO
+    pass
     stack = []
-    pairs = {")": "(", "}": "{", "]": "["}
+    paris = {")": "(", "]": "[", "}": "{"}
     for i, text in enumerate(s):
-        if text in '([{':
+        if text in "({[":
             stack.append((text, i))
-        elif text in ')]}':
+        elif text in ")}]":
             if not stack:
                 return i
             left, _ = stack[-1]
-            if left != pairs[text]:
+            if left != paris[text]:
                 return i
             stack.pop()
     if stack:
