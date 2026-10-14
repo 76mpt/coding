@@ -6,18 +6,19 @@ def change_of_basis(basis, points, matrix):
     matrix: [[a, b], [c, d]]，標準基底下的變換
     回傳 (B-座標, 組回來的點, [T]_B, 變換後的點的 B-座標)。
     """
-    
+    # TODO
+    pass
     def apply(M, p):
         return [M[0][0] * p[0] + M[0][1] * p[1], M[1][0] * p[0] + M[1][1] * p[1]]
     def matmul(X, Y):
         return [[sum(X[i][k] * Y[k][j] for k in range(2)) for j in range(2)] for i in range(2)]
-    def inverse_2X2(M):
+    def inverse_2x2(M):
         a, b = M[0]
         c, d = M[1]
-        det = a * d - b * c
+        det = a * d - c * b
         return [[d / det, -b / det], [-c / det, a / det]]
     B = [[float(basis[0][0]), float(basis[1][0])], [float(basis[0][1]), float(basis[1][1])]]
-    B_inv = inverse_2X2(B)
+    B_inv = inverse_2x2(B)
     coor = []
     for point in points:
         c = apply(B_inv, point)
@@ -36,6 +37,3 @@ def change_of_basis(basis, points, matrix):
         c = apply(B_inv, tran)
         t_coor.append([float(c[0]), float(c[1])])
     return coor, reco, t_b, t_coor
-
-
-

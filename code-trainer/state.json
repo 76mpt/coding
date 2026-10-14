@@ -99,17 +99,20 @@
       "review_due": "2026-11-17T08:53:43+00:00"
     },
     "007-min-shipping-capacity": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-08-04T08:51:07+00:00",
       "node": "2.5",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-10-14T12:52:09+00:00",
+      "review_due": "2026-10-17T12:52:09+00:00"
     },
     "008-cpp-unique-sorted": {
       "status": "open",
@@ -792,19 +795,19 @@
     },
     "052-change-of-basis": {
       "status": "solved",
-      "attempts": 1,
+      "attempts": 4,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-09-08T10:23:15+00:00",
       "node": "M0.1",
       "ever_attempted": true,
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
-      "solved_at": "2026-09-18T08:26:00+00:00",
-      "review_due": "2026-10-14T08:26:00+00:00"
+      "solved_at": "2026-10-14T12:43:17+00:00",
+      "review_due": "2026-11-18T12:43:17+00:00"
     },
     "053-compact-detections": {
       "status": "solved",
@@ -1108,17 +1111,20 @@
       "solve_hints": 0
     },
     "072-search-bounds": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-10-09T09:09:10+00:00",
       "node": "2.5",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-10-14T12:47:00+00:00",
+      "review_due": "2026-10-17T12:47:00+00:00"
     },
     "073-search-rotated": {
       "status": "open",
@@ -1185,9 +1191,9 @@
       "hints_used": 0
     },
     "2.5": {
-      "attempted": 0,
-      "solved": 0,
-      "clean_solved": 0,
+      "attempted": 2,
+      "solved": 2,
+      "clean_solved": 2,
       "hints_used": 0
     },
     "2.12": {
@@ -1318,75 +1324,6 @@
     }
   },
   "log": [
-    {
-      "ts": "2026-09-07T04:24:40+00:00",
-      "event": "test_fail",
-      "id": "005-parse-label-line",
-      "passed": 8,
-      "total": 12
-    },
-    {
-      "ts": "2026-09-07T04:26:59+00:00",
-      "event": "test_fail",
-      "id": "005-parse-label-line",
-      "passed": 8,
-      "total": 12
-    },
-    {
-      "ts": "2026-09-07T04:27:50+00:00",
-      "event": "test_fail",
-      "id": "005-parse-label-line",
-      "passed": 11,
-      "total": 12
-    },
-    {
-      "ts": "2026-09-07T04:28:09+00:00",
-      "event": "solved",
-      "id": "005-parse-label-line",
-      "attempts": 5,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-07T04:28:12+00:00",
-      "event": "answer_unlocked",
-      "id": "005-parse-label-line",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-07T04:28:54+00:00",
-      "event": "redo",
-      "id": "028-find-image-names",
-      "rep": 2
-    },
-    {
-      "ts": "2026-09-07T04:34:17+00:00",
-      "event": "test_fail",
-      "id": "028-find-image-names",
-      "passed": 8,
-      "total": 12
-    },
-    {
-      "ts": "2026-09-07T04:34:38+00:00",
-      "event": "test_fail",
-      "id": "028-find-image-names",
-      "passed": 8,
-      "total": 12
-    },
-    {
-      "ts": "2026-09-07T04:35:04+00:00",
-      "event": "solved",
-      "id": "028-find-image-names",
-      "attempts": 3,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-07T04:35:09+00:00",
-      "event": "answer_unlocked",
-      "id": "028-find-image-names",
-      "solved_first": true
-    },
     {
       "ts": "2026-09-07T04:36:45+00:00",
       "event": "redo",
@@ -4747,6 +4684,75 @@
       "ts": "2026-10-13T09:10:48+00:00",
       "event": "answer_unlocked",
       "id": "070-fold-chain",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-14T12:34:18+00:00",
+      "event": "redo",
+      "id": "052-change-of-basis",
+      "rep": 3
+    },
+    {
+      "ts": "2026-10-14T12:42:10+00:00",
+      "event": "test_fail",
+      "id": "052-change-of-basis",
+      "passed": 0,
+      "total": 9
+    },
+    {
+      "ts": "2026-10-14T12:42:34+00:00",
+      "event": "test_fail",
+      "id": "052-change-of-basis",
+      "passed": 2,
+      "total": 9
+    },
+    {
+      "ts": "2026-10-14T12:42:53+00:00",
+      "event": "test_fail",
+      "id": "052-change-of-basis",
+      "passed": 2,
+      "total": 9
+    },
+    {
+      "ts": "2026-10-14T12:43:17+00:00",
+      "event": "solved",
+      "id": "052-change-of-basis",
+      "attempts": 4,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-14T12:43:35+00:00",
+      "event": "answer_unlocked",
+      "id": "052-change-of-basis",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-14T12:47:00+00:00",
+      "event": "solved",
+      "id": "072-search-bounds",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-14T12:47:04+00:00",
+      "event": "answer_unlocked",
+      "id": "072-search-bounds",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-14T12:52:09+00:00",
+      "event": "solved",
+      "id": "007-min-shipping-capacity",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-14T12:52:12+00:00",
+      "event": "answer_unlocked",
+      "id": "007-min-shipping-capacity",
       "solved_first": true
     }
   ],
