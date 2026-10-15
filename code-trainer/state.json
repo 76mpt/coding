@@ -1127,17 +1127,20 @@
       "review_due": "2026-10-17T12:47:00+00:00"
     },
     "073-search-rotated": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-10-09T09:12:38+00:00",
       "node": "2.5",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-10-15T13:21:08+00:00",
+      "review_due": "2026-10-18T13:21:08+00:00"
     },
     "074-max-cut-length": {
       "status": "open",
@@ -1191,9 +1194,9 @@
       "hints_used": 0
     },
     "2.5": {
-      "attempted": 2,
-      "solved": 2,
-      "clean_solved": 2,
+      "attempted": 3,
+      "solved": 3,
+      "clean_solved": 3,
       "hints_used": 0
     },
     "2.12": {
@@ -1324,19 +1327,6 @@
     }
   },
   "log": [
-    {
-      "ts": "2026-09-07T04:36:45+00:00",
-      "event": "redo",
-      "id": "032-label-maps",
-      "rep": 2
-    },
-    {
-      "ts": "2026-09-07T04:44:12+00:00",
-      "event": "test_fail",
-      "id": "032-label-maps",
-      "passed": 1,
-      "total": 8
-    },
     {
       "ts": "2026-09-07T04:44:25+00:00",
       "event": "solved",
@@ -4754,6 +4744,20 @@
       "event": "answer_unlocked",
       "id": "007-min-shipping-capacity",
       "solved_first": true
+    },
+    {
+      "ts": "2026-10-15T13:21:08+00:00",
+      "event": "solved",
+      "id": "073-search-rotated",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-15T13:21:11+00:00",
+      "event": "answer_unlocked",
+      "id": "073-search-rotated",
+      "solved_first": true
     }
   ],
   "counter": 74,
@@ -4781,6 +4785,7 @@
     "su-la-10": "2026-09-17T06:44:23+00:00",
     "mit1806-15": "2026-09-26T10:06:52+00:00",
     "mit1806-16": "2026-09-26T10:06:54+00:00",
-    "su-la-08": "2026-10-08T07:09:03+00:00"
+    "su-la-08": "2026-10-08T07:09:03+00:00",
+    "su-la-11": "2026-10-15T12:57:47+00:00"
   }
 }
