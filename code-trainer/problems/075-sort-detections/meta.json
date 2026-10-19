@@ -1,0 +1,21 @@
+{
+  "id": "075-sort-detections",
+  "title": "偵測框的多鍵排序",
+  "lang": "py",
+  "mode": "function",
+  "entry": "sort_detections",
+  "node": "2.6",
+  "difficulty": "warmup",
+  "tags": [
+    "sorting",
+    "sort-key",
+    "stable-sort",
+    "argsort"
+  ],
+  "hint_count": 4,
+  "test_count": 10,
+  "timeout": 10.0,
+  "est_minutes": 50,
+  "source_style": "leetcode",
+  "created": "2026-10-19T13:43:12+00:00"
+}

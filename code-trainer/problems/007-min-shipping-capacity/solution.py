@@ -4,19 +4,16 @@ def min_capacity(weights: list[int], days: int) -> int:
     pass
     left = max(weights)
     right = sum(weights)
-
     while left < right:
         cap = (left + right) // 2
-        used_day = 1
-        current_load = 0
-
+        used = 1
+        cur = 0
         for w in weights:
-            if current_load + w > cap:
-                used_day += 1
-                current_load = 0
-            current_load += w
-
-        if used_day <= days:
+            if cur + w > cap:
+                used += 1
+                cur = 0
+            cur += w
+        if used <= days:
             right = cap
         else:
             left = cap + 1

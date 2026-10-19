@@ -7,6 +7,8 @@ def shortest_path(grid):
     grid: list[list[int]]，0 可通行、1 障礙
     回傳 int
     """
+    # TODO
+    pass
     m = len(grid)
     n = len(grid[0])
     if grid[0][0] == 1 or grid[m-1][n-1] == 1:

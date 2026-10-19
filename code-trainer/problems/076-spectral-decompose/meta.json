@@ -1,0 +1,21 @@
+{
+  "id": "076-spectral-decompose",
+  "title": "對稱矩陣的譜分解",
+  "lang": "py",
+  "mode": "function",
+  "entry": "spectral_decompose",
+  "node": "M0.4",
+  "difficulty": "standard",
+  "tags": [
+    "eigendecomposition",
+    "spectral-theorem",
+    "jacobi-rotation",
+    "positive-definite"
+  ],
+  "hint_count": 4,
+  "test_count": 13,
+  "timeout": 10.0,
+  "est_minutes": 85,
+  "source_style": "math",
+  "created": "2026-10-19T13:50:00+00:00"
+}
