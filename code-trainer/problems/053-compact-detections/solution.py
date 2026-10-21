@@ -6,9 +6,3 @@ def compact(scores, threshold):
     回傳 (保留了幾個, 保留下來的那幾個元素)。
     """
     return len([score for score in scores if score >= threshold]), [score for score in scores if score >= threshold]
-    # write = 0
-    # for score in scores:
-    #   if score >= threshold:
-    #       scores[write] = score
-    #        write += 1
-    # return write, scores[:write]

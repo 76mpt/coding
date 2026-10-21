@@ -18,8 +18,8 @@ def power_iteration(A, v0, iters):
         lams.append(lam)
     
     Av = mat_vec(A, v)
-    residual = norm([Av[i] - lams[-1] * v[i] for i in range(n)])
+    residaul = norm([Av[i] - lams[-1] * v[i] for i in range(n)])
     idx = max(range(n), key=lambda i:abs(v[i]))
     if v[idx] < 0:
         v = [-x for x in v]
-    return lams[-1], v, lams, residual
+    return lams[-1], v, lams, residaul

@@ -1,7 +1,7 @@
 def max_cut_length(lengths, k):
     """求能切出 k 段等長片段的最大片段長度。回傳 float。"""
     # TODO
-    lo = 0.0
+    lo = 0
     hi = max(lengths)
     for _ in range(100):
         mid = (lo + hi) / 2

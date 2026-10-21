@@ -13,4 +13,3 @@ def find_pair(sizes, target):
         if x not in seen:
             seen[x] = j
     return None
-    

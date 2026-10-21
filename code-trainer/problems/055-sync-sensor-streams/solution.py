@@ -19,4 +19,3 @@ def nearest_imu(cam, imu):
                 j += 1
         cam_frame.append(j)
     return cam_frame
-            

@@ -9,7 +9,7 @@ def weighted_lstsq(A, b, w):
         return [dot(row, x) for row in A]
     def solve(M, rhs):
         n = len(rhs)
-        aug = [[float(v) for v in M[i]] + [float(rhs[i])] for i in range(n)]
+        aug = [[float(v) for v in M[i]] + [float(rhs[i])]for i in range(n)]
         for col in range(n):
             pivot = max(range(col, n), key=lambda i: abs(aug[i][col]))
             aug[col], aug[pivot] = aug[pivot], aug[col]
@@ -23,7 +23,7 @@ def weighted_lstsq(A, b, w):
                 for j in range(col, n + 1):
                     aug[i][j] -= factor * aug[col][j]
         return [float(aug[i][n]) for i in range(n)]
-
+    
     m = len(A)
     n = len(A[0])
     M = [[0.0] * n for _ in range(n)]
@@ -35,7 +35,7 @@ def weighted_lstsq(A, b, w):
                 M[j][k] += w[i] * A[i][j] * A[i][k]
     x = solve(M, rhs)
     Ax = mat_vec(A, x)
-    residuals = [float(b[i] - Ax[i]) for i in range(m)]
-    dots = [float(sum(w[i] * A[i][j] * residuals[i] for i in range(m))) for j in range(n)]
-    wrss = float(sum(w[i] * residuals[i] ** 2 for i in range(m)))
-    return x, residuals, dots, wrss
+    residual = [float(b[i] - Ax[i]) for i in range(m)]
+    dots = [float(sum(w[i] * A[i][j] * residual[i] for i in range(m))) for j in range(n)]
+    wrss = float(sum(w[i] * residual[i] ** 2 for i in range(m)))
+    return x, residual, dots, wrss

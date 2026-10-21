@@ -22,7 +22,7 @@ def search_rotated(nums, targets):
                 lo = mid + 1
             else:
                 hi = mid
-
+        
         if lo == n:
             return -1
         idx = (lo + pivot) % n

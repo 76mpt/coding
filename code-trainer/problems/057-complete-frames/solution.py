@@ -9,10 +9,9 @@ def complete_frames(filenames):
         file = file.strip()
         if not "." in file:
             continue
-        cam, ext = file.rsplit('.', 1)
+        cam, ext = file.rsplit(".", 1)
         if ext.lower() not in ("png", "jpg", "jpeg"):
             continue
-
         cam = cam.lower()
         if not cam.startswith("cam"):
             continue

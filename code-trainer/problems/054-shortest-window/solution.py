@@ -17,5 +17,3 @@ def shortest_window(counts, target):
             cur -= counts[left]
             left += 1
     return 0 if best == len(counts) + 1 else best
-    
-    

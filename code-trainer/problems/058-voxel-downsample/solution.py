@@ -19,6 +19,7 @@ def voxel_downsample(points, size):
         vox[key][1] += y
         vox[key][2] += z
         vox[key][3] += 1
+
     vox_coor = []
     center = []
     for key in sorted(vox):
