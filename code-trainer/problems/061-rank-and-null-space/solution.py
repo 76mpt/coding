@@ -6,14 +6,13 @@ def rank_and_null_space(A):
     """
     m = len(A)
     n = len(A[0])
-    R = [list(map(float, r)) for r in A]
+    R = [list(map(float, r))for r in A]
     pivots = []
     row = 0
     for col in range(n):
         p = next((i for i in range(row, m) if abs(R[i][col]) > 1e-9), None)
         if p is None:
             continue
-            
         R[row], R[p] = R[p], R[row]
         x = R[row][col]
         R[row] = [v / x for v in R[row]]
@@ -32,5 +31,5 @@ def rank_and_null_space(A):
         for i, p in enumerate(pivots):
             v[p] = -R[i][f]
         basis.append(v)
-    dots = [[sum(a * b for a, b in zip(r, v)) for v in basis] for r in A]
+    dots = [[sum(a * b for a, b in zip(r, v))for v in basis] for r in A]
     return len(pivots), basis, dots

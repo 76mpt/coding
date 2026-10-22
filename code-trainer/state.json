@@ -347,15 +347,15 @@
     },
     "023-numerical-derivative": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 4,
+      "rep": 5,
       "first_seen": "2026-08-06T11:53:23+00:00",
       "node": "M00.4",
-      "solved_at": "2026-09-07T04:08:52+00:00",
-      "review_due": "2026-10-22T04:08:52+00:00",
+      "solved_at": "2026-10-22T11:40:54+00:00",
+      "review_due": "2027-01-20T11:40:54+00:00",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
@@ -907,19 +907,19 @@
     },
     "059-zero-drift-segments": {
       "status": "solved",
-      "attempts": 2,
+      "attempts": 1,
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-09-11T08:51:43+00:00",
       "node": "2.2",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-26T08:05:22+00:00",
-      "review_due": "2026-10-22T08:05:22+00:00"
+      "solved_at": "2026-10-22T11:43:38+00:00",
+      "review_due": "2026-11-26T11:43:38+00:00"
     },
     "060-gram-schmidt": {
       "status": "solved",
@@ -943,15 +943,15 @@
       "hints_revealed": 0,
       "answer_unlocked": true,
       "ever_unlocked": true,
-      "rep": 3,
+      "rep": 4,
       "first_seen": "2026-09-11T08:51:43+00:00",
       "node": "M0.2",
       "ever_solved": true,
       "ever_clean": true,
       "solve_hints": 0,
       "ever_attempted": true,
-      "solved_at": "2026-09-26T08:10:11+00:00",
-      "review_due": "2026-10-22T08:10:11+00:00"
+      "solved_at": "2026-10-22T11:57:04+00:00",
+      "review_due": "2026-11-26T11:57:04+00:00"
     },
     "062-first-bad-bracket": {
       "status": "solved",
@@ -1162,17 +1162,20 @@
       "review_due": "2026-10-28T10:04:01+00:00"
     },
     "075-sort-detections": {
-      "status": "open",
-      "attempts": 0,
+      "status": "solved",
+      "attempts": 1,
       "hints_revealed": 0,
-      "answer_unlocked": false,
-      "ever_unlocked": false,
-      "rep": 0,
+      "answer_unlocked": true,
+      "ever_unlocked": true,
+      "rep": 1,
       "first_seen": "2026-10-19T13:43:12+00:00",
       "node": "2.6",
-      "ever_solved": false,
-      "ever_clean": false,
-      "solve_hints": 0
+      "ever_solved": true,
+      "ever_clean": true,
+      "solve_hints": 0,
+      "ever_attempted": true,
+      "solved_at": "2026-10-22T12:12:25+00:00",
+      "review_due": "2026-10-25T12:12:25+00:00"
     },
     "076-spectral-decompose": {
       "status": "open",
@@ -1183,6 +1186,32 @@
       "rep": 0,
       "first_seen": "2026-10-19T13:50:00+00:00",
       "node": "M0.4",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "077-merge-tracks": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-10-22T11:31:33+00:00",
+      "node": "2.6",
+      "ever_solved": false,
+      "ever_clean": false,
+      "solve_hints": 0
+    },
+    "078-top-k-scores": {
+      "status": "open",
+      "attempts": 0,
+      "hints_revealed": 0,
+      "answer_unlocked": false,
+      "ever_unlocked": false,
+      "rep": 0,
+      "first_seen": "2026-10-22T11:35:02+00:00",
+      "node": "2.6",
       "ever_solved": false,
       "ever_clean": false,
       "solve_hints": 0
@@ -1358,103 +1387,13 @@
       "hints_used": 0
     },
     "2.6": {
-      "attempted": 0,
-      "solved": 0,
-      "clean_solved": 0,
+      "attempted": 1,
+      "solved": 1,
+      "clean_solved": 1,
       "hints_used": 0
     }
   },
   "log": [
-    {
-      "ts": "2026-09-11T07:04:35+00:00",
-      "event": "redo",
-      "id": "047-monte-carlo-bayes",
-      "rep": 2
-    },
-    {
-      "ts": "2026-09-11T07:08:30+00:00",
-      "event": "created",
-      "id": "055-sync-sensor-streams",
-      "node": "2.1",
-      "lang": "py",
-      "difficulty": "standard"
-    },
-    {
-      "ts": "2026-09-11T07:08:30+00:00",
-      "event": "created",
-      "id": "056-pair-to-target",
-      "node": "2.2",
-      "lang": "py",
-      "difficulty": "warmup"
-    },
-    {
-      "ts": "2026-09-11T07:10:42+00:00",
-      "event": "solved",
-      "id": "047-monte-carlo-bayes",
-      "attempts": 1,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-11T07:11:35+00:00",
-      "event": "answer_unlocked",
-      "id": "047-monte-carlo-bayes",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-11T07:11:57+00:00",
-      "event": "redo",
-      "id": "048-variance-two-ways",
-      "rep": 2
-    },
-    {
-      "ts": "2026-09-11T07:14:37+00:00",
-      "event": "test_fail",
-      "id": "048-variance-two-ways",
-      "passed": 9,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-11T07:14:51+00:00",
-      "event": "test_fail",
-      "id": "048-variance-two-ways",
-      "passed": 9,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-11T07:17:41+00:00",
-      "event": "test_fail",
-      "id": "048-variance-two-ways",
-      "passed": 6,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-11T07:18:30+00:00",
-      "event": "test_fail",
-      "id": "048-variance-two-ways",
-      "passed": 9,
-      "total": 10
-    },
-    {
-      "ts": "2026-09-11T07:20:30+00:00",
-      "event": "solved",
-      "id": "048-variance-two-ways",
-      "attempts": 5,
-      "hints": 0,
-      "clean": true
-    },
-    {
-      "ts": "2026-09-11T07:20:34+00:00",
-      "event": "answer_unlocked",
-      "id": "048-variance-two-ways",
-      "solved_first": true
-    },
-    {
-      "ts": "2026-09-11T07:20:46+00:00",
-      "event": "redo",
-      "id": "052-change-of-basis",
-      "rep": 1
-    },
     {
       "ts": "2026-09-11T07:31:55+00:00",
       "event": "test_fail",
@@ -4781,9 +4720,99 @@
       "event": "answer_unlocked",
       "id": "069-weighted-least-squares",
       "solved_first": true
+    },
+    {
+      "ts": "2026-10-22T11:31:33+00:00",
+      "event": "created",
+      "id": "077-merge-tracks",
+      "node": "2.6",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-10-22T11:35:02+00:00",
+      "event": "created",
+      "id": "078-top-k-scores",
+      "node": "2.6",
+      "lang": "py",
+      "difficulty": "standard"
+    },
+    {
+      "ts": "2026-10-22T11:36:35+00:00",
+      "event": "redo",
+      "id": "023-numerical-derivative",
+      "rep": 4
+    },
+    {
+      "ts": "2026-10-22T11:40:54+00:00",
+      "event": "solved",
+      "id": "023-numerical-derivative",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-22T11:40:57+00:00",
+      "event": "answer_unlocked",
+      "id": "023-numerical-derivative",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-22T11:41:00+00:00",
+      "event": "redo",
+      "id": "059-zero-drift-segments",
+      "rep": 3
+    },
+    {
+      "ts": "2026-10-22T11:43:38+00:00",
+      "event": "solved",
+      "id": "059-zero-drift-segments",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-22T11:43:42+00:00",
+      "event": "answer_unlocked",
+      "id": "059-zero-drift-segments",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-22T11:45:48+00:00",
+      "event": "redo",
+      "id": "061-rank-and-null-space",
+      "rep": 3
+    },
+    {
+      "ts": "2026-10-22T11:57:04+00:00",
+      "event": "solved",
+      "id": "061-rank-and-null-space",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-22T11:57:07+00:00",
+      "event": "answer_unlocked",
+      "id": "061-rank-and-null-space",
+      "solved_first": true
+    },
+    {
+      "ts": "2026-10-22T12:12:25+00:00",
+      "event": "solved",
+      "id": "075-sort-detections",
+      "attempts": 1,
+      "hints": 0,
+      "clean": true
+    },
+    {
+      "ts": "2026-10-22T12:12:29+00:00",
+      "event": "answer_unlocked",
+      "id": "075-sort-detections",
+      "solved_first": true
     }
   ],
-  "counter": 76,
+  "counter": 78,
   "plan": {
     "started": "2026-08-17T00:00:00",
     "hours_per_week": 16

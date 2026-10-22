@@ -1,0 +1,21 @@
+{
+  "id": "078-top-k-scores",
+  "title": "百萬候選框裡的第 k 大分數",
+  "lang": "py",
+  "mode": "function",
+  "entry": "top_k_scores",
+  "node": "2.6",
+  "difficulty": "standard",
+  "tags": [
+    "counting-sort",
+    "kth-largest",
+    "bucket",
+    "selection"
+  ],
+  "hint_count": 4,
+  "test_count": 13,
+  "timeout": 10.0,
+  "est_minutes": 60,
+  "source_style": "leetcode",
+  "created": "2026-10-22T11:35:02+00:00"
+}

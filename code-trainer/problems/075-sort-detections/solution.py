@@ -3,5 +3,6 @@ def sort_detections(dets):
 
     回傳 (order, sorted_dets)。
     """
-    # TODO
-    return ([], [])
+    order = sorted(range(len(dets)), key=lambda i: (dets[i][0], -dets[i][1], i))
+    sorted_det = [dets[i] for i in order]
+    return order, sorted_det

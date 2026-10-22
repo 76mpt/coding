@@ -13,5 +13,5 @@ def count_segments(deltas, k):
         target = cur - k
         if target in seen:
             count += seen[target]
-        seen[cur] = seen.get(cur, 0) + 1
+        seen[cur] = seen.get(cur,0) + 1
     return count

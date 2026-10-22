@@ -1,0 +1,21 @@
+{
+  "id": "077-merge-tracks",
+  "title": "合併軌跡區間與最大重疊",
+  "lang": "py",
+  "mode": "function",
+  "entry": "merge_tracks",
+  "node": "2.6",
+  "difficulty": "standard",
+  "tags": [
+    "sorting",
+    "intervals",
+    "sweep-line",
+    "merge-intervals"
+  ],
+  "hint_count": 4,
+  "test_count": 12,
+  "timeout": 10.0,
+  "est_minutes": 70,
+  "source_style": "leetcode",
+  "created": "2026-10-22T11:31:33+00:00"
+}
